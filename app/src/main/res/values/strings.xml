@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Login</string>
+    <string name="PHRALogo">PHRA</string>
+    <string name="textViewUsername">Username</string>
+    <string name="editTextUsername">Username</string>
+    <string name="textViewPassword">Password</string>
+    <string name="editTextPassword">Password</string>
+    <string name="buttonLogIn">LOGIN</string>
+</resources>
