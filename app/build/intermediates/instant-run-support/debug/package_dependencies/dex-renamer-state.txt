@@ -1,4 +1,4 @@
-#Mon May 29 16:04:57 IST 2017
+#Tue Jun 06 13:50:40 IST 2017
 file.2=C\:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\ksoap2-android-assembly-3.6.2-jar-with-dependencies_07cd4e106c81c5184bf843de23cffec7c145d624\\classes.dex
 base.2=C\:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\2\\ksoap2-android-assembly-3.6.2-jar-with-dependencies_07cd4e106c81c5184bf843de23cffec7c145d624
 file.1=C\:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\classes_5140bdbd95f6b16190fabf977c86968ed35ec0ef\\classes.dex

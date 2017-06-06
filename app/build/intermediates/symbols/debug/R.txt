@@ -726,7 +726,8 @@ int drawable notification_template_icon_bg 0x7f020067
 int drawable notification_template_icon_low_bg 0x7f020068
 int drawable notification_tile_bg 0x7f020065
 int drawable notify_panel_notification_icon_bg 0x7f020066
-int id Logo 0x7f0d007b
+int id Logo 0x7f0d007e
+int id TextViewWelcome 0x7f0d007f
 int id action0 0x7f0d008f
 int id action_bar 0x7f0d006b
 int id action_bar_activity_content 0x7f0d0000
@@ -755,7 +756,7 @@ int id auto 0x7f0d002d
 int id basic 0x7f0d0015
 int id beginning 0x7f0d003f
 int id bottom 0x7f0d002e
-int id buttonLogIn 0x7f0d007e
+int id buttonLogIn 0x7f0d007d
 int id buttonPanel 0x7f0d0052
 int id cancel_action 0x7f0d0090
 int id center 0x7f0d002f
@@ -778,8 +779,8 @@ int id design_menu_item_action_area_stub 0x7f0d0089
 int id design_menu_item_text 0x7f0d0088
 int id design_navigation_view 0x7f0d0087
 int id disableHome 0x7f0d001b
-int id editTextPassword 0x7f0d007d
-int id editTextUsername 0x7f0d007c
+int id editTextPassword 0x7f0d007c
+int id editTextUsername 0x7f0d007b
 int id edit_query 0x7f0d006d
 int id end 0x7f0d0032
 int id end_padder 0x7f0d00a2
@@ -855,7 +856,6 @@ int id smallLabel 0x7f0d0080
 int id snackbar_action 0x7f0d0085
 int id snackbar_text 0x7f0d0084
 int id snap 0x7f0d0025
-int id soapResult 0x7f0d007f
 int id spacer 0x7f0d0053
 int id split_action_bar 0x7f0d0008
 int id spread 0x7f0d0010
@@ -1010,8 +1010,6 @@ int string path_password_eye_mask_visible 0x7f07002c
 int string path_password_strike_through 0x7f07002d
 int string search_menu_title 0x7f070013
 int string status_bar_notification_info_overflow 0x7f070014
-int string textViewPassword 0x7f07002e
-int string textViewUsername 0x7f07002f
 int style AlertDialog_AppCompat 0x7f0900a1
 int style AlertDialog_AppCompat_Light 0x7f0900a2
 int style Animation_AppCompat_Dialog 0x7f0900a3

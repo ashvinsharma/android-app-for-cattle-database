@@ -1,5 +1,7 @@
 package in.nic.phra.app;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,19 +9,24 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.security.MessageDigest;
 
-import static in.nic.phra.app.WebServiceDetails.authenticate;
-import static in.nic.phra.app.WebServiceDetails.wsURL;
+import static in.nic.phra.app.data.WebServiceDetails.*;
 
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
     public Boolean flag = false;
+    public UserBean userBean;
     EditText editTextUsername, editTextPassword;
 
     @Override
@@ -38,18 +45,29 @@ public class LoginActivity extends AppCompatActivity {
         //Converting password to md5 hash and initiating login process
         String digestedKey = hashKey(password);
         this.loginMethod(username, digestedKey);
+
+        Intent intent = new Intent(this, WelcomeActivity.class);
+        startActivity(intent);
     }
 
-    private void loginMethod(String username, String password) {
+    private void loginMethod(final String username, String password) {
 
         class LoginMethodAsyncTask extends AsyncTask<String, Void, String> {
+            private final ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this);
+
+            @Override
+            protected void onPreExecute() {
+                progressDialog.setIndeterminate(true);
+                progressDialog.setMessage("Logging in...");
+                progressDialog.show();
+            }
 
             @Override
             protected String doInBackground(String... params) {
                 String paramUsername = params[0];
                 String paramPassword = params[1];
                 String postParam = "LoginUserId=" + paramUsername + "&Pwd=" + paramPassword;
-                Log.i(TAG, "POST Query: LoginUserId=" + paramUsername + "&Pwd=" + paramPassword);
+                Log.d(TAG, "POST Query: LoginUserId=" + paramUsername + "&Pwd=" + paramPassword);
 
                 try {
                     //Apache Libraries and namevaluepair has been deprecated since APK 21(?). Using HttpURLConnection instead.
@@ -68,7 +86,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     // Fetching the response code for debugging purposes.
                     int responseCode = connection.getResponseCode();
-                    Log.i(TAG, "POST Response Code: " + responseCode);
+                    Log.d(TAG, "POST Response Code: " + responseCode);
 
                     if (responseCode == HttpURLConnection.HTTP_OK) {
                         BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
@@ -81,27 +99,45 @@ public class LoginActivity extends AppCompatActivity {
                         }
                         in.close();
 
-                        Log.i(TAG, "HTTP Response: " + response.toString());
+                        Log.d(TAG, "HTTP Response: " + response.toString());
 
                         //Sets Authentication flag
-                        if (!response.toString().contains("Wrong")) {
+                        if (!response.toString().contains("Authentication Failed!")) {
                             flag = true;
                             Log.i(TAG, "Authentication Completed: Logged in Successfully!");
                             //TODO:get user details here
+                            try {
+                                JSONObject jsonObject = new JSONObject(response.toString());
+                                JSONArray jsonArray = jsonObject.getJSONArray("rows");
+                                JSONObject beanObject = jsonArray.getJSONObject(0);
+
+                                userBean = new UserBean(username, beanObject.getString("User_FullName"), beanObject.getInt("UserType_Code"));
+
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
                         }
                     } else {
-                        System.err.println("Error!!! Abort!!!");
+                        Log.e(TAG, "Error!!! Abort!!!");
                     }
-                } catch (Exception e) {
-                    e.printStackTrace();
+                    connection.disconnect();
+                } catch (MalformedURLException e) {
+                    System.out.println("URLConnection Exception: " + e);
+                } catch (IOException e) {
+                    System.out.println("IOStream Exception: " + e);
                 }
+                /*catch (Exception e) {
+                    Log.e(TAG, e.toString());
+                   // e.printStackTrace();
+                }*/
                 return postParam;
-                //TODO: Get UserDetails viz. UserName, UserType_Code
             }
 
             @Override
             protected void onPostExecute(String result) {
-                //TODO:Add loading animation; Save details in bean; Move to welcome Activity
+                //TODO:Move to welcome Activity
+                progressDialog.dismiss();
+                Log.i(TAG, "in onPostExecute");
             }
         }
         LoginMethodAsyncTask loginMethodAsyncTask = new LoginMethodAsyncTask();
@@ -119,8 +155,8 @@ public class LoginActivity extends AppCompatActivity {
                 stringBuilder.append(String.format("%02x", bytes & 0xff));
             }
 
-            Log.i(TAG, "pass: " + pass);
-            Log.i(TAG, "hashkey: " + stringBuilder.toString());
+            Log.d(TAG, "pass: " + pass);
+            Log.d(TAG, "hash key: " + stringBuilder.toString());
 
         } catch (Exception e) {
             e.printStackTrace();

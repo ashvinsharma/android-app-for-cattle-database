@@ -3107,7 +3107,8 @@ containing a value of this type.
         public static final int notify_panel_notification_icon_bg=0x7f020066;
     }
     public static final class id {
-        public static final int Logo=0x7f0d007b;
+        public static final int Logo=0x7f0d007e;
+        public static final int TextViewWelcome=0x7f0d007f;
         public static final int action0=0x7f0d008f;
         public static final int action_bar=0x7f0d006b;
         public static final int action_bar_activity_content=0x7f0d0000;
@@ -3136,7 +3137,7 @@ containing a value of this type.
         public static final int basic=0x7f0d0015;
         public static final int beginning=0x7f0d003f;
         public static final int bottom=0x7f0d002e;
-        public static final int buttonLogIn=0x7f0d007e;
+        public static final int buttonLogIn=0x7f0d007d;
         public static final int buttonPanel=0x7f0d0052;
         public static final int cancel_action=0x7f0d0090;
         public static final int center=0x7f0d002f;
@@ -3159,8 +3160,8 @@ containing a value of this type.
         public static final int design_menu_item_text=0x7f0d0088;
         public static final int design_navigation_view=0x7f0d0087;
         public static final int disableHome=0x7f0d001b;
-        public static final int editTextPassword=0x7f0d007d;
-        public static final int editTextUsername=0x7f0d007c;
+        public static final int editTextPassword=0x7f0d007c;
+        public static final int editTextUsername=0x7f0d007b;
         public static final int edit_query=0x7f0d006d;
         public static final int end=0x7f0d0032;
         public static final int end_padder=0x7f0d00a2;
@@ -3236,7 +3237,6 @@ containing a value of this type.
         public static final int snackbar_action=0x7f0d0085;
         public static final int snackbar_text=0x7f0d0084;
         public static final int snap=0x7f0d0025;
-        public static final int soapResult=0x7f0d007f;
         public static final int spacer=0x7f0d0053;
         public static final int split_action_bar=0x7f0d0008;
         public static final int spread=0x7f0d0010;
@@ -3399,8 +3399,6 @@ containing a value of this type.
         public static final int path_password_strike_through=0x7f07002d;
         public static final int search_menu_title=0x7f070013;
         public static final int status_bar_notification_info_overflow=0x7f070014;
-        public static final int textViewPassword=0x7f07002e;
-        public static final int textViewUsername=0x7f07002f;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat=0x7f0900a1;
