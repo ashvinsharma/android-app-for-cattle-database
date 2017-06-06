@@ -164,12 +164,12 @@
         "source": "C:\\Users\\ashvi\\.android\\build-cache\\69a8642930ef513e0e96feba42f46b27ec6758e4\\output\\res\\drawable\\abc_spinner_textfield_background_material.xml"
     },
     {
-        "merged": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_tick_mark_material.xml",
-        "source": "C:\\Users\\ashvi\\.android\\build-cache\\69a8642930ef513e0e96feba42f46b27ec6758e4\\output\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
-    },
-    {
         "merged": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\logo.png",
         "source": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\src\\main\\res\\drawable\\logo.png"
+    },
+    {
+        "merged": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_tick_mark_material.xml",
+        "source": "C:\\Users\\ashvi\\.android\\build-cache\\69a8642930ef513e0e96feba42f46b27ec6758e4\\output\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
     },
     {
         "merged": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_tile_bg.xml",

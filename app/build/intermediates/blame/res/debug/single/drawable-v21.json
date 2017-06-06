@@ -20,12 +20,12 @@
         "source": "C:\\Users\\ashvi\\.android\\build-cache\\69a8642930ef513e0e96feba42f46b27ec6758e4\\output\\res\\drawable-v21\\abc_edit_text_material.xml"
     },
     {
-        "merged": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
-        "source": "C:\\Users\\ashvi\\.android\\build-cache\\69a8642930ef513e0e96feba42f46b27ec6758e4\\output\\res\\drawable-v21\\abc_btn_colored_material.xml"
-    },
-    {
         "merged": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\avd_show_password.xml",
         "source": "C:\\Users\\ashvi\\.android\\build-cache\\a7dd2d8cd4df55b2db2e68dc6d523f91478d4c1e\\output\\res\\drawable-v21\\avd_show_password.xml"
+    },
+    {
+        "merged": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\ashvi\\.android\\build-cache\\69a8642930ef513e0e96feba42f46b27ec6758e4\\output\\res\\drawable-v21\\abc_btn_colored_material.xml"
     },
     {
         "merged": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\design_password_eye.xml",
