@@ -1,7 +1,14 @@
 <resources>
-    <string name="app_name">Login</string>
+    <string name="app_name">PHRA</string>
     <string name="PHRALogo">PHRA</string>
     <string name="editTextUsername">Username</string>
     <string name="editTextPassword">Password</string>
     <string name="buttonLogIn">LOGIN</string>
+    <string name="textViewForgetPassword"><a href="http://www.google.com">Forget Password?</a></string>
+    <string name="title_activity_welcome">WelcomeActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_logout">Log Out</string>
 </resources>

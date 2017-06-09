@@ -1,13 +1,19 @@
 package in.nic.phra.app;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -21,13 +27,15 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.security.MessageDigest;
 
-import static in.nic.phra.app.data.WebServiceDetails.*;
+import static in.nic.phra.app.data.WebServiceDetails.authenticate;
+import static in.nic.phra.app.data.WebServiceDetails.wsURL;
 
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
-    public Boolean flag = false;
-    public UserBean userBean;
-    EditText editTextUsername, editTextPassword;
+    private Boolean authFlag = false;
+    private UserBean userBean;
+    private EditText editTextUsername;
+    private EditText editTextPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +44,8 @@ public class LoginActivity extends AppCompatActivity {
 
         editTextUsername = (EditText) findViewById(R.id.editTextUsername);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
+        TextView tvForgetPassword = (TextView) findViewById(R.id.textViewForgetPassword);
+        tvForgetPassword.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
     public void sendLoginRequest(View view) {
@@ -46,17 +56,20 @@ public class LoginActivity extends AppCompatActivity {
         String digestedKey = hashKey(password);
         this.loginMethod(username, digestedKey);
 
-        Intent intent = new Intent(this, WelcomeActivity.class);
-        startActivity(intent);
+
     }
 
     private void loginMethod(final String username, String password) {
 
         class LoginMethodAsyncTask extends AsyncTask<String, Void, String> {
             private final ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this);
+            private int responseCode;
 
             @Override
             protected void onPreExecute() {
+                //Stopping the change of orientation of the device to prevent killing of the AsyncTask Process
+                // unlocking right when the process is completed
+                lockScreenOrientation();
                 progressDialog.setIndeterminate(true);
                 progressDialog.setMessage("Logging in...");
                 progressDialog.show();
@@ -68,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
                 String paramPassword = params[1];
                 String postParam = "LoginUserId=" + paramUsername + "&Pwd=" + paramPassword;
                 Log.d(TAG, "POST Query: LoginUserId=" + paramUsername + "&Pwd=" + paramPassword);
-
+                //TODO: check network availability
                 try {
                     //Apache Libraries and namevaluepair has been deprecated since APK 21(?). Using HttpURLConnection instead.
                     URL url = new URL(wsURL + authenticate);
@@ -85,7 +98,7 @@ public class LoginActivity extends AppCompatActivity {
                     os.close();
 
                     // Fetching the response code for debugging purposes.
-                    int responseCode = connection.getResponseCode();
+                    responseCode = connection.getResponseCode();
                     Log.d(TAG, "POST Response Code: " + responseCode);
 
                     if (responseCode == HttpURLConnection.HTTP_OK) {
@@ -100,12 +113,11 @@ public class LoginActivity extends AppCompatActivity {
                         in.close();
 
                         Log.d(TAG, "HTTP Response: " + response.toString());
-
+                        //TODO: Check login logic again
                         //Sets Authentication flag
                         if (!response.toString().contains("Authentication Failed!")) {
-                            flag = true;
+                            authFlag = true;
                             Log.i(TAG, "Authentication Completed: Logged in Successfully!");
-                            //TODO:get user details here
                             try {
                                 JSONObject jsonObject = new JSONObject(response.toString());
                                 JSONArray jsonArray = jsonObject.getJSONArray("rows");
@@ -122,22 +134,40 @@ public class LoginActivity extends AppCompatActivity {
                     }
                     connection.disconnect();
                 } catch (MalformedURLException e) {
-                    System.out.println("URLConnection Exception: " + e);
+                    Log.e(TAG, "URLConnection Exception: " + e.getMessage());
                 } catch (IOException e) {
-                    System.out.println("IOStream Exception: " + e);
+                    Log.e(TAG, "IOException Exception: " + e);
                 }
-                /*catch (Exception e) {
-                    Log.e(TAG, e.toString());
-                   // e.printStackTrace();
-                }*/
+
                 return postParam;
             }
 
             @Override
             protected void onPostExecute(String result) {
-                //TODO:Move to welcome Activity
+                unlockScreenOrientation();
                 progressDialog.dismiss();
                 Log.i(TAG, "in onPostExecute");
+
+                //Moving to new Activity if the login is successful otherwise shows a toast
+                if (authFlag) {
+                    Intent intent = new Intent(LoginActivity.this, WelcomeActivity.class);
+                    intent.putExtra("bean", userBean);
+                    startActivity(intent);
+                } else {
+                    Context context = getApplicationContext();
+                    final CharSequence INVALID_USERNAME_PASSWORD = "Invalid Username/Password!";
+                    final CharSequence NO_INTERNET_CONNECTION = "Please check if you have an active Internet Connection";
+                    int duration = Toast.LENGTH_LONG;
+
+                    if (responseCode != 0) {
+                        Toast toast = Toast.makeText(context, INVALID_USERNAME_PASSWORD, duration);
+                        toast.show();
+                    } else {
+                        Toast toast = Toast.makeText(context, NO_INTERNET_CONNECTION, duration);
+                        toast.show();
+                    }
+
+                }
             }
         }
         LoginMethodAsyncTask loginMethodAsyncTask = new LoginMethodAsyncTask();
@@ -163,4 +193,18 @@ public class LoginActivity extends AppCompatActivity {
         }
         return stringBuilder.toString();
     }
+
+    private void lockScreenOrientation() {
+        int currentConfig = getResources().getConfiguration().orientation;
+        if (currentConfig == Configuration.ORIENTATION_LANDSCAPE)
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        else
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+    }
+
+    private void unlockScreenOrientation() {
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
+    }
+
 }
+
