@@ -3,6 +3,7 @@ package in.nic.phra.app;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.AsyncTask;
@@ -11,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,13 +29,19 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.security.MessageDigest;
 
+import in.nic.phra.app.data.UserBean;
+
+import static in.nic.phra.app.data.Strings.INVALID_USERNAME_PASSWORD;
+import static in.nic.phra.app.data.Strings.NO_INTERNET_CONNECTION;
 import static in.nic.phra.app.data.WebServiceDetails.authenticate;
 import static in.nic.phra.app.data.WebServiceDetails.wsURL;
 
 public class LoginActivity extends AppCompatActivity {
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
+
     private static final String TAG = "LoginActivity";
     private Boolean authFlag = false;
-    private UserBean userBean;
     private EditText editTextUsername;
     private EditText editTextPassword;
 
@@ -41,6 +49,13 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        sharedPreferences = getApplicationContext().getSharedPreferences("userSession", MODE_PRIVATE);
+
+        if(!(sharedPreferences.getString("username", "null").equals("null"))){
+            Intent intent = new Intent(this, WelcomeActivity.class);
+            startActivity(intent);
+            finish();
+        }
 
         editTextUsername = (EditText) findViewById(R.id.editTextUsername);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
@@ -67,18 +82,27 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             protected void onPreExecute() {
-                //Stopping the change of orientation of the device to prevent killing of the AsyncTask Process
-                // unlocking right when the process is completed
+                /* Stopping the change of orientation of the device to prevent killing of the AsyncTask Process
+                 * unlocking right when the process is completed
+                 * Hiding Keyboard
+                 */
+
+                InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputMethodManager.hideSoftInputFromWindow(editTextUsername.getWindowToken(), 0);
+
                 lockScreenOrientation();
+
                 progressDialog.setIndeterminate(true);
                 progressDialog.setMessage("Logging in...");
                 progressDialog.show();
+
             }
 
             @Override
             protected String doInBackground(String... params) {
                 String paramUsername = params[0];
                 String paramPassword = params[1];
+                editor = sharedPreferences.edit();
                 String postParam = "LoginUserId=" + paramUsername + "&Pwd=" + paramPassword;
                 Log.d(TAG, "POST Query: LoginUserId=" + paramUsername + "&Pwd=" + paramPassword);
                 //TODO: check network availability
@@ -123,7 +147,18 @@ public class LoginActivity extends AppCompatActivity {
                                 JSONArray jsonArray = jsonObject.getJSONArray("rows");
                                 JSONObject beanObject = jsonArray.getJSONObject(0);
 
-                                userBean = new UserBean(username, beanObject.getString("User_FullName"), beanObject.getInt("UserType_Code"));
+                                editor.putString("username", username);
+                                editor.putString("User_FullName", beanObject.getString("User_FullName"));
+                                editor.putInt("State_ID",beanObject.getInt("State_ID"));
+                                editor.putString("State_Name",beanObject.getString("State_Name"));
+                                editor.putInt("District_ID",beanObject.getInt("District_ID"));
+                                editor.putString("District_Name",beanObject.getString("District_Name"));
+                                editor.putInt("Block_ID",beanObject.getInt("Block_ID"));
+                                editor.putString("Block_Name",beanObject.getString("Block_Name"));
+                                editor.putInt("Centre_ID",beanObject.getInt("Centre_ID"));
+                                editor.putString("Centre_Name",beanObject.getString("Centre_Name"));
+                                editor.putInt("UserType_Code", beanObject.getInt("UserType_Code"));
+                                editor.commit();
 
                             } catch (Exception e) {
                                 e.printStackTrace();
@@ -146,17 +181,16 @@ public class LoginActivity extends AppCompatActivity {
             protected void onPostExecute(String result) {
                 unlockScreenOrientation();
                 progressDialog.dismiss();
+
                 Log.i(TAG, "in onPostExecute");
 
                 //Moving to new Activity if the login is successful otherwise shows a toast
                 if (authFlag) {
                     Intent intent = new Intent(LoginActivity.this, WelcomeActivity.class);
-                    intent.putExtra("bean", userBean);
+                    //TODO: get user details to intent
                     startActivity(intent);
                 } else {
                     Context context = getApplicationContext();
-                    final CharSequence INVALID_USERNAME_PASSWORD = "Invalid Username/Password!";
-                    final CharSequence NO_INTERNET_CONNECTION = "Please check if you have an active Internet Connection";
                     int duration = Toast.LENGTH_LONG;
 
                     if (responseCode != 0) {

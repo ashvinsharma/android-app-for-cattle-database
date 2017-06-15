@@ -6,9 +6,9 @@
     <string name="buttonLogIn">LOGIN</string>
     <string name="textViewForgetPassword"><a href="http://www.google.com">Forget Password?</a></string>
     <string name="title_activity_welcome">WelcomeActivity</string>
-
+<string name="PrimaryRegistration">Primary Registration</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-
     <string name="action_logout">Log Out</string>
+    <string name="itemUser">User</string>
 </resources>

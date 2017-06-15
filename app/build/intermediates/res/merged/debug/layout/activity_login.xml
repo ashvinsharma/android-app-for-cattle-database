@@ -5,11 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
     tools:context="in.nic.phra.app.LoginActivity">
 
     <ImageView
-        android:id="@+id/imageLogo"
         android:layout_width="395dp"
         android:layout_height="139dp"
         android:layout_marginBottom="8dp"
@@ -68,7 +66,8 @@
             android:layout_height="wrap_content"
             android:linksClickable="true"
             android:text="@string/textViewForgetPassword"
-            android:textAlignment="center"/>
+            android:textAlignment="center"
+            android:textAllCaps="false"/>
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
