@@ -8,6 +8,7 @@ import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
@@ -29,8 +30,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.security.MessageDigest;
 
-import in.nic.phra.app.data.UserBean;
-
 import static in.nic.phra.app.data.Strings.INVALID_USERNAME_PASSWORD;
 import static in.nic.phra.app.data.Strings.NO_INTERNET_CONNECTION;
 import static in.nic.phra.app.data.WebServiceDetails.authenticate;
@@ -51,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         sharedPreferences = getApplicationContext().getSharedPreferences("userSession", MODE_PRIVATE);
 
-        if(!(sharedPreferences.getString("username", "null").equals("null"))){
+        if (!(sharedPreferences.getString("username", "null").equals("null"))) {
             Intent intent = new Intent(this, WelcomeActivity.class);
             startActivity(intent);
             finish();
@@ -70,7 +69,6 @@ public class LoginActivity extends AppCompatActivity {
         //Converting password to md5 hash and initiating login process
         String digestedKey = hashKey(password);
         this.loginMethod(username, digestedKey);
-
 
     }
 
@@ -105,7 +103,6 @@ public class LoginActivity extends AppCompatActivity {
                 editor = sharedPreferences.edit();
                 String postParam = "LoginUserId=" + paramUsername + "&Pwd=" + paramPassword;
                 Log.d(TAG, "POST Query: LoginUserId=" + paramUsername + "&Pwd=" + paramPassword);
-                //TODO: check network availability
                 try {
                     //Apache Libraries and namevaluepair has been deprecated since APK 21(?). Using HttpURLConnection instead.
                     URL url = new URL(wsURL + authenticate);
@@ -149,16 +146,16 @@ public class LoginActivity extends AppCompatActivity {
 
                                 editor.putString("username", username);
                                 editor.putString("User_FullName", beanObject.getString("User_FullName"));
-                                editor.putInt("State_ID",beanObject.getInt("State_ID"));
-                                editor.putString("State_Name",beanObject.getString("State_Name"));
-                                editor.putInt("District_ID",beanObject.getInt("District_ID"));
-                                editor.putString("District_Name",beanObject.getString("District_Name"));
-                                editor.putInt("Block_ID",beanObject.getInt("Block_ID"));
-                                editor.putString("Block_Name",beanObject.getString("Block_Name"));
-                                editor.putInt("Centre_ID",beanObject.getInt("Centre_ID"));
-                                editor.putString("Centre_Name",beanObject.getString("Centre_Name"));
+                                editor.putInt("State_ID", beanObject.getInt("State_ID"));
+                                editor.putString("State_Name", beanObject.getString("State_Name"));
+                                editor.putInt("District_ID", beanObject.getInt("District_ID"));
+                                editor.putString("District_Name", beanObject.getString("District_Name"));
+                                editor.putInt("Block_ID", beanObject.getInt("Block_ID"));
+                                editor.putString("Block_Name", beanObject.getString("Block_Name"));
+                                editor.putInt("Centre_ID", beanObject.getInt("Centre_ID"));
+                                editor.putString("Centre_Name", beanObject.getString("Centre_Name"));
                                 editor.putInt("UserType_Code", beanObject.getInt("UserType_Code"));
-                                editor.commit();
+                                editor.apply();
 
                             } catch (Exception e) {
                                 e.printStackTrace();
@@ -208,6 +205,7 @@ public class LoginActivity extends AppCompatActivity {
         loginMethodAsyncTask.execute(username, password);
     }
 
+    @NonNull
     private String hashKey(String pass) {
         MessageDigest messageDigest;
         StringBuilder stringBuilder = new StringBuilder();
@@ -228,6 +226,10 @@ public class LoginActivity extends AppCompatActivity {
         return stringBuilder.toString();
     }
 
+    /**
+     * Manual method to lock the screen orientation; used in AsyncTask
+     * prevents crash on changing orientation
+     */
     private void lockScreenOrientation() {
         int currentConfig = getResources().getConfiguration().orientation;
         if (currentConfig == Configuration.ORIENTATION_LANDSCAPE)
@@ -236,9 +238,12 @@ public class LoginActivity extends AppCompatActivity {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
 
+    /**
+     * Manual method to lock the screen orientation; used in AsyncTask
+     * prevents crash on changing orientation
+     */
     private void unlockScreenOrientation() {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
     }
 
 }
-

@@ -31,6 +31,11 @@
             android:label="@string/title_activity_welcome"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity
+            android:name=".forms.FormPrimaryRegistration"
+            android:label="@string/title_activity_form_primary_registration"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>
