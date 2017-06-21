@@ -36,6 +36,10 @@
         "source": "C:\\Users\\ashvi\\.android\\build-cache\\69a8642930ef513e0e96feba42f46b27ec6758e4\\output\\res\\layout\\abc_action_mode_close_item_material.xml"
     },
     {
+        "merged": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_form_primary_registration.xml",
+        "source": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\src\\main\\res\\layout\\activity_form_primary_registration.xml"
+    },
+    {
         "merged": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
         "source": "C:\\Users\\ashvi\\.android\\build-cache\\69a8642930ef513e0e96feba42f46b27ec6758e4\\output\\res\\layout\\abc_screen_toolbar.xml"
     },
@@ -152,6 +156,10 @@
         "source": "C:\\Users\\ashvi\\.android\\build-cache\\69a8642930ef513e0e96feba42f46b27ec6758e4\\output\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
     },
     {
+        "merged": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_animal_form.xml",
+        "source": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\src\\main\\res\\layout\\fragment_animal_form.xml"
+    },
+    {
         "merged": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
         "source": "C:\\Users\\ashvi\\.android\\build-cache\\69a8642930ef513e0e96feba42f46b27ec6758e4\\output\\res\\layout\\abc_screen_content_include.xml"
     },
@@ -162,6 +170,10 @@
     {
         "merged": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
         "source": "C:\\Users\\ashvi\\.android\\build-cache\\69a8642930ef513e0e96feba42f46b27ec6758e4\\output\\res\\layout\\abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_owner_form.xml",
+        "source": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\src\\main\\res\\layout\\fragment_owner_form.xml"
     },
     {
         "merged": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
@@ -182,6 +194,10 @@
     {
         "merged": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
         "source": "C:\\Users\\ashvi\\.android\\build-cache\\69a8642930ef513e0e96feba42f46b27ec6758e4\\output\\res\\layout\\abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_form_primary_registration.xml",
+        "source": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\src\\main\\res\\layout\\fragment_form_primary_registration.xml"
     },
     {
         "merged": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_menu_item_action_area.xml",

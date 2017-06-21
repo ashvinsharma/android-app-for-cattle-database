@@ -13,6 +13,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -106,10 +107,9 @@ public class WelcomeActivity extends AppCompatActivity
         int id = item.getItemId();
         Fragment fragment = null;
         Class fragmentClass = null;
-        CharSequence title = null;
         if (id == R.id.nav_primary_registration) {
             fragmentClass = PrimaryRegistration.class;
-            title = "Primary Registration";
+            Log.i(TAG, "Changing Fragment to Primary Registration");
         } else if (id == R.id.nav_user_logout) {
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.clear();

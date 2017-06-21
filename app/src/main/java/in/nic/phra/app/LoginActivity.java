@@ -134,7 +134,6 @@ public class LoginActivity extends AppCompatActivity {
                         in.close();
 
                         Log.d(TAG, "HTTP Response: " + response.toString());
-                        //TODO: Check login logic again
                         //Sets Authentication flag
                         if (!response.toString().contains("Authentication Failed!")) {
                             authFlag = true;
@@ -184,7 +183,6 @@ public class LoginActivity extends AppCompatActivity {
                 //Moving to new Activity if the login is successful otherwise shows a toast
                 if (authFlag) {
                     Intent intent = new Intent(LoginActivity.this, WelcomeActivity.class);
-                    //TODO: get user details to intent
                     startActivity(intent);
                 } else {
                     Context context = getApplicationContext();
@@ -197,7 +195,6 @@ public class LoginActivity extends AppCompatActivity {
                         Toast toast = Toast.makeText(context, NO_INTERNET_CONNECTION, duration);
                         toast.show();
                     }
-
                 }
             }
         }

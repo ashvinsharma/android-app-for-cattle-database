@@ -12,11 +12,16 @@
     <string name="action_logout">Log Out</string>
     <string name="itemUser">User</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="new_primary_registration">Add new Primary Registration</string>
     <string name="title_activity_form_primary_registration">FormPrimaryRegistration</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
-    <string name="owner">Owner</string>
-    <string name="animal">Animal</string>
+    <string name="owner_primary_registration">Owner</string>
+    <string name="animal_primary_registration">Animal</string>
+    <string name="user_drawer_layout_subheader">User</string>
+    <string name="hello_owner_fragment">Hello owner fragment</string>
+    <string name="hello_animal_fragment">Hello animal fragment</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
