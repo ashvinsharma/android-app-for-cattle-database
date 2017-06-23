@@ -22,32 +22,33 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="info" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a161f4b1-4728-4f2a-8532-78ac0d1ca43a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/annotations_java5_15_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/AnimalForm.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/OwnerForm.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_animal_form.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_owner_form.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/values-w820dp/dimens.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$color.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$color.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$dimen.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$dimen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$drawable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$drawable.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$id.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$layout.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$string.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$string.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$color.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$color.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$dimen.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$dimen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$drawable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$drawable.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$id.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/recyclerview/R$dimen.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/recyclerview/R$dimen.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/LoginActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/LoginActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/R$color.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/R$color.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/R$dimen.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/R$dimen.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/R$drawable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/R$drawable.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/R$id.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/R$integer.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/R$integer.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/R$layout.class" />
@@ -56,29 +57,37 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/R$style.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/R$style.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/R$styleable.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/generated/mockable-android-25.jar" afterPath="$PROJECT_DIR$/build/generated/mockable-android-25.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/ashvi.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/ashvi.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/design/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/design/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/appcompat/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/appcompat/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/recyclerview/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/recyclerview/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/in/nic/phra/app/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/in/nic/phra/app/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-hdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-hdpi-v4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-mdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-mdpi-v4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xhdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xhdpi-v4.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xxhdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xxhdpi-v4.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/layout.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/layout.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/manifests/full/debug/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values/values.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values/values.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/app/build/outputs/logs/manifest-merger-debug-report.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/LoginActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/LoginActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/PrimaryRegistration.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/PrimaryRegistration.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/WelcomeActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/WelcomeActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/FormPrimaryRegistration.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/FormPrimaryRegistration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_form_primary_registration.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_form_primary_registration.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/menu/activity_welcome_drawer.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/activity_welcome_drawer.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu_form_primary_registration.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_form_primary_registration.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/AnimalForm.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/AnimalForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/OwnerForm.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/OwnerForm.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_animal_form.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_animal_form.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_owner_form.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_owner_form.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_primary_registration.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_primary_registration.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/drawables.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/drawables.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
     </list>
     <ignored path="App.iws" />
@@ -116,19 +125,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PrimaryRegistration.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/PrimaryRegistration.java">
+      <file leaf-file-name="OwnerForm.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/OwnerForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="96" column="4" selection-start-line="96" selection-start-column="4" selection-end-line="96" selection-end-column="4" />
+            <state relative-caret-position="0">
+              <caret line="149" column="2" selection-start-line="149" selection-start-column="2" selection-end-line="149" selection-end-column="2" />
               <folding>
-                <element signature="docComment;class#PrimaryRegistration#0" expanded="false" />
-                <element signature="method#PrimaryRegistration#0;class#PrimaryRegistration#0" expanded="false" />
-                <element signature="e#1471#1472#0" expanded="true" />
-                <element signature="e#1521#1522#0" expanded="true" />
-                <element signature="method#onAttach#0;class#PrimaryRegistration#0" expanded="false" />
-                <element signature="method#onDetach#0;class#PrimaryRegistration#0" expanded="false" />
-                <element signature="docComment;class#OnFragmentInteractionListener#0;class#PrimaryRegistration#0" expanded="false" />
+                <element signature="docComment;class#OwnerForm#0" expanded="false" />
+                <element signature="method#OwnerForm#0;class#OwnerForm#0" expanded="false" />
+                <element signature="docComment;method#newInstance#0;class#OwnerForm#0" expanded="false" />
+                <element signature="method#newInstance#0;class#OwnerForm#0" expanded="false" />
+                <element signature="method#onAttach#0;class#OwnerForm#0" expanded="false" />
+                <element signature="method#onDetach#0;class#OwnerForm#0" expanded="false" />
+                <element signature="method#onItemSelected#0;class#OwnerForm#0" expanded="false" />
+                <element signature="method#onNothingSelected#0;class#OwnerForm#0" expanded="false" />
+                <element signature="docComment;class#OnFragmentInteractionListener#0;class#OwnerForm#0" expanded="false" />
+                <element signature="class#OnFragmentInteractionListener#0;class#OwnerForm#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -137,46 +149,27 @@
       <file leaf-file-name="FormPrimaryRegistration.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/FormPrimaryRegistration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
+            <state relative-caret-position="109">
+              <caret line="58" column="14" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
               <folding>
-                <element signature="docComment;field#mSectionsPagerAdapter#0;class#FormPrimaryRegistration#0" expanded="false" />
-                <element signature="docComment;field#mViewPager#0;class#FormPrimaryRegistration#0" expanded="false" />
-                <element signature="e#1755#1824#0" expanded="false" />
+                <element signature="e#1195#1264#0" expanded="false" />
                 <element signature="method#onCreateOptionsMenu#0;class#FormPrimaryRegistration#0" expanded="false" />
                 <element signature="method#onOptionsItemSelected#0;class#FormPrimaryRegistration#0" expanded="false" />
-                <element signature="e#2774#2832#0" expanded="false" />
+                <element signature="e#2751#2809#0" expanded="false" />
                 <element signature="method#onFragmentInteraction#0;class#FormPrimaryRegistration#0" expanded="false" />
                 <element signature="docComment;class#PlaceholderFragment#0;class#FormPrimaryRegistration#0" expanded="false" />
+                <element signature="class#PlaceholderFragment#0;class#FormPrimaryRegistration#0" expanded="false" />
                 <element signature="docComment;field#ARG_SECTION_NUMBER#0;class#PlaceholderFragment#0;class#FormPrimaryRegistration#0" expanded="false" />
                 <element signature="method#PlaceholderFragment#0;class#PlaceholderFragment#0;class#FormPrimaryRegistration#0" expanded="false" />
                 <element signature="docComment;method#newInstance#0;class#PlaceholderFragment#0;class#FormPrimaryRegistration#0" expanded="false" />
                 <element signature="method#newInstance#0;class#PlaceholderFragment#0;class#FormPrimaryRegistration#0" expanded="false" />
                 <element signature="method#onCreateView#0;class#PlaceholderFragment#0;class#FormPrimaryRegistration#0" expanded="false" />
                 <element signature="docComment;class#SectionsPagerAdapter#0;class#FormPrimaryRegistration#0" expanded="false" />
-                <element signature="e#5012#5080#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OwnerForm.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/OwnerForm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding>
-                <element signature="docComment;class#OwnerForm#0" expanded="false" />
-                <element signature="method#OwnerForm#0;class#OwnerForm#0" expanded="false" />
-                <element signature="docComment;method#newInstance#0;class#OwnerForm#0" expanded="false" />
-                <element signature="method#newInstance#0;class#OwnerForm#0" expanded="false" />
-                <element signature="method#onCreateView#0;class#OwnerForm#0" expanded="false" />
-                <element signature="method#onAttach#0;class#OwnerForm#0" expanded="false" />
-                <element signature="method#onDetach#0;class#OwnerForm#0" expanded="false" />
-                <element signature="method#onFragmentInteraction#0;class#OwnerForm#0" expanded="false" />
-                <element signature="docComment;class#OnFragmentInteractionListener#0;class#OwnerForm#0" expanded="false" />
-                <element signature="class#OnFragmentInteractionListener#0;class#OwnerForm#0" expanded="false" />
-                <marker date="1498073054040" expanded="false" signature="1411:1417" ph=" }" />
+                <element signature="class#SectionsPagerAdapter#0;class#FormPrimaryRegistration#0" expanded="false" />
+                <element signature="method#getItem#0;class#SectionsPagerAdapter#0;class#FormPrimaryRegistration#0" expanded="false" />
+                <element signature="e#4990#5058#0" expanded="false" />
+                <element signature="method#getCount#0;class#SectionsPagerAdapter#0;class#FormPrimaryRegistration#0" expanded="false" />
+                <element signature="method#getPageTitle#0;class#SectionsPagerAdapter#0;class#FormPrimaryRegistration#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -185,18 +178,57 @@
       <file leaf-file-name="AnimalForm.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/AnimalForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
+            <state relative-caret-position="350">
+              <caret line="64" column="21" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
               <folding>
                 <element signature="docComment;class#AnimalForm#0" expanded="false" />
                 <element signature="method#AnimalForm#0;class#AnimalForm#0" expanded="false" />
                 <element signature="docComment;method#newInstance#0;class#AnimalForm#0" expanded="false" />
                 <element signature="method#newInstance#0;class#AnimalForm#0" expanded="false" />
-                <element signature="method#onCreateView#0;class#AnimalForm#0" expanded="false" />
-                <element signature="method#onAttach#0;class#AnimalForm#0" expanded="false" />
+                <element signature="e#2364#2365#0" expanded="true" />
                 <element signature="method#onDetach#0;class#AnimalForm#0" expanded="false" />
                 <element signature="docComment;class#OnFragmentInteractionListener#0;class#AnimalForm#0" expanded="false" />
+                <element signature="class#OnFragmentInteractionListener#0;class#AnimalForm#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fragment_animal_form.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_animal_form.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fragment_owner_form.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_owner_form.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fragment_primary_registration.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_primary_registration.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -2044,9 +2076,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/WebServiceDetails.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/data/WebServiceDetails.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_welcome.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
         <option value="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/menu/welcome.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/drawables.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/xml/backup_descriptor.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/UserBean.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/data/UserBean.java" />
@@ -2065,24 +2095,27 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values-v19/styles.xml" />
         <option value="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values/values.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_form_primary_registration.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/content_welcome.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_primary_registration.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_form_primary_registration.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/activity_welcome_drawer.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/welcome.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_form_primary_registration.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_animal_form.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_owner_form.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/WelcomeActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/drawables.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/LoginActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/PrimaryRegistration.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/FormPrimaryRegistration.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout-v21/fragment_owner_form.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/WelcomeActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/OwnerForm.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/AnimalForm.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/PrimaryRegistration.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_animal_form.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_owner_form.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_primary_registration.xml" />
       </list>
     </option>
   </component>
@@ -2091,6 +2124,25 @@
     <option name="y" value="-8" />
     <option name="width" value="1382" />
     <option name="height" value="744" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Internationalization &gt; Bidirectional Text</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>AndroidLintRtlHardcoded</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -2118,12 +2170,12 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="AndroidView">
-        <subPane />
-      </pane>
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
+        <subPane />
+      </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView">
         <subPane />
       </pane>
     </panes>
@@ -2138,7 +2190,7 @@
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/java" />
     <property name="UI_DESIGNER_EDITOR_MODE.CaptureAnalysis.SHOW" value="false" />
-    <property name="DEBUGGABLE_DEVICE" value="samsung-sm_e500h-192.168.43.231:5555" />
+    <property name="DEBUGGABLE_DEVICE" value="samsung-sm_e500h-8054e063" />
     <property name="DEBUGGABLE_PROCESS" value="in.nic.phra.app" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
     <property name="DEBUGGER_ID" value="Auto" />
@@ -2572,7 +2624,14 @@
       <option name="project" value="LOCAL" />
       <updated>1497970230260</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="- onClick change Tabs working on FormPrimaryRegistration&#10;- Two Tabs (Owner and Animal) working with separate Fragments&#10;&#10;### TODO:&#10;- Create forms for Owner and Animals&#10;- Mark crucial ones *required* and disabling the click for submit&#10;- Connect it to WS (also create one)&#10;">
+      <created>1498073368611</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1498073368611</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2580,7 +2639,6 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
     <todo-panel id="all">
-      <are-packages-shown value="true" />
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
@@ -2588,28 +2646,28 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.4969743" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.4871407" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32764506" sideWeight="0.49092284" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1452345" sideWeight="0.5107034" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4334471" sideWeight="0.51664144" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32730263" sideWeight="0.5030257" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.668942" sideWeight="0.5060514" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.56828886" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43003413" sideWeight="0.48487142" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32764506" sideWeight="0.48865354" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32764506" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32730263" sideWeight="0.48865354" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32764506" sideWeight="0.4969743" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.50907713" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23827533" sideWeight="0.4880546" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32293987" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23792094" sideWeight="0.4819079" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3225256" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40443686" sideWeight="0.48335856" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22163388" sideWeight="0.51194537" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23792094" sideWeight="0.5180921" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2657,59 +2715,19 @@
     <MESSAGE value="- Top Bar translucent&#10;- Changed colors and theme&#10;&#10;# Next Task&#10;- Implement Fragments in Welcome Activity&#10;- Create Primary Registration Form in the Fragment with two tabs for master and animal" />
     <MESSAGE value="- onClick to Primary Registration Form working" />
     <MESSAGE value="- onClick to Primary Registration Form working &#10;- TODO: Create a Primary Registration Form, connect to WebService" />
-    <option name="LAST_COMMIT_MESSAGE" value="- onClick to Primary Registration Form working &#10;- TODO: Create a Primary Registration Form, connect to WebService" />
+    <MESSAGE value="- onClick change Tabs working on FormPrimaryRegistration&#10;- Two Tabs (Owner and Animal) working with separate Fragments&#10;&#10;### TODO:&#10;- Create forms for Owner and Animals&#10;- Mark crucial ones *required* and disabling the click for submit&#10;- Connect it to WS (also create one)&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="- onClick change Tabs working on FormPrimaryRegistration&#10;- Two Tabs (Owner and Animal) working with separate Fragments&#10;&#10;### TODO:&#10;- Create forms for Owner and Animals&#10;- Mark crucial ones *required* and disabling the click for submit&#10;- Connect it to WS (also create one)&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/WelcomeActivity.java</url>
-          <line>133</line>
-          <properties />
-          <option name="timeStamp" value="98" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="113" />
+      <option name="time" value="118" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-v21/ic_menu_camera.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-v19/styles.xml" />
-    <entry file="file://$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values/values.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="767">
-          <caret line="723" column="27" selection-start-line="723" selection-start-column="27" selection-end-line="723" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="android-dummy://C:/Users/ashvi/AndroidStudioProjects/App//Theme Editor">
-      <provider selected="true" editor-type-id="themeEditor">
-        <state theme-name="AppTheme" module-name="app" proportion="0.67" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/captures/in.nic.phra.app_2017.06.15_17.26.li">
-      <provider selected="true" editor-type-id="capture-editor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/content_welcome.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="32" column="36" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/android/content/ContentValues.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/captures/in.nic.phra.app_2017.06.19_10.26.li">
       <provider selected="true" editor-type-id="capture-editor">
         <state />
@@ -2727,15 +2745,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2780,22 +2789,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/android/os/Handler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/android/os/Looper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2159">
-          <caret line="146" column="0" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/android/view/View.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -2811,7 +2804,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
           <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2822,7 +2814,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="149">
           <caret line="59" column="44" selection-start-line="59" selection-start-column="44" selection-end-line="59" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2833,18 +2824,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-w820dp/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-w820dp/dimens.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/activity_welcome_drawer.xml">
       <provider selected="true" editor-type-id="android-designer2">
         <state />
@@ -2852,7 +2835,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="61" selection-start-line="11" selection-start-column="61" selection-end-line="11" selection-end-column="61" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2863,7 +2845,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2874,7 +2855,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2882,249 +2862,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
           <caret line="566" column="24" selection-start-line="566" selection-start-column="24" selection-end-line="566" selection-end-column="24" />
-          <folding>
-            <element signature="class#FragmentState#0" expanded="false" />
-            <element signature="method#FragmentState#0;class#FragmentState#0" expanded="false" />
-            <element signature="method#FragmentState#1;class#FragmentState#0" expanded="false" />
-            <element signature="method#instantiate#0;class#FragmentState#0" expanded="false" />
-            <element signature="method#writeToParcel#0;class#FragmentState#0" expanded="false" />
-            <element signature="class#5307:5604" expanded="false" />
-            <element signature="docComment;class#Fragment#0" expanded="false" />
-            <element signature="docComment;class#SavedState#0;class#Fragment#0" expanded="false" />
-            <element signature="class#SavedState#0;class#Fragment#0" expanded="false" />
-            <element signature="method#SavedState#1;class#SavedState#0;class#Fragment#0" expanded="false" />
-            <element signature="class#12506:12830" expanded="false" />
-            <element signature="docComment;class#InstantiationException#0;class#Fragment#0" expanded="false" />
-            <element signature="class#InstantiationException#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#Fragment#0;class#Fragment#0" expanded="false" />
-            <element signature="method#Fragment#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#instantiate#0;class#Fragment#0" expanded="false" />
-            <element signature="method#instantiate#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#instantiate#1;class#Fragment#0" expanded="false" />
-            <element signature="method#instantiate#1;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#isSupportFragmentClass#0;class#Fragment#0" expanded="false" />
-            <element signature="method#isSupportFragmentClass#0;class#Fragment#0" expanded="false" />
-            <element signature="method#restoreViewState#0;class#Fragment#0" expanded="false" />
-            <element signature="method#setIndex#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#equals#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#hashCode#0;class#Fragment#0" expanded="false" />
-            <element signature="method#toString#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#getId#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#getTag#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#setArguments#0;class#Fragment#0" expanded="false" />
-            <element signature="method#setArguments#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#getArguments#0;class#Fragment#0" expanded="false" />
-            <element signature="e#20269#20270#0" expanded="false" />
-            <element signature="e#20302#20303#0" expanded="false" />
-            <element signature="docComment;method#setInitialSavedState#0;class#Fragment#0" expanded="false" />
-            <element signature="method#setInitialSavedState#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#setTargetFragment#0;class#Fragment#0" expanded="false" />
-            <element signature="method#setTargetFragment#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#getTargetFragment#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#getTargetRequestCode#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#getContext#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#getActivity#0;class#Fragment#0" expanded="false" />
-            <element signature="method#getActivity#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#getHost#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#getResources#0;class#Fragment#0" expanded="false" />
-            <element signature="method#getResources#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#getText#0;class#Fragment#0" expanded="false" />
-            <element signature="method#getText#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#getString#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#getString#1;class#Fragment#0" expanded="false" />
-            <element signature="method#getString#1;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#getFragmentManager#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#getChildFragmentManager#0;class#Fragment#0" expanded="false" />
-            <element signature="method#getChildFragmentManager#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#peekChildFragmentManager#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#getParentFragment#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#isAdded#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#isDetached#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#isRemoving#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#isInLayout#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#isResumed#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#isVisible#0;class#Fragment#0" expanded="false" />
-            <element signature="method#isVisible#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#isHidden#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#hasOptionsMenu#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#isMenuVisible#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#onHiddenChanged#0;class#Fragment#0" expanded="false" />
-            <element signature="method#onHiddenChanged#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#setRetainInstance#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#setHasOptionsMenu#0;class#Fragment#0" expanded="false" />
-            <element signature="method#setHasOptionsMenu#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#setMenuVisibility#0;class#Fragment#0" expanded="false" />
-            <element signature="method#setMenuVisibility#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#setUserVisibleHint#0;class#Fragment#0" expanded="false" />
-            <element signature="method#setUserVisibleHint#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#getUserVisibleHint#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#getLoaderManager#0;class#Fragment#0" expanded="false" />
-            <element signature="method#getLoaderManager#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#startActivity#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#startActivity#1;class#Fragment#0" expanded="false" />
-            <element signature="method#startActivity#1;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#startActivityForResult#0;class#Fragment#0" expanded="false" />
-            <element signature="method#startActivityForResult#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#startActivityForResult#1;class#Fragment#0" expanded="false" />
-            <element signature="method#startActivityForResult#1;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#startIntentSenderForResult#0;class#Fragment#0" expanded="false" />
-            <element signature="method#startIntentSenderForResult#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#onActivityResult#0;class#Fragment#0" expanded="false" />
-            <element signature="method#onActivityResult#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#requestPermissions#0;class#Fragment#0" expanded="false" />
-            <element signature="method#requestPermissions#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#onRequestPermissionsResult#0;class#Fragment#0" expanded="false" />
-            <element signature="method#onRequestPermissionsResult#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#shouldShowRequestPermissionRationale#0;class#Fragment#0" expanded="false" />
-            <element signature="method#shouldShowRequestPermissionRationale#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#getLayoutInflater#0;class#Fragment#0" expanded="false" />
-            <element signature="method#getLayoutInflater#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#onInflate#0;class#Fragment#0" expanded="false" />
-            <element signature="method#onInflate#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#onInflate#1;class#Fragment#0" expanded="false" />
-            <element signature="e#45633#45644#0" expanded="false" />
-            <element signature="method#onInflate#1;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#onAttachFragment#0;class#Fragment#0" expanded="false" />
-            <element signature="method#onAttachFragment#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#onAttach#0;class#Fragment#0" expanded="false" />
-            <element signature="method#onAttach#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#onAttach#1;class#Fragment#0" expanded="false" />
-            <element signature="e#46862#46873#0" expanded="false" />
-            <element signature="docComment;method#onCreateAnimation#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#onCreate#0;class#Fragment#0" expanded="false" />
-            <element signature="method#onCreate#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#restoreChildFragmentState#0;class#Fragment#0" expanded="false" />
-            <element signature="method#restoreChildFragmentState#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#onCreateView#0;class#Fragment#0" expanded="false" />
-            <element signature="method#onCreateView#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#onViewCreated#0;class#Fragment#0" expanded="false" />
-            <element signature="method#onViewCreated#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#getView#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#onActivityCreated#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#onViewStateRestored#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#onStart#0;class#Fragment#0" expanded="false" />
-            <element signature="method#onStart#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#onResume#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#onSaveInstanceState#0;class#Fragment#0" expanded="false" />
-            <element signature="method#onSaveInstanceState#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#onMultiWindowModeChanged#0;class#Fragment#0" expanded="false" />
-            <element signature="method#onMultiWindowModeChanged#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#onPictureInPictureModeChanged#0;class#Fragment#0" expanded="false" />
-            <element signature="method#onPictureInPictureModeChanged#0;class#Fragment#0" expanded="false" />
-            <element signature="e#56069#56078#0" expanded="false" />
-            <element signature="docComment;method#onPause#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#onStop#0;class#Fragment#0" expanded="false" />
-            <element signature="e#56734#56743#0" expanded="false" />
-            <element signature="docComment;method#onDestroyView#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#onDestroy#0;class#Fragment#0" expanded="false" />
-            <element signature="method#onDestroy#0;class#Fragment#0" expanded="false" />
-            <element signature="e#57658#57738#0" expanded="false" />
-            <element signature="docComment;method#initState#0;class#Fragment#0" expanded="false" />
-            <element signature="method#initState#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#onDetach#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#onCreateOptionsMenu#0;class#Fragment#0" expanded="false" />
-            <element signature="method#onCreateOptionsMenu#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#onPrepareOptionsMenu#0;class#Fragment#0" expanded="false" />
-            <element signature="method#onPrepareOptionsMenu#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#onDestroyOptionsMenu#0;class#Fragment#0" expanded="false" />
-            <element signature="method#onDestroyOptionsMenu#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#onOptionsItemSelected#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#onOptionsMenuClosed#0;class#Fragment#0" expanded="false" />
-            <element signature="method#onOptionsMenuClosed#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#onCreateContextMenu#0;class#Fragment#0" expanded="false" />
-            <element signature="method#onCreateContextMenu#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#registerForContextMenu#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#unregisterForContextMenu#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#onContextItemSelected#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#setEnterSharedElementCallback#0;class#Fragment#0" expanded="false" />
-            <element signature="method#setEnterSharedElementCallback#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#setExitSharedElementCallback#0;class#Fragment#0" expanded="false" />
-            <element signature="method#setExitSharedElementCallback#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#setEnterTransition#0;class#Fragment#0" expanded="false" />
-            <element signature="method#setEnterTransition#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#getEnterTransition#0;class#Fragment#0" expanded="false" />
-            <element signature="method#getEnterTransition#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#setReturnTransition#0;class#Fragment#0" expanded="false" />
-            <element signature="method#setReturnTransition#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#getReturnTransition#0;class#Fragment#0" expanded="false" />
-            <element signature="method#getReturnTransition#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#setExitTransition#0;class#Fragment#0" expanded="false" />
-            <element signature="method#setExitTransition#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#getExitTransition#0;class#Fragment#0" expanded="false" />
-            <element signature="method#getExitTransition#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#setReenterTransition#0;class#Fragment#0" expanded="false" />
-            <element signature="method#setReenterTransition#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#getReenterTransition#0;class#Fragment#0" expanded="false" />
-            <element signature="method#getReenterTransition#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#setSharedElementEnterTransition#0;class#Fragment#0" expanded="false" />
-            <element signature="method#setSharedElementEnterTransition#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#getSharedElementEnterTransition#0;class#Fragment#0" expanded="false" />
-            <element signature="method#getSharedElementEnterTransition#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#setSharedElementReturnTransition#0;class#Fragment#0" expanded="false" />
-            <element signature="method#setSharedElementReturnTransition#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#getSharedElementReturnTransition#0;class#Fragment#0" expanded="false" />
-            <element signature="method#getSharedElementReturnTransition#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#setAllowEnterTransitionOverlap#0;class#Fragment#0" expanded="false" />
-            <element signature="method#setAllowEnterTransitionOverlap#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#getAllowEnterTransitionOverlap#0;class#Fragment#0" expanded="false" />
-            <element signature="method#getAllowEnterTransitionOverlap#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#setAllowReturnTransitionOverlap#0;class#Fragment#0" expanded="false" />
-            <element signature="method#setAllowReturnTransitionOverlap#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#getAllowReturnTransitionOverlap#0;class#Fragment#0" expanded="false" />
-            <element signature="method#getAllowReturnTransitionOverlap#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#postponeEnterTransition#0;class#Fragment#0" expanded="false" />
-            <element signature="method#postponeEnterTransition#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#startPostponedEnterTransition#0;class#Fragment#0" expanded="false" />
-            <element signature="method#startPostponedEnterTransition#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#callStartTransitionListener#0;class#Fragment#0" expanded="false" />
-            <element signature="method#callStartTransitionListener#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;method#dump#0;class#Fragment#0" expanded="false" />
-            <element signature="method#dump#0;class#Fragment#0" expanded="false" />
-            <element signature="method#findFragmentByWho#0;class#Fragment#0" expanded="false" />
-            <element signature="method#instantiateChildFragmentManager#0;class#Fragment#0" expanded="false" />
-            <element signature="class#87657:88101" expanded="false" />
-            <element signature="e#87691#87700#0" expanded="false" />
-            <element signature="method#onFindViewById#0;class#87657:88101" expanded="false" />
-            <element signature="method#performCreate#0;class#Fragment#0" expanded="false" />
-            <element signature="method#performCreateView#0;class#Fragment#0" expanded="false" />
-            <element signature="method#performActivityCreated#0;class#Fragment#0" expanded="false" />
-            <element signature="method#performStart#0;class#Fragment#0" expanded="false" />
-            <element signature="method#performResume#0;class#Fragment#0" expanded="false" />
-            <element signature="method#performMultiWindowModeChanged#0;class#Fragment#0" expanded="false" />
-            <element signature="method#performPictureInPictureModeChanged#0;class#Fragment#0" expanded="false" />
-            <element signature="method#performConfigurationChanged#0;class#Fragment#0" expanded="false" />
-            <element signature="method#performLowMemory#0;class#Fragment#0" expanded="false" />
-            <element signature="method#performCreateOptionsMenu#0;class#Fragment#0" expanded="false" />
-            <element signature="method#performPrepareOptionsMenu#0;class#Fragment#0" expanded="false" />
-            <element signature="method#performOptionsItemSelected#0;class#Fragment#0" expanded="false" />
-            <element signature="method#performContextItemSelected#0;class#Fragment#0" expanded="false" />
-            <element signature="method#performOptionsMenuClosed#0;class#Fragment#0" expanded="false" />
-            <element signature="method#performSaveInstanceState#0;class#Fragment#0" expanded="false" />
-            <element signature="method#performPause#0;class#Fragment#0" expanded="false" />
-            <element signature="method#performStop#0;class#Fragment#0" expanded="false" />
-            <element signature="method#performReallyStop#0;class#Fragment#0" expanded="false" />
-            <element signature="method#performDestroyView#0;class#Fragment#0" expanded="false" />
-            <element signature="method#performDestroy#0;class#Fragment#0" expanded="false" />
-            <element signature="method#performDetach#0;class#Fragment#0" expanded="false" />
-            <element signature="e#96871#96933#0" expanded="false" />
-            <element signature="method#setOnStartEnterTransitionListener#0;class#Fragment#0" expanded="false" />
-            <element signature="method#ensureAnimationInfo#0;class#Fragment#0" expanded="false" />
-            <element signature="method#getNextAnim#0;class#Fragment#0" expanded="false" />
-            <element signature="method#setNextAnim#0;class#Fragment#0" expanded="false" />
-            <element signature="method#getNextTransition#0;class#Fragment#0" expanded="false" />
-            <element signature="method#setNextTransition#0;class#Fragment#0" expanded="false" />
-            <element signature="method#getNextTransitionStyle#0;class#Fragment#0" expanded="false" />
-            <element signature="method#getEnterTransitionCallback#0;class#Fragment#0" expanded="false" />
-            <element signature="method#getExitTransitionCallback#0;class#Fragment#0" expanded="false" />
-            <element signature="method#getAnimatingAway#0;class#Fragment#0" expanded="false" />
-            <element signature="method#getStateAfterAnimating#0;class#Fragment#0" expanded="false" />
-            <element signature="method#isPostponed#0;class#Fragment#0" expanded="false" />
-            <element signature="method#isHideReplaced#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;class#OnStartEnterTransitionListener#0;class#Fragment#0" expanded="false" />
-            <element signature="class#OnStartEnterTransitionListener#0;class#Fragment#0" expanded="false" />
-            <element signature="docComment;class#AnimationInfo#0;class#Fragment#0" expanded="false" />
-            <element signature="class#AnimationInfo#0;class#Fragment#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3132,31 +2869,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="231" column="18" selection-start-line="231" selection-start-column="18" selection-end-line="231" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/drawables.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="55" selection-start-line="3" selection-start-column="55" selection-end-line="3" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3167,7 +2879,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3175,9 +2886,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="189" column="0" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
-          <folding>
-            <element signature="e#6965#6966#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3185,31 +2893,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="151">
           <caret line="799" column="0" selection-start-line="799" selection-start-column="0" selection-end-line="799" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="29" column="58" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_primary_registration.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="55" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="55" />
-          <folding>
-            <marker date="1497970018295" expanded="true" signature="1239:1273" ph="&quot;Add new Primary Registration&quot;" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3217,15 +2900,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="1194" column="0" selection-start-line="1194" selection-start-column="0" selection-end-line="1194" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3237,7 +2911,7 @@
         <state relative-caret-position="238">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
-            <element signature="e#1839#1879#0" expanded="true" />
+            <element signature="e#1839#1879#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -3257,56 +2931,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-154">
           <caret line="837" column="27" selection-start-line="837" selection-start-column="27" selection-end-line="837" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_animal_form.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_owner_form.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="24" column="45" selection-start-line="12" selection-start-column="8" selection-end-line="24" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/WelcomeActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1204#1296#0" expanded="false" />
-            <element signature="method#onBackPressed#0;class#WelcomeActivity#0" expanded="false" />
-            <element signature="method#onCreateOptionsMenu#0;class#WelcomeActivity#0" expanded="false" />
-            <element signature="method#onOptionsItemSelected#0;class#WelcomeActivity#0" expanded="false" />
-            <element signature="e#3436#3494#0" expanded="false" />
-            <element signature="e#3853#3896#0" expanded="false" />
-            <element signature="method#onFragmentInteraction#0;class#WelcomeActivity#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/LoginActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3830">
-          <caret line="237" column="7" selection-start-line="237" selection-start-column="7" selection-end-line="237" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3314,95 +2938,226 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
           <caret line="75" column="51" selection-start-line="75" selection-start-column="51" selection-end-line="75" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/logo.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/drawables.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="11" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout-v21/fragment_owner_form.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/PrimaryRegistration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
           <folding>
-            <element signature="docComment;class#FragmentPagerAdapter#0" expanded="false" />
-            <element signature="method#startUpdate#0;class#FragmentPagerAdapter#0" expanded="false" />
-            <element signature="method#instantiateItem#0;class#FragmentPagerAdapter#0" expanded="false" />
-            <element signature="method#destroyItem#0;class#FragmentPagerAdapter#0" expanded="false" />
-            <element signature="method#setPrimaryItem#0;class#FragmentPagerAdapter#0" expanded="false" />
-            <element signature="method#finishUpdate#0;class#FragmentPagerAdapter#0" expanded="false" />
-            <element signature="method#isViewFromObject#0;class#FragmentPagerAdapter#0" expanded="false" />
-            <element signature="method#restoreState#0;class#FragmentPagerAdapter#0" expanded="false" />
-            <element signature="docComment;method#getItemId#0;class#FragmentPagerAdapter#0" expanded="false" />
-            <element signature="method#makeFragmentName#0;class#FragmentPagerAdapter#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="docComment;class#OnFragmentInteractionListener#0;class#PrimaryRegistration#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/FormPrimaryRegistration.java">
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/android/widget/AdapterView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
-          <folding>
-            <element signature="docComment;field#mSectionsPagerAdapter#0;class#FormPrimaryRegistration#0" expanded="false" />
-            <element signature="docComment;field#mViewPager#0;class#FormPrimaryRegistration#0" expanded="false" />
-            <element signature="e#1755#1824#0" expanded="false" />
-            <element signature="method#onCreateOptionsMenu#0;class#FormPrimaryRegistration#0" expanded="false" />
-            <element signature="method#onOptionsItemSelected#0;class#FormPrimaryRegistration#0" expanded="false" />
-            <element signature="e#2774#2832#0" expanded="false" />
-            <element signature="method#onFragmentInteraction#0;class#FormPrimaryRegistration#0" expanded="false" />
-            <element signature="docComment;class#PlaceholderFragment#0;class#FormPrimaryRegistration#0" expanded="false" />
-            <element signature="docComment;field#ARG_SECTION_NUMBER#0;class#PlaceholderFragment#0;class#FormPrimaryRegistration#0" expanded="false" />
-            <element signature="method#PlaceholderFragment#0;class#PlaceholderFragment#0;class#FormPrimaryRegistration#0" expanded="false" />
-            <element signature="docComment;method#newInstance#0;class#PlaceholderFragment#0;class#FormPrimaryRegistration#0" expanded="false" />
-            <element signature="method#newInstance#0;class#PlaceholderFragment#0;class#FormPrimaryRegistration#0" expanded="false" />
-            <element signature="method#onCreateView#0;class#PlaceholderFragment#0;class#FormPrimaryRegistration#0" expanded="false" />
-            <element signature="docComment;class#SectionsPagerAdapter#0;class#FormPrimaryRegistration#0" expanded="false" />
-            <element signature="e#5012#5080#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="98">
+          <caret line="1096" column="0" selection-start-line="1096" selection-start-column="0" selection-end-line="1096" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/android/os/Handler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/android/os/Looper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="146" column="0" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/captures/in.nic.phra.app_2017.06.22_15.42.li">
+      <provider selected="true" editor-type-id="capture-editor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/captures/in.nic.phra.app_2017.06.22_15.42-1.li">
+      <provider selected="true" editor-type-id="capture-editor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/WelcomeActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-94">
+          <caret line="111" column="38" selection-start-line="111" selection-start-column="34" selection-end-line="111" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="113" column="65" selection-start-line="113" selection-start-column="65" selection-end-line="113" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/data/UserBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153">
+          <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/OwnerForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="149" column="2" selection-start-line="149" selection-start-column="2" selection-end-line="149" selection-end-column="2" />
           <folding>
             <element signature="docComment;class#OwnerForm#0" expanded="false" />
             <element signature="method#OwnerForm#0;class#OwnerForm#0" expanded="false" />
             <element signature="docComment;method#newInstance#0;class#OwnerForm#0" expanded="false" />
             <element signature="method#newInstance#0;class#OwnerForm#0" expanded="false" />
-            <element signature="method#onCreateView#0;class#OwnerForm#0" expanded="false" />
             <element signature="method#onAttach#0;class#OwnerForm#0" expanded="false" />
             <element signature="method#onDetach#0;class#OwnerForm#0" expanded="false" />
-            <element signature="method#onFragmentInteraction#0;class#OwnerForm#0" expanded="false" />
+            <element signature="method#onItemSelected#0;class#OwnerForm#0" expanded="false" />
+            <element signature="method#onNothingSelected#0;class#OwnerForm#0" expanded="false" />
             <element signature="docComment;class#OnFragmentInteractionListener#0;class#OwnerForm#0" expanded="false" />
             <element signature="class#OnFragmentInteractionListener#0;class#OwnerForm#0" expanded="false" />
-            <marker date="1498073054040" expanded="false" signature="1411:1417" ph=" }" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/AnimalForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
+        <state relative-caret-position="350">
+          <caret line="64" column="21" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="21" />
           <folding>
             <element signature="docComment;class#AnimalForm#0" expanded="false" />
             <element signature="method#AnimalForm#0;class#AnimalForm#0" expanded="false" />
             <element signature="docComment;method#newInstance#0;class#AnimalForm#0" expanded="false" />
             <element signature="method#newInstance#0;class#AnimalForm#0" expanded="false" />
-            <element signature="method#onCreateView#0;class#AnimalForm#0" expanded="false" />
-            <element signature="method#onAttach#0;class#AnimalForm#0" expanded="false" />
+            <element signature="e#2364#2365#0" expanded="true" />
             <element signature="method#onDetach#0;class#AnimalForm#0" expanded="false" />
             <element signature="docComment;class#OnFragmentInteractionListener#0;class#AnimalForm#0" expanded="false" />
+            <element signature="class#OnFragmentInteractionListener#0;class#AnimalForm#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/PrimaryRegistration.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/FormPrimaryRegistration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="96" column="4" selection-start-line="96" selection-start-column="4" selection-end-line="96" selection-end-column="4" />
+        <state relative-caret-position="109">
+          <caret line="58" column="14" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
           <folding>
-            <element signature="docComment;class#PrimaryRegistration#0" expanded="false" />
-            <element signature="method#PrimaryRegistration#0;class#PrimaryRegistration#0" expanded="false" />
-            <element signature="e#1471#1472#0" expanded="true" />
-            <element signature="e#1521#1522#0" expanded="true" />
-            <element signature="method#onAttach#0;class#PrimaryRegistration#0" expanded="false" />
-            <element signature="method#onDetach#0;class#PrimaryRegistration#0" expanded="false" />
-            <element signature="docComment;class#OnFragmentInteractionListener#0;class#PrimaryRegistration#0" expanded="false" />
+            <element signature="e#1195#1264#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#FormPrimaryRegistration#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#FormPrimaryRegistration#0" expanded="false" />
+            <element signature="e#2751#2809#0" expanded="false" />
+            <element signature="method#onFragmentInteraction#0;class#FormPrimaryRegistration#0" expanded="false" />
+            <element signature="docComment;class#PlaceholderFragment#0;class#FormPrimaryRegistration#0" expanded="false" />
+            <element signature="class#PlaceholderFragment#0;class#FormPrimaryRegistration#0" expanded="false" />
+            <element signature="docComment;field#ARG_SECTION_NUMBER#0;class#PlaceholderFragment#0;class#FormPrimaryRegistration#0" expanded="false" />
+            <element signature="method#PlaceholderFragment#0;class#PlaceholderFragment#0;class#FormPrimaryRegistration#0" expanded="false" />
+            <element signature="docComment;method#newInstance#0;class#PlaceholderFragment#0;class#FormPrimaryRegistration#0" expanded="false" />
+            <element signature="method#newInstance#0;class#PlaceholderFragment#0;class#FormPrimaryRegistration#0" expanded="false" />
+            <element signature="method#onCreateView#0;class#PlaceholderFragment#0;class#FormPrimaryRegistration#0" expanded="false" />
+            <element signature="docComment;class#SectionsPagerAdapter#0;class#FormPrimaryRegistration#0" expanded="false" />
+            <element signature="class#SectionsPagerAdapter#0;class#FormPrimaryRegistration#0" expanded="false" />
+            <element signature="method#getItem#0;class#SectionsPagerAdapter#0;class#FormPrimaryRegistration#0" expanded="false" />
+            <element signature="e#4990#5058#0" expanded="false" />
+            <element signature="method#getCount#0;class#SectionsPagerAdapter#0;class#FormPrimaryRegistration#0" expanded="false" />
+            <element signature="method#getPageTitle#0;class#SectionsPagerAdapter#0;class#FormPrimaryRegistration#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_animal_form.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_owner_form.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_primary_registration.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

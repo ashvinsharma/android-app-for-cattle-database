@@ -36,8 +36,8 @@ import static in.nic.phra.app.data.WebServiceDetails.authenticate;
 import static in.nic.phra.app.data.WebServiceDetails.wsURL;
 
 public class LoginActivity extends AppCompatActivity {
-    SharedPreferences sharedPreferences;
-    SharedPreferences.Editor editor;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
 
     private static final String TAG = "LoginActivity";
     private Boolean authFlag = false;

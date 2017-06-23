@@ -4,12 +4,13 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import in.nic.phra.app.R;
-import in.nic.phra.app.forms.FormPrimaryRegistration;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -48,7 +49,25 @@ public class AnimalForm extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_animal_form, container, false);
+        View fragmentView = inflater.inflate(R.layout.fragment_animal_form, container, false);
+
+        Button buttonBack = (Button) fragmentView.findViewById(R.id.backButton);
+        buttonBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ViewPager mViewPager = (ViewPager) getActivity().findViewById(R.id.container);
+                mViewPager.setCurrentItem(0);
+            }
+        });
+
+        Button buttonSubmit = (Button) fragmentView.findViewById(R.id.submit_button);
+        buttonSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //TODO: Create webservices and invoke AsyncTask to send the details over GET Method
+            }
+        });
+        return fragmentView;
     }
 
     @Override

@@ -2,7 +2,6 @@ package in.nic.phra.app;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -20,7 +19,7 @@ import android.view.MenuItem;
 public class WelcomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, PrimaryRegistration.OnFragmentInteractionListener {
     private static final String TAG = "WelcomeActivity";
-    SharedPreferences sharedPreferences;
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +30,7 @@ public class WelcomeActivity extends AppCompatActivity
 
         //if statement: to prevent the reset in the event of change of the orientation of the screen
         //if block: to have a default fragment for the screen(optional)
-        /*if (savedInstanceState == null) {
+        if (savedInstanceState == null) {
             Fragment fragment = null;
             Class fragmentClass;
             fragmentClass = PrimaryRegistration.class;
@@ -43,7 +42,7 @@ public class WelcomeActivity extends AppCompatActivity
 
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.forms_fragment, fragment).commit();
-        }*/
+        }
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -139,8 +138,4 @@ public class WelcomeActivity extends AppCompatActivity
         return true;
     }
 
-    @Override
-    public void onFragmentInteraction(Uri uri) {
-
-    }
 }

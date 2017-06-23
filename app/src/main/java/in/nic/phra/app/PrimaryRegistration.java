@@ -2,7 +2,6 @@ package in.nic.phra.app;
 
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -19,29 +18,12 @@ import in.nic.phra.app.forms.FormPrimaryRegistration;
  * Activities that contain this fragment must implement the
  * {@link PrimaryRegistration.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link PrimaryRegistration#newInstance} factory method to
- * create an instance of this fragment.
  */
 public class PrimaryRegistration extends Fragment {
     private static final String TAG = "PrimaryRegistration";
-    private OnFragmentInteractionListener mListener;
-    private View view;
 
     public PrimaryRegistration() {
         // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @return A new instance of fragment PrimaryRegistration.
-     */
-    public static PrimaryRegistration newInstance() {
-        PrimaryRegistration fragment = new PrimaryRegistration();
-        Bundle args = new Bundle();
-        fragment.setArguments(args);
-        return fragment;
     }
 
     @Override
@@ -71,7 +53,6 @@ public class PrimaryRegistration extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
@@ -81,7 +62,6 @@ public class PrimaryRegistration extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
-        mListener = null;
     }
 
     /**
@@ -94,8 +74,6 @@ public class PrimaryRegistration extends Fragment {
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
      */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+    interface OnFragmentInteractionListener {
     }
 }

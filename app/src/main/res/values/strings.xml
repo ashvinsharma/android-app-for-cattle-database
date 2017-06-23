@@ -1,4 +1,5 @@
 <resources>
+    <!-- Login and Welcome Activity -->
     <string name="app_name">PHRA</string>
     <string name="PHRALogo">PHRA</string>
     <string name="editTextUsername">Username</string>
@@ -10,8 +11,8 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_logout">Log Out</string>
-    <string name="itemUser">User</string>
 
+    <!-- Primary Registration -->
     <string name="new_primary_registration">Add new Primary Registration</string>
     <string name="title_activity_form_primary_registration">FormPrimaryRegistration</string>
     <string name="action_settings">Settings</string>
@@ -19,9 +20,28 @@
     <string name="owner_primary_registration">Owner</string>
     <string name="animal_primary_registration">Animal</string>
     <string name="user_drawer_layout_subheader">User</string>
-    <string name="hello_owner_fragment">Hello owner fragment</string>
-    <string name="hello_animal_fragment">Hello animal fragment</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- OwnerForm -->
+    <string name="select_area">Select Area:</string>
+    <string name="urban">Urban</string>
+    <string name="rural">Rural</string>
+    <string name="owner_name">Owner Name</string>
+    <string name="father_husband_name">Father\'s/Husband\'s Name</string>
+    <string name="address">Address</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="telephone_number">Telephone Number</string>
+    <string name="next">NEXT</string>
+    <!-- AnimalForm -->
+    <string name="ear_tag_number">Ear Tag Number</string>
+    <string name="name_of_animal">Name of Animal</string>
+    <string name="age_of_animal">Age of Animal</string>
+    <string name="breed">Breed Of Animal</string>
+    <string name="date_of_calving">Date of Calving</string>
+    <string name="sire_details">Sire Detail (Name &amp; Number)</string>
+    <string name="dam_details">Dam Detail (Name &amp; Number)</string>
+    <string name="first_recording_date">First Recording Date</string>
+    <string name="ear_tag_of_calf">Ear Tag of Calf</string>
+    <string name="sex_of_calf">Sex of Calf</string>
+    <string name="remarks">Remarks</string>
+    <string name="back">BACK</string>
+    <string name="submit">SUBMIT</string>
 </resources>
