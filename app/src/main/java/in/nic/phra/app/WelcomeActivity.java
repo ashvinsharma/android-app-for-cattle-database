@@ -117,6 +117,7 @@ public class WelcomeActivity extends AppCompatActivity
             Intent intent = new Intent(WelcomeActivity.this, LoginActivity.class);
             startActivity(intent);
             finish();
+            return true;
         }
 
         if (fragmentClass != null) {

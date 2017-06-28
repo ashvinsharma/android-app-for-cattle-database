@@ -32,8 +32,8 @@ import java.security.MessageDigest;
 
 import static in.nic.phra.app.data.Strings.INVALID_USERNAME_PASSWORD;
 import static in.nic.phra.app.data.Strings.NO_INTERNET_CONNECTION;
-import static in.nic.phra.app.data.WebServiceDetails.authenticate;
-import static in.nic.phra.app.data.WebServiceDetails.wsURL;
+import static in.nic.phra.app.data.WebServiceDetails.AUTHENTICATE;
+import static in.nic.phra.app.data.WebServiceDetails.WS_URL;
 
 public class LoginActivity extends AppCompatActivity {
     private SharedPreferences sharedPreferences;
@@ -102,10 +102,10 @@ public class LoginActivity extends AppCompatActivity {
                 String paramPassword = params[1];
                 editor = sharedPreferences.edit();
                 String postParam = "LoginUserId=" + paramUsername + "&Pwd=" + paramPassword;
-                Log.d(TAG, "POST Query: LoginUserId=" + paramUsername + "&Pwd=" + paramPassword);
+                Log.d(TAG, "POST Query: " + postParam);
                 try {
                     //Apache Libraries and namevaluepair has been deprecated since APK 21(?). Using HttpURLConnection instead.
-                    URL url = new URL(wsURL + authenticate);
+                    URL url = new URL(WS_URL + AUTHENTICATE);
                     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
                     connection.setRequestMethod("POST");
@@ -118,7 +118,7 @@ public class LoginActivity extends AppCompatActivity {
                     os.flush();
                     os.close();
 
-                    // Fetching the response code for debugging purposes.
+                    // Fetching the response code
                     responseCode = connection.getResponseCode();
                     Log.d(TAG, "POST Response Code: " + responseCode);
 

@@ -92,6 +92,10 @@
         "source": "C:\\Users\\ashvi\\.android\\build-cache\\a7dd2d8cd4df55b2db2e68dc6d523f91478d4c1e\\output\\res\\layout\\design_bottom_navigation_item.xml"
     },
     {
+        "merged": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_splash_screen.xml",
+        "source": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\src\\main\\res\\layout\\activity_splash_screen.xml"
+    },
+    {
         "merged": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_action.xml",
         "source": "C:\\Users\\ashvi\\.android\\build-cache\\69a8642930ef513e0e96feba42f46b27ec6758e4\\output\\res\\layout\\notification_action.xml"
     },

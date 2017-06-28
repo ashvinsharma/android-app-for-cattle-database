@@ -31,6 +31,9 @@
     <string name="telephone_number">Telephone Number</string>
     <string name="next">NEXT</string>
     <!-- AnimalForm -->
+    <string name="select_species">Species:</string>
+    <string name="cow">Cow</string>
+    <string name="buffalo">Buffalo</string>
     <string name="ear_tag_number">Ear Tag Number</string>
     <string name="name_of_animal">Name of Animal</string>
     <string name="age_of_animal">Age of Animal</string>
