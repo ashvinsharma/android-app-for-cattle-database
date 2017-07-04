@@ -39,6 +39,9 @@
     <string name="age_of_animal">Age of Animal</string>
     <string name="breed">Breed Of Animal</string>
     <string name="date_of_calving">Date of Calving</string>
+    <string-array name="date_of_calving_array">
+        <item>@string/date_of_calving</item>
+    </string-array>
     <string name="sire_details">Sire Detail (Name &amp; Number)</string>
     <string name="dam_details">Dam Detail (Name &amp; Number)</string>
     <string name="first_recording_date">First Recording Date</string>

@@ -1,6 +1,7 @@
 package in.nic.phra.app.data;
 
 /**
+ * @deprecated
  * Created by ashvi on 27-06-2017.
  * stores for moving data(village name and ID) from AsyncTask to OwnerForm Class
  */

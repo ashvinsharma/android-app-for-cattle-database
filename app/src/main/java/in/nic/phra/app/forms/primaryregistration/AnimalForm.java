@@ -1,5 +1,6 @@
 package in.nic.phra.app.forms.primaryregistration;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -16,6 +17,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -25,16 +27,18 @@ import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import in.nic.phra.app.R;
-import in.nic.phra.app.data.Breed;
 
 import static android.content.Context.MODE_PRIVATE;
+import static in.nic.phra.app.data.Strings.BUFFALO;
+import static in.nic.phra.app.data.Strings.COW;
 import static in.nic.phra.app.data.WebServiceDetails.COMPLETE_SPINNER_BREED;
 import static in.nic.phra.app.data.WebServiceDetails.WS_URL;
 
@@ -89,11 +93,11 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
                 if (checkedId == R.id.radioButtonCow) {
-                    species = "1";
+                    species = COW;
                     Log.i(TAG, "Species: Cow selected");
                     Toast.makeText(getContext(), "Cow", Toast.LENGTH_SHORT).show();
                 } else if (checkedId == R.id.radioButtonBuffalo) {
-                    species = "2";
+                    species = BUFFALO;
                     Log.i(TAG, "Species: Buffalo selected");
                     Toast.makeText(getContext(), "Buffalo", Toast.LENGTH_SHORT).show();
                 }
@@ -119,6 +123,15 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
         breedListAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         breed.setAdapter(breedListAdapter);
 
+        ListView dateOfCalving = (ListView) getActivity().findViewById(R.id.listViewDateOfCalving);
+/*        dateOfCalving.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                //TODO:implement date dialog fragment
+            }
+        });
+*/
         Button buttonBack = (Button) fragmentView.findViewById(R.id.backButton);
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -139,13 +152,14 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
     }
 
     private class FillSpinner extends AsyncTask<String, Void, String> {
-        ArrayList<Breed> breedBeanList = new ArrayList<>();
+        @SuppressLint("UseSparseArrays")
+        Map<Integer, String> breedHashMap = new HashMap<>();
 
         @Override
         protected String doInBackground(String... params) {
             String stateID = params[0];
             String species = params[1];
-            String param =  "?stateID="+ stateID + "&species=" + species;
+            String param = "?stateID=" + stateID + "&species=" + species;
             Log.d(TAG, "Query: " + param);
 
             try {
@@ -170,18 +184,15 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
                     in.close();
 
                     Log.d(TAG, "HTTP Response is: " + response.toString());
-                    try{
+                    try {
                         JSONObject jsonObject = new JSONObject(response.toString());
                         JSONArray jsonArray = jsonObject.getJSONArray("rows");
 
-                        for(int i=0 ; i < jsonArray.length(); i++) {
+                        for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject tuple = jsonArray.getJSONObject(i);
-
-                            Breed breed = new Breed(tuple.getString("Breed_Name"),tuple.getInt("Breed_ID"));
-                            breedBeanList.add(breed);
+                            breedHashMap.put(tuple.getInt("Breed_ID"), tuple.getString("Breed_Name"));
                         }
-                        Log.i(TAG, "hi");
-                    }catch(Exception e){
+                    } catch (Exception e) {
                         e.printStackTrace();
                     }
                 }
@@ -192,11 +203,11 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
         }
 
         @Override
-        protected void onPostExecute(String string){
+        protected void onPostExecute(String string) {
             breedList.clear();
 
-            for (Breed breedBean : breedBeanList) {
-                breedList.add(breedBean.getBreed());
+            for (Map.Entry breedMap : breedHashMap.entrySet()) {
+                breedList.add(breedMap.getValue().toString());
             }
             breed.setAdapter(breedListAdapter);
         }

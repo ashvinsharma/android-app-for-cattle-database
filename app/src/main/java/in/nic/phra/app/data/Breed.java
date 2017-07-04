@@ -1,7 +1,8 @@
 package in.nic.phra.app.data;
 
 /**
- * Created by ashvi on 28-06-2017.
+ * @deprecated
+ * Created by Ashvin Sharma <ashvinsharma97@gmail.com> on 28-06-2017 .
  */
 
 public class Breed {

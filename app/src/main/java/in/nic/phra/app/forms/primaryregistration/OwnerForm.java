@@ -1,5 +1,6 @@
 package in.nic.phra.app.forms.primaryregistration;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
@@ -28,12 +29,17 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import in.nic.phra.app.R;
-import in.nic.phra.app.data.VillageTown;
 
 import static android.content.Context.MODE_PRIVATE;
+import static in.nic.phra.app.data.Strings.RURAL;
+import static in.nic.phra.app.data.Strings.TOWN;
+import static in.nic.phra.app.data.Strings.URBAN;
+import static in.nic.phra.app.data.Strings.VILLAGE;
 import static in.nic.phra.app.data.WebServiceDetails.COMPLETE_SPINNER_TOWN_VILLAGE;
 import static in.nic.phra.app.data.WebServiceDetails.WS_URL;
 
@@ -92,11 +98,11 @@ public class OwnerForm extends Fragment implements AdapterView.OnItemSelectedLis
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
                 if (checkedId == R.id.radioButtonUrban) {
-                    area = "2";
+                    area = URBAN;
                     Log.i(TAG, "Area: Urban selected");
                     Toast.makeText(getContext(), "Urban", Toast.LENGTH_SHORT).show();
                 } else if (checkedId == R.id.radioButtonRural) {
-                    area = "1";
+                    area = RURAL;
                     Log.i(TAG, "Area: Rural selected");
                     Toast.makeText(getContext(), "Rural", Toast.LENGTH_SHORT).show();
                 }
@@ -153,7 +159,8 @@ public class OwnerForm extends Fragment implements AdapterView.OnItemSelectedLis
     }
 
     private class FillSpinner extends AsyncTask<String, Void, String> {
-        final ArrayList<VillageTown> vt = new ArrayList<>();  //stores name+ID of village/town
+        @SuppressLint("UseSparseArrays")
+        Map<Integer, String> villageTownMap = new HashMap<>();  //stores name+ID of village/town
 
         @Override
         protected void onPreExecute() {
@@ -202,13 +209,10 @@ public class OwnerForm extends Fragment implements AdapterView.OnItemSelectedLis
                         JSONArray jsonArray = jsonObject.getJSONArray("rows");
 
                         ArrayList<JSONObject> jsonResults = new ArrayList<>();
-                        //clear the contents of bean array
-                        vt.clear();
                         for (int i = 0; i < jsonArray.length(); i++) {
                             jsonResults.add(jsonArray.getJSONObject(i));
-                            VillageTown temp = new VillageTown(jsonResults.get(i).getString("Village_Name"),
-                                    jsonResults.get(i).getInt("Village_ID"));
-                            vt.add(temp);
+                            villageTownMap.put(jsonResults.get(i).getInt("Village_ID"),
+                                    jsonResults.get(i).getString("Village_Name"));
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -219,9 +223,9 @@ public class OwnerForm extends Fragment implements AdapterView.OnItemSelectedLis
             }
 
             switch (area) {
-                case "1":
+                case VILLAGE:
                     return "Village";
-                case "2":
+                case TOWN:
                     return "Town";
                 default:
                     return null;
@@ -234,9 +238,9 @@ public class OwnerForm extends Fragment implements AdapterView.OnItemSelectedLis
             villageTownList.clear();
 
             //populate the list of villages/town
-            if (vt.size() != 0) {
-                for (VillageTown vtIterator : vt) {
-                    villageTownList.add(vtIterator.getName());
+            if (villageTownMap.size() != 0) {
+                for (Map.Entry vt : villageTownMap.entrySet()) {
+                    villageTownList.add(vt.getValue().toString());
                 }
             } else {
                 villageTownList.add("No " + area + " found");
