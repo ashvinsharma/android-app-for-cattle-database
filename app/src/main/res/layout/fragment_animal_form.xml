@@ -98,24 +98,26 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"/>
 
-                <ListView
-                    android:id="@+id/listViewDateOfCalving"
+                <TextView
+                    android:id="@+id/DateOfCalving"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:background="?android:attr/selectableItemBackground"
-                    android:clickable="true"
-                    android:entries="@array/date_of_calving_array"
-                    android:paddingLeft="-16dp"
-                    android:paddingRight="-16dp"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingTop="8dp"
+                    android:text="@string/date_of_calving"
                     android:textColor="@android:color/black"
-                    android:textSize="24sp"
-                    tools:ignore="NestedScrolling"/>
+                    android:textSize="18sp"/>
 
                 <Spinner
                     android:id="@+id/spinner_number_of_lactation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"/>
+                    android:layout_marginTop="8dp"
+                    android:spinnerMode="dialog"/>
 
                 <EditText
                     android:id="@+id/editTextSire"

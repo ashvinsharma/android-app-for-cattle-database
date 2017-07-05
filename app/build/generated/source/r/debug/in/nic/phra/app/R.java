@@ -3116,6 +3116,7 @@ containing a value of this type.
     }
     public static final class id {
         public static final int Address=0x7f0e00af;
+        public static final int DateOfCalving=0x7f0e009c;
         public static final int action0=0x7f0e00ba;
         public static final int action_bar=0x7f0e006b;
         public static final int action_bar_activity_content=0x7f0e0000;
@@ -3217,7 +3218,6 @@ containing a value of this type.
         public static final int line3=0x7f0e00cb;
         public static final int linearlayout=0x7f0e007f;
         public static final int listMode=0x7f0e0018;
-        public static final int listViewDateOfCalving=0x7f0e009c;
         public static final int list_item=0x7f0e004f;
         public static final int logo=0x7f0e0083;
         public static final int main_content=0x7f0e007a;

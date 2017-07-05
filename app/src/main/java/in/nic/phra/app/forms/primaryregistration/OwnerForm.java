@@ -56,11 +56,17 @@ public class OwnerForm extends Fragment implements AdapterView.OnItemSelectedLis
     private OnFragmentInteractionListener mListener;
 
     private Spinner villageTown;
+    private Spinner category;
+
     private final List<String> villageTownList = new ArrayList<>();
     private ArrayAdapter<String> villageTownListDataAdapter;
 
     private String area;
-
+    private String ownerName;
+    private String fatherHusbandName;
+    private String address;
+    private String mobileNumber;
+    private String telephoneNumber;
 
     public OwnerForm() {
         // Required empty public constructor
@@ -84,11 +90,6 @@ public class OwnerForm extends Fragment implements AdapterView.OnItemSelectedLis
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final SharedPreferences sharedPreferences = getActivity().getApplicationContext().getSharedPreferences("userSession", MODE_PRIVATE);
-        String ownerName;
-        String fatherHusbandName;
-        String address;
-        String mobileNumber;
-        String telephoneNumber;
 
         // Inflate the layout for this fragment
         View inputFragmentView = inflater.inflate(R.layout.fragment_owner_form, container, false);
@@ -126,7 +127,7 @@ public class OwnerForm extends Fragment implements AdapterView.OnItemSelectedLis
         EditText editTextFatherHusbandName = (EditText) inputFragmentView.findViewById(R.id.editTextFatherHusbandName);
         fatherHusbandName = editTextFatherHusbandName.toString();
 
-        Spinner category = (Spinner) inputFragmentView.findViewById(R.id.spinnerCategory);
+        category = (Spinner) inputFragmentView.findViewById(R.id.spinnerCategory);
         category.setOnItemSelectedListener(this);
         List<String> categoryList = new ArrayList<>();
         categoryList.add("General");
@@ -247,6 +248,21 @@ public class OwnerForm extends Fragment implements AdapterView.OnItemSelectedLis
             }
             villageTown.setAdapter(villageTownListDataAdapter);
         }
+    }
+
+    public Bundle getData() {
+        Bundle bundle = new Bundle();
+        bundle.putString("area", area);
+        bundle.putString("villageTown", villageTown.getSelectedItem().toString());
+        bundle.putString("ownerName", ownerName);
+        bundle.putString("fatherHusbandName", fatherHusbandName);
+        bundle.putString("category", category.getSelectedItem().toString());
+        bundle.putString("address", address);
+        bundle.putString("mobileNumber", mobileNumber);
+        bundle.putString("telephoneNumber", telephoneNumber);
+
+
+        return bundle;
     }
 
     @Override

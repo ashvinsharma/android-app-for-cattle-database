@@ -1,6 +1,7 @@
 package in.nic.phra.app.forms.primaryregistration;
 
 import android.annotation.SuppressLint;
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -16,10 +17,11 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -30,6 +32,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -55,7 +58,13 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
     private OnFragmentInteractionListener mListener;
 
     private String species;
-    Spinner breed;
+    private String earTagNumber;
+    private String animalName;
+    private String animalAge;
+    private Spinner breed;
+    private Spinner lactationNumber;
+
+    private TextView dateOfCalving;
     private List<String> breedList = new ArrayList<>();
     ArrayAdapter<String> breedListAdapter;
 
@@ -79,9 +88,7 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        String earTagNumber;
-        String animalName;
-        String animalAge;
+
 
         final SharedPreferences sharedPreferences = getActivity().getApplicationContext().getSharedPreferences("userSession", MODE_PRIVATE);
         // Inflate the layout for this fragment
@@ -123,15 +130,24 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
         breedListAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         breed.setAdapter(breedListAdapter);
 
-        ListView dateOfCalving = (ListView) getActivity().findViewById(R.id.listViewDateOfCalving);
-/*        dateOfCalving.setOnClickListener(new View.OnClickListener() {
+        dateOfCalving = (TextView) fragmentView.findViewById(R.id.DateOfCalving);
+        dateOfCalving.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                //TODO:implement date dialog fragment
+                showDatePicker();
             }
         });
-*/
+
+        lactationNumber = (Spinner) fragmentView.findViewById(R.id.spinner_number_of_lactation);
+        lactationNumber.setOnItemSelectedListener(this);
+        ArrayList<Integer> lactationNumberList = new ArrayList<>();
+        for (int i = 0; i < 15; i++) {
+            lactationNumberList.add(i + 1);
+        }
+        ArrayAdapter<Integer> lactationAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, lactationNumberList);
+        lactationNumber.setAdapter(lactationAdapter);
+
         Button buttonBack = (Button) fragmentView.findViewById(R.id.backButton);
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -145,6 +161,7 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
         buttonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                getData();
                 //TODO: Create webservices and invoke AsyncTask to send the details over GET Method
             }
         });
@@ -212,6 +229,49 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
             breed.setAdapter(breedListAdapter);
         }
     }
+
+    private void getData() {
+        Bundle bundle = new Bundle();
+        bundle.getString("species", species);
+        bundle.getString("earTagNumber", earTagNumber);
+        bundle.getString("animalName", animalName);
+        bundle.getString("animalAge", animalAge);
+        bundle.getString("breed", breed.getSelectedItem().toString());
+        //dateofcalving
+//        bundle.getString();
+    }
+
+    private void showDatePicker() {
+        DatePickerFragment date = new DatePickerFragment();
+        /**
+         * Set Up Current Date Into dialog
+         */
+        Calendar calender = Calendar.getInstance();
+        Bundle args = new Bundle();
+        args.putInt("year", calender.get(Calendar.YEAR));
+        args.putInt("month", calender.get(Calendar.MONTH));
+        args.putInt("day", calender.get(Calendar.DAY_OF_MONTH));
+        date.setArguments(args);
+
+        /**
+         * Set Call back to capture selected date
+         */
+        date.setCallBack(onDate);
+        date.show(getActivity().getSupportFragmentManager(), "Date Picker");
+    }
+
+    DatePickerDialog.OnDateSetListener onDate = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear,
+                              int dayOfMonth) {
+            Toast.makeText(
+                    getActivity().getApplicationContext(),
+                    String.valueOf(dayOfMonth) + "/" + String.valueOf(monthOfYear) + "/" + String.valueOf(year),
+                    Toast.LENGTH_LONG).show();
+            dateOfCalving.setText("Date of Calving: " +
+                    String.valueOf(dayOfMonth) + "/" + String.valueOf(monthOfYear) + "/" + String.valueOf(year));
+        }
+    };
 
     @Override
     public void onAttach(Context context) {
