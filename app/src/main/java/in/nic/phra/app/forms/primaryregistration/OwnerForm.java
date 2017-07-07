@@ -57,16 +57,19 @@ public class OwnerForm extends Fragment implements AdapterView.OnItemSelectedLis
 
     private Spinner villageTown;
     private Spinner category;
+    private EditText editTextAddress;
+    private EditText editTextTelephoneNumber;
+    private EditText editTextMobileNumber;
+    private EditText editTextFatherHusbandName;
+    private EditText editTextOwnerName;
+
+    @SuppressLint("UseSparseArrays")
+    Map<String, Integer> villageTownMap = new HashMap<>();  //stores name+ID of village/town
 
     private final List<String> villageTownList = new ArrayList<>();
     private ArrayAdapter<String> villageTownListDataAdapter;
 
     private String area;
-    private String ownerName;
-    private String fatherHusbandName;
-    private String address;
-    private String mobileNumber;
-    private String telephoneNumber;
 
     public OwnerForm() {
         // Required empty public constructor
@@ -114,18 +117,18 @@ public class OwnerForm extends Fragment implements AdapterView.OnItemSelectedLis
             }
         });
 
+        editTextAddress = (EditText) inputFragmentView.findViewById(R.id.Address);
+        editTextTelephoneNumber = (EditText) inputFragmentView.findViewById(R.id.editTextTelephoneNumber);
+        editTextMobileNumber = (EditText) inputFragmentView.findViewById(R.id.editTextMobileNumber);
+        editTextFatherHusbandName = (EditText) inputFragmentView.findViewById(R.id.editTextFatherHusbandName);
+        editTextOwnerName = (EditText) inputFragmentView.findViewById(R.id.editTextOwnerName);
+
         villageTown = (Spinner) inputFragmentView.findViewById(R.id.spinnerVillageTown);
         villageTown.setOnItemSelectedListener(this);
         villageTownList.add("Select one Village/Town");
         villageTownListDataAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, villageTownList);
         villageTownListDataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         villageTown.setAdapter(villageTownListDataAdapter);
-
-        EditText editTextOwnerName = (EditText) inputFragmentView.findViewById(R.id.editTextOwnerName);
-        ownerName = editTextOwnerName.toString();
-
-        EditText editTextFatherHusbandName = (EditText) inputFragmentView.findViewById(R.id.editTextFatherHusbandName);
-        fatherHusbandName = editTextFatherHusbandName.toString();
 
         category = (Spinner) inputFragmentView.findViewById(R.id.spinnerCategory);
         category.setOnItemSelectedListener(this);
@@ -137,15 +140,6 @@ public class OwnerForm extends Fragment implements AdapterView.OnItemSelectedLis
         ArrayAdapter<String> categoryListDataAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, categoryList);
         categoryListDataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         category.setAdapter(categoryListDataAdapter);
-
-        EditText editTextAddress = (EditText) inputFragmentView.findViewById(R.id.Address);
-        address = editTextAddress.toString();
-
-        EditText editTextMobileNumber = (EditText) inputFragmentView.findViewById(R.id.editTextMobileNumber);
-        mobileNumber = editTextMobileNumber.toString();
-
-        EditText editTextTelephoneNumber = (EditText) inputFragmentView.findViewById(R.id.editTextTelephoneNumber);
-        telephoneNumber = editTextTelephoneNumber.toString();
 
         Button nextButton = (Button) inputFragmentView.findViewById(R.id.next_button);
         nextButton.setOnClickListener(new View.OnClickListener() {
@@ -160,8 +154,6 @@ public class OwnerForm extends Fragment implements AdapterView.OnItemSelectedLis
     }
 
     private class FillSpinner extends AsyncTask<String, Void, String> {
-        @SuppressLint("UseSparseArrays")
-        Map<Integer, String> villageTownMap = new HashMap<>();  //stores name+ID of village/town
 
         @Override
         protected void onPreExecute() {
@@ -212,8 +204,8 @@ public class OwnerForm extends Fragment implements AdapterView.OnItemSelectedLis
                         ArrayList<JSONObject> jsonResults = new ArrayList<>();
                         for (int i = 0; i < jsonArray.length(); i++) {
                             jsonResults.add(jsonArray.getJSONObject(i));
-                            villageTownMap.put(jsonResults.get(i).getInt("Village_ID"),
-                                    jsonResults.get(i).getString("Village_Name"));
+                            villageTownMap.put(jsonResults.get(i).getString("Village_Name"),
+                                    jsonResults.get(i).getInt("Village_ID"));
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -241,7 +233,7 @@ public class OwnerForm extends Fragment implements AdapterView.OnItemSelectedLis
             //populate the list of villages/town
             if (villageTownMap.size() != 0) {
                 for (Map.Entry vt : villageTownMap.entrySet()) {
-                    villageTownList.add(vt.getValue().toString());
+                    villageTownList.add(vt.getKey().toString());
                 }
             } else {
                 villageTownList.add("No " + area + " found");
@@ -251,16 +243,38 @@ public class OwnerForm extends Fragment implements AdapterView.OnItemSelectedLis
     }
 
     public Bundle getData() {
+
+        String[] params = new String[]{
+                editTextOwnerName.getText().toString().trim(),
+                editTextFatherHusbandName.getText().toString().trim(),
+                editTextAddress.getText().toString().trim(),
+                editTextMobileNumber.getText().toString().trim(),
+                editTextTelephoneNumber.getText().toString().trim()
+        };
+
+        //removing spaces with "%20" to send through GET
+        for (int i = 0; i < params.length; i++)
+            if (params[i].contains(" ")) {
+                params[i] = params[i].replace(" ", "%20");
+            }
+
+        //Prevent NPE in case of empty spinner
+        String villageID;
+        if (villageTownMap.get(villageTown.getSelectedItem().toString()) == null) {
+            villageID = null;
+        } else {
+            villageID = String.valueOf(villageTownMap.get(villageTown.getSelectedItem().toString()));
+        }
+
         Bundle bundle = new Bundle();
         bundle.putString("area", area);
-        bundle.putString("villageTown", villageTown.getSelectedItem().toString());
-        bundle.putString("ownerName", ownerName);
-        bundle.putString("fatherHusbandName", fatherHusbandName);
+        bundle.putString("villageTown", villageID);
+        bundle.putString("ownerName", params[0]);
+        bundle.putString("fatherHusbandName", params[1]);
         bundle.putString("category", category.getSelectedItem().toString());
-        bundle.putString("address", address);
-        bundle.putString("mobileNumber", mobileNumber);
-        bundle.putString("telephoneNumber", telephoneNumber);
-
+        bundle.putString("address", params[2]);
+        bundle.putString("mobileNumber", params[3]);
+        bundle.putString("telephoneNumber", params[4]);
 
         return bundle;
     }

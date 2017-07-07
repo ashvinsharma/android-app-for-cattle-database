@@ -2,7 +2,6 @@
 <project version="4">
   <component name="AnalysisUIOptions">
     <option name="ANALYZE_TEST_SOURCES" value="false" />
-    <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="AndroidLayouts">
     <shared>
@@ -24,12 +23,11 @@
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a161f4b1-4728-4f2a-8532-78ac0d1ca43a" name="Default" comment="- Implemented HashMap and deprecated Breed VillageTown List Bean/POJO files">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/DatePickerFragment.java" />
+    <list default="true" id="a161f4b1-4728-4f2a-8532-78ac0d1ca43a" name="Default" comment="- Primary Registration enabled &#10;- Next commit on PR list show">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
@@ -37,25 +35,36 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$string.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/design/R$string.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/android/support/v7/appcompat/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/LoginActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/LoginActivity.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/R$id.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/R$id.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/R$integer.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/R$integer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/R$layout.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/R$layout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/R$mipmap.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/R$mipmap.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/R$string.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/R$string.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/R$style.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/R$style.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/R$styleable.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/in/nic/phra/app/R$styleable.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/generated/mockable-android-25.jar" afterPath="$PROJECT_DIR$/build/generated/mockable-android-25.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/design/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/design/R.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/appcompat/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/android/support/v7/appcompat/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/r/debug/in/nic/phra/app/R.java" afterPath="$PROJECT_DIR$/app/build/generated/source/r/debug/in/nic/phra/app/R.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/multi/values.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-mdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-mdpi-v4.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xhdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xhdpi-v4.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xxhdpi-v4.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/drawable-xxhdpi-v4.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/layout.json" afterPath="$PROJECT_DIR$/app/build/intermediates/blame/res/debug/single/layout.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merger.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values/values.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/values/values.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/LoginActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/LoginActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/data/Strings.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/data/Strings.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/data/WebServiceDetails.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/data/WebServiceDetails.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/FormPrimaryRegistration.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/FormPrimaryRegistration.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/AnimalForm.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/AnimalForm.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/OwnerForm.java" afterPath="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/OwnerForm.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_animal_form.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_animal_form.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_owner_form.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_owner_form.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
     </list>
     <ignored path="App.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -81,6 +90,9 @@
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
         <projects_view>
           <tree_state />
         </projects_view>
@@ -88,47 +100,22 @@
     </system>
   </component>
   <component name="FavoritesManager">
-    <favorites_list name="App" />
+    <favorites_list name="App">
+      <favorite_root url="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/OwnerForm.java" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+    </favorites_list>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AnimalForm.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/AnimalForm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="268" column="111" selection-start-line="268" selection-start-column="111" selection-end-line="268" selection-end-column="111" />
-              <folding>
-                <element signature="docComment;class#AnimalForm#0" expanded="false" />
-                <element signature="method#AnimalForm#0;class#AnimalForm#0" expanded="false" />
-                <element signature="docComment;method#newInstance#0;class#AnimalForm#0" expanded="false" />
-                <element signature="method#newInstance#0;class#AnimalForm#0" expanded="false" />
-                <element signature="class#FillSpinner#0;class#AnimalForm#0" expanded="false" />
-                <element signature="method#doInBackground#0;class#FillSpinner#0;class#AnimalForm#0" expanded="false" />
-                <element signature="method#onPostExecute#0;class#FillSpinner#0;class#AnimalForm#0" expanded="false" />
-                <element signature="method#getData#0;class#AnimalForm#0" expanded="false" />
-                <element signature="e#9496#9511#0" expanded="false" />
-                <element signature="method#showDatePicker#0;class#AnimalForm#0" expanded="false" />
-                <element signature="method#onAttach#0;class#AnimalForm#0" expanded="false" />
-                <element signature="method#onDetach#0;class#AnimalForm#0" expanded="false" />
-                <element signature="method#onItemSelected#0;class#AnimalForm#0" expanded="false" />
-                <element signature="method#onNothingSelected#0;class#AnimalForm#0" expanded="false" />
-                <element signature="docComment;class#OnFragmentInteractionListener#0;class#AnimalForm#0" expanded="false" />
-                <element signature="class#OnFragmentInteractionListener#0;class#AnimalForm#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FormPrimaryRegistration.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FormPrimaryRegistration.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/FormPrimaryRegistration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-578">
-              <caret line="31" column="55" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="55" />
+            <state relative-caret-position="133">
+              <caret line="75" column="16" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="16" />
               <folding>
-                <element signature="e#1342#1411#0" expanded="false" />
+                <element signature="e#1436#1505#0" expanded="false" />
                 <element signature="method#onCreateOptionsMenu#0;class#FormPrimaryRegistration#0" expanded="false" />
                 <element signature="method#onOptionsItemSelected#0;class#FormPrimaryRegistration#0" expanded="false" />
-                <element signature="e#3591#3649#0" expanded="false" />
+                <element signature="e#4024#4082#0" expanded="false" />
                 <element signature="method#onFragmentInteraction#0;class#FormPrimaryRegistration#0" expanded="false" />
                 <element signature="docComment;class#PlaceholderFragment#0;class#FormPrimaryRegistration#0" expanded="false" />
                 <element signature="class#PlaceholderFragment#0;class#FormPrimaryRegistration#0" expanded="false" />
@@ -138,11 +125,29 @@
                 <element signature="method#newInstance#0;class#PlaceholderFragment#0;class#FormPrimaryRegistration#0" expanded="false" />
                 <element signature="method#onCreateView#0;class#PlaceholderFragment#0;class#FormPrimaryRegistration#0" expanded="false" />
                 <element signature="docComment;class#SectionsPagerAdapter#0;class#FormPrimaryRegistration#0" expanded="false" />
-                <element signature="class#SectionsPagerAdapter#0;class#FormPrimaryRegistration#0" expanded="false" />
-                <element signature="method#getItem#0;class#SectionsPagerAdapter#0;class#FormPrimaryRegistration#0" expanded="false" />
-                <element signature="e#5830#5898#0" expanded="false" />
+                <element signature="e#6263#6331#0" expanded="false" />
                 <element signature="method#getCount#0;class#SectionsPagerAdapter#0;class#FormPrimaryRegistration#0" expanded="false" />
                 <element signature="method#getPageTitle#0;class#SectionsPagerAdapter#0;class#FormPrimaryRegistration#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/LoginActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="265">
+              <caret line="104" column="49" selection-start-line="104" selection-start-column="49" selection-end-line="104" selection-end-column="49" />
+              <folding>
+                <element signature="method#onCreate#0;class#LoginActivity#0" expanded="false" />
+                <element signature="method#sendLoginRequest#0;class#LoginActivity#0" expanded="false" />
+                <element signature="method#onPreExecute#0;class#2781:9086" expanded="false" />
+                <element signature="method#onPostExecute#0;class#2781:9086" expanded="false" />
+                <element signature="method#hashKey#0;class#LoginActivity#0" expanded="false" />
+                <element signature="docComment;method#lockScreenOrientation#0;class#LoginActivity#0" expanded="false" />
+                <element signature="method#lockScreenOrientation#0;class#LoginActivity#0" expanded="false" />
+                <element signature="docComment;method#unlockScreenOrientation#0;class#LoginActivity#0" expanded="false" />
+                <element signature="method#unlockScreenOrientation#0;class#LoginActivity#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -151,13 +156,15 @@
       <file leaf-file-name="OwnerForm.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/OwnerForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="252" column="28" selection-start-line="252" selection-start-column="28" selection-end-line="252" selection-end-column="28" />
+            <state relative-caret-position="287">
+              <caret line="258" column="13" selection-start-line="258" selection-start-column="13" selection-end-line="258" selection-end-column="13" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="docComment;class#OwnerForm#0" expanded="false" />
                 <element signature="method#OwnerForm#0;class#OwnerForm#0" expanded="false" />
                 <element signature="docComment;method#newInstance#0;class#OwnerForm#0" expanded="false" />
                 <element signature="method#newInstance#0;class#OwnerForm#0" expanded="false" />
+                <element signature="method#onCreateView#0;class#OwnerForm#0" expanded="false" />
                 <element signature="class#FillSpinner#0;class#OwnerForm#0" expanded="false" />
                 <element signature="method#onPreExecute#0;class#FillSpinner#0;class#OwnerForm#0" expanded="false" />
                 <element signature="method#doInBackground#0;class#FillSpinner#0;class#OwnerForm#0" expanded="false" />
@@ -173,14 +180,60 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fragment_animal_form.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_animal_form.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
+      <file leaf-file-name="AnimalForm.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/AnimalForm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="111" column="59" selection-start-line="111" selection-start-column="59" selection-end-line="111" selection-end-column="59" />
+            <state relative-caret-position="707">
+              <caret line="420" column="54" selection-start-line="420" selection-start-column="54" selection-end-line="420" selection-end-column="54" />
+              <folding>
+                <element signature="docComment;class#AnimalForm#0" expanded="false" />
+                <element signature="class#sendFormData#0;class#AnimalForm#0" expanded="false" />
+                <element signature="method#onPreExecute#0;class#sendFormData#0;class#AnimalForm#0" expanded="false" />
+                <element signature="method#doInBackground#0;class#sendFormData#0;class#AnimalForm#0" expanded="false" />
+                <element signature="method#onPostExecute#0;class#sendFormData#0;class#AnimalForm#0" expanded="false" />
+                <element signature="method#onAttach#0;class#AnimalForm#0" expanded="false" />
+                <element signature="method#onItemSelected#0;class#AnimalForm#0" expanded="false" />
+                <element signature="method#onNothingSelected#0;class#AnimalForm#0" expanded="false" />
+                <element signature="docComment;class#OnFragmentInteractionListener#0;class#AnimalForm#0" expanded="false" />
+                <element signature="class#OnFragmentInteractionListener#0;class#AnimalForm#0" expanded="false" />
+                <element signature="docComment;method#lockScreenOrientation#0;class#AnimalForm#0" expanded="false" />
+                <element signature="method#lockScreenOrientation#0;class#AnimalForm#0" expanded="false" />
+                <element signature="docComment;method#unlockScreenOrientation#0;class#AnimalForm#0" expanded="false" />
+                <element signature="method#unlockScreenOrientation#0;class#AnimalForm#0" expanded="false" />
+                <marker date="1499412640944" expanded="false" signature="3190:3242" ph="{...}" />
+                <marker date="1499412640944" expanded="false" signature="3248:3431" ph="/**...*/" />
+                <marker date="1499412640944" expanded="false" signature="3475:3628" ph="{...}" />
+                <marker date="1499412640944" expanded="false" signature="3775:8611" ph="{...}" />
+                <marker date="1499412640944" expanded="false" signature="4142:4290" ph="(group, checkedId) → {" />
+                <marker date="1499412640944" expanded="false" signature="4969:4984" ph="}" />
+                <marker date="1499412640944" expanded="false" signature="6143:6239" ph="(view) → {" />
+                <marker date="1499412640944" expanded="false" signature="6319:6334" ph="}" />
+                <marker date="1499412640944" expanded="false" signature="6997:7092" ph="(view) → {" />
+                <marker date="1499412640944" expanded="false" signature="7172:7187" ph="}" />
+                <marker date="1499412640944" expanded="false" signature="7289:7437" ph="(group, checkedId) → {" />
+                <marker date="1499412640944" expanded="false" signature="7935:7950" ph="}" />
+                <marker date="1499412640944" expanded="false" signature="7992:8087" ph="(view) → {" />
+                <marker date="1499412640944" expanded="false" signature="8237:8252" ph="}" />
+                <marker date="1499412640944" expanded="false" signature="8683:11059" ph="{...}" />
+                <marker date="1499412640944" expanded="false" signature="8762:10750" ph="{...}" />
+                <marker date="1499412640944" expanded="false" signature="10822:11053" ph="{...}" />
+                <marker date="1499412640944" expanded="false" signature="15886:16462" ph="{...}" />
+                <marker date="1499412640944" expanded="false" signature="18246:18428" ph="(view, year, monthOfYear, dayOfMonth) → {" />
+                <marker date="1499412640944" expanded="false" signature="18441:19650" ph="..." />
+                <marker date="1499412640944" expanded="false" signature="19655:19666" ph="}" />
+                <marker date="1499412640944" expanded="false" signature="19710:19721" ph=" { " />
+                <marker date="1499412640944" expanded="false" signature="19742:19748" ph=" }" />
+                <marker date="1499412640944" expanded="false" signature="20175:20234" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WebServiceDetails.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/data/WebServiceDetails.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -2020,8 +2073,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/requestContent.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/Request.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/Data/WebServiceDetails.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/data/WebServiceDetails.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/WebServiceDetails.java" />
@@ -2059,18 +2110,20 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/content_welcome.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_primary_registration.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/WelcomeActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/LoginActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/data/WebServiceDetails.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_owner_form.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/data/Breed.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/OwnerForm.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/data/VillageTown.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/data/Strings.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/FormPrimaryRegistration.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/utility/utilities.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_owner_form.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/LoginActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_animal_form.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/data/Strings.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/data/WebServiceDetails.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/test" />
+        <option value="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/OwnerForm.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/AnimalForm.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/FormPrimaryRegistration.java" />
       </list>
     </option>
   </component>
@@ -2124,15 +2177,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView">
-        <subPane />
-      </pane>
-      <pane id="PackagesPane">
-        <subPane />
-      </pane>
-      <pane id="ProjectPane">
-        <subPane />
-      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -2151,25 +2195,35 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="ProjectPane">
+        <subPane />
+      </pane>
+      <pane id="PackagesPane">
+        <subPane />
+      </pane>
+      <pane id="AndroidView">
+        <subPane />
+      </pane>
       <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop" />
-    <property name="device.picker.selection" value="8054e063" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.file-colors" />
+    <property name="device.picker.selection" value="Pixel_API_25" />
+    <property name="settings.editor.selected.configurable" value="instant.run" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/java" />
     <property name="UI_DESIGNER_EDITOR_MODE.CaptureAnalysis.SHOW" value="false" />
-    <property name="DEBUGGABLE_DEVICE" value="samsung-sm_e500h-192.168.43.231:5555" />
+    <property name="DEBUGGABLE_DEVICE" value="samsung-sm_e500h-8054e063" />
     <property name="DEBUGGABLE_PROCESS" value="in.nic.phra.app" />
     <property name="SHOW_ALL_PROCESSES" value="false" />
     <property name="DEBUGGER_ID" value="Auto" />
     <property name="com.android.hv.last.comp.width" value="278" />
     <property name="com.android.hv.first.comp.width" value="294" />
+    <property name="SearchEverywhereHistoryKey" value="plugin&#9;ACTION&#9;WelcomeScreen.Plugins" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -2556,6 +2610,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="a161f4b1-4728-4f2a-8532-78ac0d1ca43a" name="Default" comment="" />
@@ -2620,7 +2677,14 @@
       <option name="project" value="LOCAL" />
       <updated>1498675440824</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fast commit">
+      <created>1499247474438</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1499247474438</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView">
@@ -2635,36 +2699,36 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32764506" sideWeight="0.4871407" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33959043" sideWeight="0.49092284" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32730263" sideWeight="0.4871407" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33881578" sideWeight="0.49092284" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1452345" sideWeight="0.5107034" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6694079" sideWeight="0.5146413" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4161184" sideWeight="0.5183016" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6677632" sideWeight="0.5060514" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.56828886" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42927632" sideWeight="0.48487142" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3223684" sideWeight="0.48865354" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42832765" sideWeight="0.48487142" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6694079" sideWeight="0.48865354" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.66611844" sideWeight="0.48535872" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.50907713" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23718888" sideWeight="0.4819079" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23645681" sideWeight="0.4819079" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24886535" sideWeight="0.49317408" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3223684" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2489019" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24886535" sideWeight="0.5068259" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4161184" sideWeight="0.48335856" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4161184" sideWeight="0.4816984" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23792094" sideWeight="0.5180921" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="407" y="368" width="444" height="168" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3225256" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -2709,56 +2773,71 @@
     <MESSAGE value="- Created forms for Owner and Animals&#10;&#10;###TODO&#10;- Mark crucial ones *required* and disabling the click for submit&#10;- Connect it to WS (also create one)&#10;" />
     <MESSAGE value="- Auto updating Spinner works for both the tabs (SpinnerTownVillage and SpinnerBreed)&#10;&#10;### TODO&#10;- Implement Date Picker" />
     <MESSAGE value="- Implemented HashMap and deprecated Breed VillageTown List Bean/POJO files" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Implemented HashMap and deprecated Breed VillageTown List Bean/POJO files" />
+    <MESSAGE value="fast commit" />
+    <MESSAGE value="- Primary Registration enabled &#10;- Next commit on PR list show" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Primary Registration enabled &#10;- Next commit on PR list show" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/AnimalForm.java</url>
+          <line>300</line>
+          <properties />
+          <option name="timeStamp" value="195" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/AnimalForm.java</url>
+          <line>328</line>
+          <properties />
+          <option name="timeStamp" value="196" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/AnimalForm.java</url>
+          <line>419</line>
+          <properties />
+          <option name="timeStamp" value="199" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/AnimalForm.java</url>
+          <line>336</line>
+          <properties />
+          <option name="timeStamp" value="200" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/OwnerForm.java</url>
+          <line>251</line>
+          <properties />
+          <option name="timeStamp" value="202" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/OwnerForm.java</url>
+          <line>268</line>
+          <properties />
+          <option name="timeStamp" value="204" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/AnimalForm.java</url>
+          <line>64</line>
+          <properties field="TAG" class="in.nic.phra.app.forms.primaryregistration.AnimalForm" />
+          <option name="timeStamp" value="191" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="172" />
+      <option name="time" value="205" />
     </breakpoint-manager>
-    <watches-manager />
+    <watches-manager>
+      <configuration name="app">
+        <watch expression="ownerBundle" language="JAVA" />
+      </configuration>
+      <configuration name="Remote">
+        <watch expression="ownerBundle" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.android/build-cache/a7dd2d8cd4df55b2db2e68dc6d523f91478d4c1e/output/res/values/values.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="231" column="18" selection-start-line="231" selection-start-column="18" selection-end-line="231" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_form_primary_registration.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/appcompat-v7/25.3.1/appcompat-v7-25.3.1-sources.jar!/android/support/v7/app/AppCompatActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="189" column="0" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/design/25.3.1/design-25.3.1-sources.jar!/android/support/design/widget/TabLayout.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="799" column="0" selection-start-line="799" selection-start-column="0" selection-end-line="799" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/support-core-ui/25.3.1/support-core-ui-25.3.1-sources.jar!/android/support/v4/view/ViewPager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="1194" column="0" selection-start-line="1194" selection-start-column="0" selection-end-line="1194" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/support-fragment/25.3.1/support-fragment-25.3.1-sources.jar!/android/support/v4/app/FragmentActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-154">
@@ -2835,13 +2914,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="439">
           <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/in/nic/phra/app/ExampleInstrumentedTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -2976,23 +3048,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_owner_form.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/LoginActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="66" column="64" selection-start-line="66" selection-start-column="64" selection-end-line="66" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_form_primary_registration.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -3036,34 +3091,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="42" column="37" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/data/VillageTown.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/data/WebServiceDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="47" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/data/Strings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3081,26 +3112,119 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_animal_form.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/utility/utilities.java" />
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/android/app/Activity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="111" column="59" selection-start-line="111" selection-start-column="59" selection-end-line="111" selection-end-column="59" />
+        <state relative-caret-position="184">
+          <caret line="5595" column="18" selection-start-line="5595" selection-start-column="18" selection-end-line="5595" selection-end-column="18" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2">
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_animal_form.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="e#2972#3342#0" expanded="false" />
+            <element signature="e#3360#3763#0" expanded="false" />
+            <element signature="e#3781#4153#0" expanded="false" />
+            <element signature="e#4171#4397#0" expanded="false" />
+            <element signature="e#4415#5072#0" expanded="false" />
+            <element signature="e#5090#5379#0" expanded="false" />
+            <element signature="e#5397#5770#0" expanded="false" />
+            <element signature="e#5788#6159#0" expanded="false" />
+            <element signature="e#6177#6852#0" expanded="false" />
+            <element signature="e#6870#7247#0" expanded="false" />
+            <element signature="e#9301#10654#0" expanded="false" />
+            <element signature="e#9718#9994#0" expanded="false" />
+            <element signature="e#10016#10195#0" expanded="false" />
+            <element signature="e#10217#10622#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/data/Strings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="50" column="20" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_owner_form.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="139" column="32" selection-start-line="139" selection-start-column="32" selection-end-line="139" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="112" column="19" selection-start-line="112" selection-start-column="19" selection-end-line="112" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/in/nic/phra/app/ExampleInstrumentedTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/android/content/SharedPreferences.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="291" column="8" selection-start-line="291" selection-start-column="8" selection-end-line="291" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/test">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/data/WebServiceDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/OwnerForm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="252" column="28" selection-start-line="252" selection-start-column="28" selection-end-line="252" selection-end-column="28" />
+        <state relative-caret-position="287">
+          <caret line="258" column="13" selection-start-line="258" selection-start-column="13" selection-end-line="258" selection-end-column="13" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="docComment;class#OwnerForm#0" expanded="false" />
             <element signature="method#OwnerForm#0;class#OwnerForm#0" expanded="false" />
             <element signature="docComment;method#newInstance#0;class#OwnerForm#0" expanded="false" />
             <element signature="method#newInstance#0;class#OwnerForm#0" expanded="false" />
+            <element signature="method#onCreateView#0;class#OwnerForm#0" expanded="false" />
             <element signature="class#FillSpinner#0;class#OwnerForm#0" expanded="false" />
             <element signature="method#onPreExecute#0;class#FillSpinner#0;class#OwnerForm#0" expanded="false" />
             <element signature="method#doInBackground#0;class#FillSpinner#0;class#OwnerForm#0" expanded="false" />
@@ -3115,15 +3239,80 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/AnimalForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="707">
+          <caret line="420" column="54" selection-start-line="420" selection-start-column="54" selection-end-line="420" selection-end-column="54" />
+          <folding>
+            <element signature="docComment;class#AnimalForm#0" expanded="false" />
+            <element signature="class#sendFormData#0;class#AnimalForm#0" expanded="false" />
+            <element signature="method#onPreExecute#0;class#sendFormData#0;class#AnimalForm#0" expanded="false" />
+            <element signature="method#doInBackground#0;class#sendFormData#0;class#AnimalForm#0" expanded="false" />
+            <element signature="method#onPostExecute#0;class#sendFormData#0;class#AnimalForm#0" expanded="false" />
+            <element signature="method#onAttach#0;class#AnimalForm#0" expanded="false" />
+            <element signature="method#onItemSelected#0;class#AnimalForm#0" expanded="false" />
+            <element signature="method#onNothingSelected#0;class#AnimalForm#0" expanded="false" />
+            <element signature="docComment;class#OnFragmentInteractionListener#0;class#AnimalForm#0" expanded="false" />
+            <element signature="class#OnFragmentInteractionListener#0;class#AnimalForm#0" expanded="false" />
+            <element signature="docComment;method#lockScreenOrientation#0;class#AnimalForm#0" expanded="false" />
+            <element signature="method#lockScreenOrientation#0;class#AnimalForm#0" expanded="false" />
+            <element signature="docComment;method#unlockScreenOrientation#0;class#AnimalForm#0" expanded="false" />
+            <element signature="method#unlockScreenOrientation#0;class#AnimalForm#0" expanded="false" />
+            <marker date="1499412640944" expanded="false" signature="3190:3242" ph="{...}" />
+            <marker date="1499412640944" expanded="false" signature="3248:3431" ph="/**...*/" />
+            <marker date="1499412640944" expanded="false" signature="3475:3628" ph="{...}" />
+            <marker date="1499412640944" expanded="false" signature="3775:8611" ph="{...}" />
+            <marker date="1499412640944" expanded="false" signature="4142:4290" ph="(group, checkedId) → {" />
+            <marker date="1499412640944" expanded="false" signature="4969:4984" ph="}" />
+            <marker date="1499412640944" expanded="false" signature="6143:6239" ph="(view) → {" />
+            <marker date="1499412640944" expanded="false" signature="6319:6334" ph="}" />
+            <marker date="1499412640944" expanded="false" signature="6997:7092" ph="(view) → {" />
+            <marker date="1499412640944" expanded="false" signature="7172:7187" ph="}" />
+            <marker date="1499412640944" expanded="false" signature="7289:7437" ph="(group, checkedId) → {" />
+            <marker date="1499412640944" expanded="false" signature="7935:7950" ph="}" />
+            <marker date="1499412640944" expanded="false" signature="7992:8087" ph="(view) → {" />
+            <marker date="1499412640944" expanded="false" signature="8237:8252" ph="}" />
+            <marker date="1499412640944" expanded="false" signature="8683:11059" ph="{...}" />
+            <marker date="1499412640944" expanded="false" signature="8762:10750" ph="{...}" />
+            <marker date="1499412640944" expanded="false" signature="10822:11053" ph="{...}" />
+            <marker date="1499412640944" expanded="false" signature="15886:16462" ph="{...}" />
+            <marker date="1499412640944" expanded="false" signature="18246:18428" ph="(view, year, monthOfYear, dayOfMonth) → {" />
+            <marker date="1499412640944" expanded="false" signature="18441:19650" ph="..." />
+            <marker date="1499412640944" expanded="false" signature="19655:19666" ph="}" />
+            <marker date="1499412640944" expanded="false" signature="19710:19721" ph=" { " />
+            <marker date="1499412640944" expanded="false" signature="19742:19748" ph=" }" />
+            <marker date="1499412640944" expanded="false" signature="20175:20234" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="104" column="49" selection-start-line="104" selection-start-column="49" selection-end-line="104" selection-end-column="49" />
+          <folding>
+            <element signature="method#onCreate#0;class#LoginActivity#0" expanded="false" />
+            <element signature="method#sendLoginRequest#0;class#LoginActivity#0" expanded="false" />
+            <element signature="method#onPreExecute#0;class#2781:9086" expanded="false" />
+            <element signature="method#onPostExecute#0;class#2781:9086" expanded="false" />
+            <element signature="method#hashKey#0;class#LoginActivity#0" expanded="false" />
+            <element signature="docComment;method#lockScreenOrientation#0;class#LoginActivity#0" expanded="false" />
+            <element signature="method#lockScreenOrientation#0;class#LoginActivity#0" expanded="false" />
+            <element signature="docComment;method#unlockScreenOrientation#0;class#LoginActivity#0" expanded="false" />
+            <element signature="method#unlockScreenOrientation#0;class#LoginActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/FormPrimaryRegistration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-578">
-          <caret line="31" column="55" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="55" />
+        <state relative-caret-position="133">
+          <caret line="75" column="16" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="16" />
           <folding>
-            <element signature="e#1342#1411#0" expanded="false" />
+            <element signature="e#1436#1505#0" expanded="false" />
             <element signature="method#onCreateOptionsMenu#0;class#FormPrimaryRegistration#0" expanded="false" />
             <element signature="method#onOptionsItemSelected#0;class#FormPrimaryRegistration#0" expanded="false" />
-            <element signature="e#3591#3649#0" expanded="false" />
+            <element signature="e#4024#4082#0" expanded="false" />
             <element signature="method#onFragmentInteraction#0;class#FormPrimaryRegistration#0" expanded="false" />
             <element signature="docComment;class#PlaceholderFragment#0;class#FormPrimaryRegistration#0" expanded="false" />
             <element signature="class#PlaceholderFragment#0;class#FormPrimaryRegistration#0" expanded="false" />
@@ -3133,36 +3322,9 @@
             <element signature="method#newInstance#0;class#PlaceholderFragment#0;class#FormPrimaryRegistration#0" expanded="false" />
             <element signature="method#onCreateView#0;class#PlaceholderFragment#0;class#FormPrimaryRegistration#0" expanded="false" />
             <element signature="docComment;class#SectionsPagerAdapter#0;class#FormPrimaryRegistration#0" expanded="false" />
-            <element signature="class#SectionsPagerAdapter#0;class#FormPrimaryRegistration#0" expanded="false" />
-            <element signature="method#getItem#0;class#SectionsPagerAdapter#0;class#FormPrimaryRegistration#0" expanded="false" />
-            <element signature="e#5830#5898#0" expanded="false" />
+            <element signature="e#6263#6331#0" expanded="false" />
             <element signature="method#getCount#0;class#SectionsPagerAdapter#0;class#FormPrimaryRegistration#0" expanded="false" />
             <element signature="method#getPageTitle#0;class#SectionsPagerAdapter#0;class#FormPrimaryRegistration#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/in/nic/phra/app/forms/primaryregistration/AnimalForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="268" column="111" selection-start-line="268" selection-start-column="111" selection-end-line="268" selection-end-column="111" />
-          <folding>
-            <element signature="docComment;class#AnimalForm#0" expanded="false" />
-            <element signature="method#AnimalForm#0;class#AnimalForm#0" expanded="false" />
-            <element signature="docComment;method#newInstance#0;class#AnimalForm#0" expanded="false" />
-            <element signature="method#newInstance#0;class#AnimalForm#0" expanded="false" />
-            <element signature="class#FillSpinner#0;class#AnimalForm#0" expanded="false" />
-            <element signature="method#doInBackground#0;class#FillSpinner#0;class#AnimalForm#0" expanded="false" />
-            <element signature="method#onPostExecute#0;class#FillSpinner#0;class#AnimalForm#0" expanded="false" />
-            <element signature="method#getData#0;class#AnimalForm#0" expanded="false" />
-            <element signature="e#9496#9511#0" expanded="false" />
-            <element signature="method#showDatePicker#0;class#AnimalForm#0" expanded="false" />
-            <element signature="method#onAttach#0;class#AnimalForm#0" expanded="false" />
-            <element signature="method#onDetach#0;class#AnimalForm#0" expanded="false" />
-            <element signature="method#onItemSelected#0;class#AnimalForm#0" expanded="false" />
-            <element signature="method#onNothingSelected#0;class#AnimalForm#0" expanded="false" />
-            <element signature="docComment;class#OnFragmentInteractionListener#0;class#AnimalForm#0" expanded="false" />
-            <element signature="class#OnFragmentInteractionListener#0;class#AnimalForm#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -18,4 +18,7 @@ public class Strings {
 
     public static final String COW = "1";
     public static final String BUFFALO = "2";
+
+    public static final String MALE = "1";
+    public static final String FEMALE = "2";
 }

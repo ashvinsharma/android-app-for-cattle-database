@@ -74,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void loginMethod(final String username, String password) {
 
-        class LoginMethodAsyncTask extends AsyncTask<String, Void, String> {
+        class LoginMethodAsyncTask extends AsyncTask<String, Void, Void> {
             private final ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this);
             private int responseCode;
 
@@ -85,8 +85,11 @@ public class LoginActivity extends AppCompatActivity {
                  * Hiding Keyboard
                  */
 
-                InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                inputMethodManager.hideSoftInputFromWindow(editTextUsername.getWindowToken(), 0);
+                View view = getCurrentFocus();
+                if (view != null) {
+                    InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                    inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                }
 
                 lockScreenOrientation();
 
@@ -97,7 +100,7 @@ public class LoginActivity extends AppCompatActivity {
             }
 
             @Override
-            protected String doInBackground(String... params) {
+            protected Void doInBackground(String... params) {
                 String paramUsername = params[0];
                 String paramPassword = params[1];
                 editor = sharedPreferences.edit();
@@ -170,11 +173,11 @@ public class LoginActivity extends AppCompatActivity {
                     Log.e(TAG, "IOException Exception: " + e);
                 }
 
-                return postParam;
+                return null;
             }
 
             @Override
-            protected void onPostExecute(String result) {
+            protected void onPostExecute(Void param) {
                 unlockScreenOrientation();
                 progressDialog.dismiss();
 
@@ -198,8 +201,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         }
-        LoginMethodAsyncTask loginMethodAsyncTask = new LoginMethodAsyncTask();
-        loginMethodAsyncTask.execute(username, password);
+        new LoginMethodAsyncTask().execute(username, password);
     }
 
     @NonNull

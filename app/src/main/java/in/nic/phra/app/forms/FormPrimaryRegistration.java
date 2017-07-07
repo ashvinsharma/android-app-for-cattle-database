@@ -3,10 +3,12 @@ package in.nic.phra.app.forms;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -61,11 +63,16 @@ public class FormPrimaryRegistration extends AppCompatActivity
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-
+                //noinspection ConstantConditions
+                if (tab.getText().toString().equalsIgnoreCase("animal")) {
+                    AnimalForm frag = (AnimalForm) getSupportFragmentManager().getFragments().get(1);
+                    frag.sendBundle(bundle);
+                }
             }
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
+                //noinspection ConstantConditions
                 if (tab.getText().toString().equalsIgnoreCase("owner")) {
                     OwnerForm frag = (OwnerForm) getSupportFragmentManager().getFragments().get(0);
                     bundle = frag.getData();

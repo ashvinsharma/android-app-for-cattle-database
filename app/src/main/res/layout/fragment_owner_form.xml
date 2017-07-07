@@ -48,6 +48,7 @@
                         android:paddingStart="4dp"
                         android:paddingTop="8dp"
                         android:text="@string/select_area"
+                        android:layout_gravity="start"
                         android:textAlignment="textStart"/>
 
                     <RadioGroup

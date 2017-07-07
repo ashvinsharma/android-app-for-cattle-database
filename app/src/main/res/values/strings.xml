@@ -46,7 +46,9 @@
     <string name="dam_details">Dam Detail (Name &amp; Number)</string>
     <string name="first_recording_date">First Recording Date</string>
     <string name="ear_tag_of_calf">Ear Tag of Calf</string>
-    <string name="sex_of_calf">Sex of Calf</string>
+    <string name="sex_of_calf">Sex of Calf: </string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
     <string name="remarks">Remarks</string>
     <string name="back">BACK</string>
     <string name="submit">SUBMIT</string>

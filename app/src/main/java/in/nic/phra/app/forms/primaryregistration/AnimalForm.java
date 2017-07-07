@@ -2,8 +2,11 @@ package in.nic.phra.app.forms.primaryregistration;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -14,6 +17,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -42,7 +46,10 @@ import in.nic.phra.app.R;
 import static android.content.Context.MODE_PRIVATE;
 import static in.nic.phra.app.data.Strings.BUFFALO;
 import static in.nic.phra.app.data.Strings.COW;
+import static in.nic.phra.app.data.Strings.FEMALE;
+import static in.nic.phra.app.data.Strings.MALE;
 import static in.nic.phra.app.data.WebServiceDetails.COMPLETE_SPINNER_BREED;
+import static in.nic.phra.app.data.WebServiceDetails.SEND_PRIMARY_REGISTRATION_FORM_DATA;
 import static in.nic.phra.app.data.WebServiceDetails.WS_URL;
 
 /**
@@ -54,19 +61,33 @@ import static in.nic.phra.app.data.WebServiceDetails.WS_URL;
  * create an instance of this fragment.
  */
 public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedListener {
+
     private static final String TAG = "AnimalForm";
+    private SharedPreferences sharedPreferences = null;
     private OnFragmentInteractionListener mListener;
+    Bundle animalBundle, ownerBundle;
 
     private String species;
-    private String earTagNumber;
-    private String animalName;
-    private String animalAge;
+    private String docDate, docMonth, docYear;
+    private String frdDate, frdMonth, frdYear;
+    private String sex;
+
     private Spinner breed;
     private Spinner lactationNumber;
-
+    private EditText editTextEarTagNumber;
+    private EditText editTextAnimalName;
+    private EditText editTextAnimalAge;
+    private EditText sireDetailEditText;
+    private EditText damDetailEditText;
+    private EditText calfEarTagEditText;
     private TextView dateOfCalving;
+    private TextView firstRecordingDate;
+
     private List<String> breedList = new ArrayList<>();
-    ArrayAdapter<String> breedListAdapter;
+    private ArrayAdapter<String> breedListAdapter;
+    @SuppressLint("UseSparseArrays")
+    private Map<String, Integer> breedHashMap = new HashMap<>();
+    private View datePickerId;
 
     public AnimalForm() {
         // Required empty public constructor
@@ -89,13 +110,12 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        sharedPreferences = getActivity().getApplicationContext().getSharedPreferences("userSession", MODE_PRIVATE);
 
-        final SharedPreferences sharedPreferences = getActivity().getApplicationContext().getSharedPreferences("userSession", MODE_PRIVATE);
         // Inflate the layout for this fragment
         View fragmentView = inflater.inflate(R.layout.fragment_animal_form, container, false);
 
-        RadioGroup radioGroupSpecies = (RadioGroup) fragmentView.findViewById(R.id.radio_group_species);
-        radioGroupSpecies.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        ((RadioGroup) fragmentView.findViewById(R.id.radio_group_species)).setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
@@ -113,15 +133,15 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
             }
         });
 
-        EditText editTextEarTagNumber = (EditText) fragmentView.findViewById(R.id.editTextEarTag);
-        earTagNumber = editTextEarTagNumber.toString();
+        editTextEarTagNumber = (EditText) fragmentView.findViewById(R.id.editTextEarTag);
+        editTextAnimalName = (EditText) fragmentView.findViewById(R.id.editTextAnimalName);
+        editTextAnimalAge = (EditText) fragmentView.findViewById(R.id.editTextAnimalAge);
+        sireDetailEditText = (EditText) fragmentView.findViewById(R.id.editTextSire);
+        damDetailEditText = (EditText) fragmentView.findViewById(R.id.editTextDam);
+        calfEarTagEditText = (EditText) fragmentView.findViewById(R.id.editTextEarTagofCalf);
+        Button buttonBack = (Button) fragmentView.findViewById(R.id.backButton);
 
-
-        EditText editTextAnimalName = (EditText) fragmentView.findViewById(R.id.editTextAnimalName);
-        animalName = editTextAnimalName.toString();
-
-        EditText editTextAnimalAge = (EditText) fragmentView.findViewById(R.id.editTextAnimalAge);
-        animalAge = editTextAnimalAge.toString();
+        dateOfCalving = (TextView) fragmentView.findViewById(R.id.DateOfCalving);
 
         breed = (Spinner) fragmentView.findViewById(R.id.spinner_breed);
         breed.setOnItemSelectedListener(this);
@@ -130,11 +150,11 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
         breedListAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         breed.setAdapter(breedListAdapter);
 
-        dateOfCalving = (TextView) fragmentView.findViewById(R.id.DateOfCalving);
         dateOfCalving.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
+                datePickerId = view;
                 showDatePicker();
             }
         });
@@ -148,7 +168,32 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
         ArrayAdapter<Integer> lactationAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, lactationNumberList);
         lactationNumber.setAdapter(lactationAdapter);
 
-        Button buttonBack = (Button) fragmentView.findViewById(R.id.backButton);
+
+        firstRecordingDate = (TextView) fragmentView.findViewById(R.id.textViewFirstRecordingDate);
+        firstRecordingDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                datePickerId = view;
+                showDatePicker();
+            }
+        });
+
+        ((RadioGroup) fragmentView.findViewById(R.id.radio_group_sex)).setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+
+            @Override
+            public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
+                if (checkedId == R.id.radioButtonMale) {
+                    sex = MALE;
+                    Log.i(TAG, "Sex: Male selected");
+                    Toast.makeText(getContext(), "Male", Toast.LENGTH_SHORT).show();
+                } else if (checkedId == R.id.radioButtonFemale) {
+                    sex = FEMALE;
+                    Log.i(TAG, "Sex: Female selected");
+                    Toast.makeText(getContext(), "Female", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -162,15 +207,13 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
             @Override
             public void onClick(View view) {
                 getData();
-                //TODO: Create webservices and invoke AsyncTask to send the details over GET Method
+                new sendFormData().execute();
             }
         });
         return fragmentView;
     }
 
     private class FillSpinner extends AsyncTask<String, Void, String> {
-        @SuppressLint("UseSparseArrays")
-        Map<Integer, String> breedHashMap = new HashMap<>();
 
         @Override
         protected String doInBackground(String... params) {
@@ -188,7 +231,7 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
                 connection.setRequestProperty("Content-type", "application/x-www-form-urlencoded");
 
                 int responseCode = connection.getResponseCode();
-                Log.i(TAG, "POST Response is: " + responseCode);
+                Log.i(TAG, connection.getRequestMethod() + " Response is: " + responseCode);
 
                 if (responseCode == HttpURLConnection.HTTP_OK) {
                     BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
@@ -207,7 +250,7 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
 
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject tuple = jsonArray.getJSONObject(i);
-                            breedHashMap.put(tuple.getInt("Breed_ID"), tuple.getString("Breed_Name"));
+                            breedHashMap.put(tuple.getString("Breed_Name"), tuple.getInt("Breed_ID"));
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -224,28 +267,111 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
             breedList.clear();
 
             for (Map.Entry breedMap : breedHashMap.entrySet()) {
-                breedList.add(breedMap.getValue().toString());
+                breedList.add(breedMap.getKey().toString());
             }
             breed.setAdapter(breedListAdapter);
         }
     }
 
-    private void getData() {
-        Bundle bundle = new Bundle();
-        bundle.getString("species", species);
-        bundle.getString("earTagNumber", earTagNumber);
-        bundle.getString("animalName", animalName);
-        bundle.getString("animalAge", animalAge);
-        bundle.getString("breed", breed.getSelectedItem().toString());
-        //dateofcalving
-//        bundle.getString();
+    private class sendFormData extends AsyncTask<Void, Void, Boolean> {
+        private final ProgressDialog progressDialog = new ProgressDialog(getActivity());
+
+        @Override
+        protected void onPreExecute() {
+            View view = getActivity().getCurrentFocus();
+            if (view != null) {
+                InputMethodManager inputMethodManager = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+            }
+
+            lockScreenOrientation();
+
+            progressDialog.setIndeterminate(true);
+            progressDialog.setMessage("Sending Form Data...");
+            progressDialog.show();
+            progressDialog.setCancelable(false);
+            progressDialog.setCanceledOnTouchOutside(false);
+
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... params) {
+
+            //TODO: handle whitespaces in string parameters {whitespace = "%20"}
+            String param = "?area=" + ownerBundle.getString("area") +
+                    "&villageTownID=" + ownerBundle.getString("villageTown") +
+                    "&ownerName=" + ownerBundle.getString("ownerName") +
+                    "&fatherHusbandName=" + ownerBundle.getString("fatherHusbandName") +
+                    "&category=" + ownerBundle.getString("category") +
+                    "&address=" + ownerBundle.getString("address") +
+                    "&mobileNumber=" + ownerBundle.getString("mobileNumber") +
+                    "&telephoneNumber=" + ownerBundle.getString("telephoneNumber") +
+                    "&species=" + animalBundle.getString("species") +
+                    "&earTagNumber=" + animalBundle.getString("earTagNumber") +
+                    "&animalName=" + animalBundle.getString("animalName") +
+                    "&animalAge=" + animalBundle.getString("animalAge") +
+                    "&breed=" + animalBundle.getString("breed") +
+                    "&dateOfCalving=" + animalBundle.getString("doc") +
+                    "&lactationNumber=" + animalBundle.getString("numberOfLactation") +
+                    "&sireDetails=" + animalBundle.getString("sireDetails") +
+                    "&damDetails=" + animalBundle.getString("damDetails") +
+                    "&firstRecordingDate=" + animalBundle.getString("frd") +
+                    "&calfEarTag=" + animalBundle.getString("earTagCalf") +
+                    "&sex=" + animalBundle.getString("sex") +
+                    "&stateID=" + String.valueOf(sharedPreferences.getInt("State_ID", 0)) +
+                    "&districtID=" + String.valueOf(sharedPreferences.getInt("District_ID", 0)) +
+                    "&blockID=" + String.valueOf(sharedPreferences.getInt("Block_ID", 0)) +
+                    "&centreID=" + String.valueOf(sharedPreferences.getInt("Centre_ID", 0)) +
+                    "&username=" + sharedPreferences.getString("username", null);
+            Log.d(TAG, param);
+
+            try {
+                URL url = new URL(WS_URL + SEND_PRIMARY_REGISTRATION_FORM_DATA + param);
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+
+                httpURLConnection.setRequestMethod("GET");
+                httpURLConnection.setDoInput(true);
+                httpURLConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+
+                int responseCode = httpURLConnection.getResponseCode();
+                Log.i(TAG, httpURLConnection.getRequestMethod() + " Response Code: " + responseCode);
+
+                if (responseCode == HttpURLConnection.HTTP_OK) {
+                    BufferedReader in = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()));
+                    String inputLine;
+                    StringBuilder response = new StringBuilder();
+
+                    while ((inputLine = in.readLine()) != null) {
+                        response.append(inputLine);
+                    }
+                    in.close();
+                    if (response.toString().equals("\"Success\"")) {
+                        return true;
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return false;
+        }
+
+        @Override
+        protected void onPostExecute(Boolean flag) {
+            if (flag) {
+                Toast.makeText(getActivity(), "Form Submitted Successfully!", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(getActivity(), "Some Error Occurred! Please Try Again.", Toast.LENGTH_LONG).show();
+            }
+
+            unlockScreenOrientation();
+            progressDialog.dismiss();
+        }
     }
 
     private void showDatePicker() {
         DatePickerFragment date = new DatePickerFragment();
-        /**
-         * Set Up Current Date Into dialog
-         */
+
+        // Set Up Current Date Into dialog
         Calendar calender = Calendar.getInstance();
         Bundle args = new Bundle();
         args.putInt("year", calender.get(Calendar.YEAR));
@@ -253,25 +379,89 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
         args.putInt("day", calender.get(Calendar.DAY_OF_MONTH));
         date.setArguments(args);
 
-        /**
-         * Set Call back to capture selected date
-         */
+        //Set Call back to capture selected date
         date.setCallBack(onDate);
         date.show(getActivity().getSupportFragmentManager(), "Date Picker");
+    }
+
+    private void getData() {
+        String[] params = new String[]{
+                editTextEarTagNumber.getText().toString().trim(),
+                editTextAnimalName.getText().toString().trim(),
+                editTextAnimalAge.getText().toString().trim(),
+                sireDetailEditText.getText().toString().trim(),
+                damDetailEditText.getText().toString().trim(),
+                calfEarTagEditText.getText().toString().trim()
+        };
+
+        //removing spaces with "%20" to send through GET
+        for (int i = 0; i < params.length; i++)
+            if (params[i].contains(" ")) {
+                params[i] = params[i].replace(" ", "%20");
+            }
+
+        String breedID;
+        if (breedHashMap.get(breed.getSelectedItem().toString()) == null) {
+            breedID = null;
+        } else {
+            breedID = String.valueOf(breedHashMap.get(breed.getSelectedItem().toString()));
+        }
+
+        animalBundle = new Bundle();
+        animalBundle.putString("species", species);
+        animalBundle.putString("earTagNumber", params[0]);
+        animalBundle.putString("animalName", params[1]);
+        animalBundle.putString("animalAge", params[2]);
+        animalBundle.putString("breed", breedID);
+        animalBundle.putString("doc", docDate + docMonth + docYear);
+        animalBundle.putString("numberOfLactation", lactationNumber.getSelectedItem().toString());
+        animalBundle.putString("sireDetails", params[3]);
+        animalBundle.putString("damDetails", params[4]);
+        animalBundle.putString("frd", frdDate + frdMonth + frdYear);
+        animalBundle.putString("earTagCalf", params[5]);
+        animalBundle.putString("sex", sex);
+
+        Log.i(TAG, "test");
     }
 
     DatePickerDialog.OnDateSetListener onDate = new DatePickerDialog.OnDateSetListener() {
         @Override
         public void onDateSet(DatePicker view, int year, int monthOfYear,
                               int dayOfMonth) {
-            Toast.makeText(
-                    getActivity().getApplicationContext(),
-                    String.valueOf(dayOfMonth) + "/" + String.valueOf(monthOfYear) + "/" + String.valueOf(year),
-                    Toast.LENGTH_LONG).show();
-            dateOfCalving.setText("Date of Calving: " +
-                    String.valueOf(dayOfMonth) + "/" + String.valueOf(monthOfYear) + "/" + String.valueOf(year));
+            if (datePickerId.getId() == R.id.DateOfCalving) {
+                if (dayOfMonth < 9)
+                    docDate = "0";
+                docDate += String.valueOf(dayOfMonth);
+
+                if (monthOfYear < 9)
+                    docMonth = "0";
+                docMonth += String.valueOf(monthOfYear + 1); //month starts from 0
+
+                docYear = String.valueOf(year);
+
+                dateOfCalving.setText("Date of Calving: " +
+                        String.valueOf(dayOfMonth) + "/" + String.valueOf(monthOfYear) + "/" + String.valueOf(year));
+            } else if (datePickerId.getId() == R.id.textViewFirstRecordingDate) {
+                if (dayOfMonth < 9)
+                    frdDate = "0";
+                frdDate += String.valueOf(dayOfMonth);
+
+                if (monthOfYear < 9)
+                    frdMonth = "0";
+                frdMonth += String.valueOf(monthOfYear + 1); //month starts from 0
+
+                frdYear = String.valueOf(year);
+
+                firstRecordingDate.setText("First Recoding Date: " +
+                        String.valueOf(dayOfMonth) + "/" + String.valueOf(monthOfYear) + "/" + String.valueOf(year));
+            }
+            datePickerId = null;
         }
     };
+
+    public void sendBundle(Bundle bundle) {
+        ownerBundle = bundle;
+    }
 
     @Override
     public void onAttach(Context context) {
@@ -312,5 +502,25 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
      */
     public interface OnFragmentInteractionListener {
         void onFragmentInteraction(Uri uri);
+    }
+
+    /**
+     * Manual method to lock the screen orientation; used in AsyncTask
+     * prevents crash on changing orientation
+     */
+    private void lockScreenOrientation() {
+        int currentConfig = getResources().getConfiguration().orientation;
+        if (currentConfig == Configuration.ORIENTATION_LANDSCAPE)
+            getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        else
+            getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+    }
+
+    /**
+     * Manual method to lock the screen orientation; used in AsyncTask
+     * prevents crash on changing orientation
+     */
+    private void unlockScreenOrientation() {
+        getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
     }
 }
