@@ -197,18 +197,14 @@ public class OwnerForm extends Fragment implements AdapterView.OnItemSelectedLis
                     in.close();
 
                     Log.d(TAG, "HTTP Response: " + response.toString());
-                    try {
-                        JSONObject jsonObject = new JSONObject(response.toString());
-                        JSONArray jsonArray = jsonObject.getJSONArray("rows");
+                    JSONObject jsonObject = new JSONObject(response.toString());
+                    JSONArray jsonArray = jsonObject.getJSONArray("rows");
 
-                        ArrayList<JSONObject> jsonResults = new ArrayList<>();
-                        for (int i = 0; i < jsonArray.length(); i++) {
-                            jsonResults.add(jsonArray.getJSONObject(i));
-                            villageTownMap.put(jsonResults.get(i).getString("Village_Name"),
-                                    jsonResults.get(i).getInt("Village_ID"));
-                        }
-                    } catch (Exception e) {
-                        e.printStackTrace();
+                    ArrayList<JSONObject> jsonResults = new ArrayList<>();
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        jsonResults.add(jsonArray.getJSONObject(i));
+                        villageTownMap.put(jsonResults.get(i).getString("Village_Name"),
+                                jsonResults.get(i).getInt("Village_ID"));
                     }
                 }
             } catch (Exception e) {

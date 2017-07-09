@@ -44,7 +44,7 @@
             android:ems="10"
             android:hint="@string/editTextUsername"
             android:inputType="textPersonName"
-            android:text="ashvin"
+            android:text="cDerraBassi"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="215dp"/>
 
@@ -55,7 +55,7 @@
             android:ems="10"
             android:hint="@string/editTextPassword"
             android:inputType="textPassword"
-            android:text="password"/>
+            android:text="dahd@123"/>
 
         <Button
             android:layout_width="match_parent"

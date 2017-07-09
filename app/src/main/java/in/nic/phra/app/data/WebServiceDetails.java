@@ -11,4 +11,5 @@ public class WebServiceDetails {
     public static final String COMPLETE_SPINNER_TOWN_VILLAGE = "/CompleteSpinnerTownVillage";
     public static final String COMPLETE_SPINNER_BREED = "/CompleteSpinnerBreed";
     public static final String SEND_PRIMARY_REGISTRATION_FORM_DATA = "/SendPrimaryRegistrationFormData";
+    public static final String GET_PRIMARY_REGISTRATION_LIST = "/GetPrimaryRegistrationList";
 }

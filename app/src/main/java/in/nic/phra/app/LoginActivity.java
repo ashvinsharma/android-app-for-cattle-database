@@ -63,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void sendLoginRequest(View view) {
-        String username = editTextUsername.getText().toString();
+        String username = editTextUsername.getText().toString().trim();
         String password = editTextPassword.getText().toString();
 
         //Converting password to md5 hash and initiating login process
@@ -96,7 +96,7 @@ public class LoginActivity extends AppCompatActivity {
                 progressDialog.setIndeterminate(true);
                 progressDialog.setMessage("Logging in...");
                 progressDialog.show();
-
+                progressDialog.setCanceledOnTouchOutside(false);
             }
 
             @Override

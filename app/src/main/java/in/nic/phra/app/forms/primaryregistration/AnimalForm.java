@@ -4,10 +4,10 @@ import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
@@ -41,6 +41,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import in.nic.phra.app.PrimaryRegistration;
 import in.nic.phra.app.R;
 
 import static android.content.Context.MODE_PRIVATE;
@@ -64,7 +65,6 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
 
     private static final String TAG = "AnimalForm";
     private SharedPreferences sharedPreferences = null;
-    private OnFragmentInteractionListener mListener;
     Bundle animalBundle, ownerBundle;
 
     private String species;
@@ -289,15 +289,13 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
             progressDialog.setIndeterminate(true);
             progressDialog.setMessage("Sending Form Data...");
             progressDialog.show();
-            progressDialog.setCancelable(false);
+            //progressDialog.setCancelable(false); //prevent back button cancel
             progressDialog.setCanceledOnTouchOutside(false);
-
         }
 
         @Override
         protected Boolean doInBackground(Void... params) {
 
-            //TODO: handle whitespaces in string parameters {whitespace = "%20"}
             String param = "?area=" + ownerBundle.getString("area") +
                     "&villageTownID=" + ownerBundle.getString("villageTown") +
                     "&ownerName=" + ownerBundle.getString("ownerName") +
@@ -365,12 +363,17 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
 
             unlockScreenOrientation();
             progressDialog.dismiss();
+
+            Intent intent = new Intent(getActivity(), PrimaryRegistration.class);
+            startActivity(intent);
         }
     }
 
     private void showDatePicker() {
         DatePickerFragment date = new DatePickerFragment();
 
+        //TODO: Improve the layout of the date picker
+        //TODO: Restrict the future dates
         // Set Up Current Date Into dialog
         Calendar calender = Calendar.getInstance();
         Bundle args = new Bundle();
@@ -413,11 +416,11 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
         animalBundle.putString("animalName", params[1]);
         animalBundle.putString("animalAge", params[2]);
         animalBundle.putString("breed", breedID);
-        animalBundle.putString("doc", docDate + docMonth + docYear);
+        animalBundle.putString("doc", docDate + "/" + docMonth + "/" + docYear);
         animalBundle.putString("numberOfLactation", lactationNumber.getSelectedItem().toString());
         animalBundle.putString("sireDetails", params[3]);
         animalBundle.putString("damDetails", params[4]);
-        animalBundle.putString("frd", frdDate + frdMonth + frdYear);
+        animalBundle.putString("frd", frdDate + "/" + frdMonth + "/" + frdYear);
         animalBundle.putString("earTagCalf", params[5]);
         animalBundle.putString("sex", sex);
 
@@ -428,32 +431,39 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
         @Override
         public void onDateSet(DatePicker view, int year, int monthOfYear,
                               int dayOfMonth) {
+
             if (datePickerId.getId() == R.id.DateOfCalving) {
-                if (dayOfMonth < 9)
-                    docDate = "0";
-                docDate += String.valueOf(dayOfMonth);
+                if (dayOfMonth < 9) {
+                    docDate = "0" + String.valueOf(dayOfMonth);
+                } else {
+                    docDate = String.valueOf(dayOfMonth);
+                }
 
-                if (monthOfYear < 9)
-                    docMonth = "0";
-                docMonth += String.valueOf(monthOfYear + 1); //month starts from 0
-
+                if (monthOfYear < 9) {
+                    docMonth = "0" + String.valueOf(monthOfYear + 1); //month starts from 0}
+                } else {
+                    docMonth = String.valueOf(monthOfYear + 1); //month starts from 0}
+                }
                 docYear = String.valueOf(year);
 
                 dateOfCalving.setText("Date of Calving: " +
-                        String.valueOf(dayOfMonth) + "/" + String.valueOf(monthOfYear) + "/" + String.valueOf(year));
+                        docDate + "/" + docMonth + "/" + docYear);
             } else if (datePickerId.getId() == R.id.textViewFirstRecordingDate) {
-                if (dayOfMonth < 9)
-                    frdDate = "0";
-                frdDate += String.valueOf(dayOfMonth);
+                if (dayOfMonth < 9) {
+                    frdDate = "0" + String.valueOf(dayOfMonth);
+                } else {
+                    frdDate = String.valueOf(dayOfMonth);
+                }
 
-                if (monthOfYear < 9)
-                    frdMonth = "0";
-                frdMonth += String.valueOf(monthOfYear + 1); //month starts from 0
-
+                if (monthOfYear < 9) {
+                    frdMonth = "0" + String.valueOf(monthOfYear + 1); //month starts from 0}
+                } else {
+                    frdMonth = String.valueOf(monthOfYear + 1); //month starts from 0}
+                }
                 frdYear = String.valueOf(year);
 
                 firstRecordingDate.setText("First Recoding Date: " +
-                        String.valueOf(dayOfMonth) + "/" + String.valueOf(monthOfYear) + "/" + String.valueOf(year));
+                        frdDate + "/" + frdMonth + "/" + frdYear);
             }
             datePickerId = null;
         }
@@ -466,8 +476,8 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        //noinspection StatementWithEmptyBody
         if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
@@ -477,7 +487,6 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
     @Override
     public void onDetach() {
         super.onDetach();
-        mListener = null;
     }
 
     @Override
@@ -501,7 +510,6 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
-        void onFragmentInteraction(Uri uri);
     }
 
     /**
