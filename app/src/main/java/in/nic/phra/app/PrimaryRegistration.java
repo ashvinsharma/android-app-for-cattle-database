@@ -10,9 +10,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -36,7 +39,10 @@ import static in.nic.phra.app.data.WebServiceDetails.WS_URL;
  */
 public class PrimaryRegistration extends Fragment {
     private static final String TAG = "PrimaryRegistration";
-    ArrayList<JSONObject> list;
+    private ArrayList<JSONObject> list;
+    private ArrayList<String> arrayListView = new ArrayList<>();
+    private ListView listView;
+    private ArrayAdapter<String> adapter;
 
     public PrimaryRegistration() {
         // Required empty public constructor
@@ -52,6 +58,9 @@ public class PrimaryRegistration extends Fragment {
                              Bundle savedInstanceState) {
         View inputFragmentView = inflater.inflate(R.layout.fragment_primary_registration, container, false);
         // Inflate the layout for this fragment
+
+        listView = (ListView) inputFragmentView.findViewById(R.id.list);
+        adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_2, arrayListView);
 
         SharedPreferences sharedPreferences = getActivity().getApplicationContext().getSharedPreferences("userSession", MODE_PRIVATE);
         new LoadPrimaryRegistrationList().execute(sharedPreferences.getString("username", null));
@@ -69,10 +78,10 @@ public class PrimaryRegistration extends Fragment {
         return inputFragmentView;
     }
 
-    private class LoadPrimaryRegistrationList extends AsyncTask<String, Void, Void> {
+    private class LoadPrimaryRegistrationList extends AsyncTask<String, Void, ArrayList<JSONObject>> {
 
         @Override
-        protected Void doInBackground(String... params) {
+        protected ArrayList<JSONObject> doInBackground(String... params) {
             String param = "?username=" + params[0];
             Log.d(TAG, param);
 
@@ -113,7 +122,19 @@ public class PrimaryRegistration extends Fragment {
                 e.printStackTrace();
             }
 
-            return null;
+            return list;
+        }
+
+        @Override
+        protected void onPostExecute(ArrayList<JSONObject> list) {
+            for (int i = 0; i < list.size(); i++) {
+                try {
+                    arrayListView.add("Ear Tag: " + list.get(i).getString("EarTagNo"));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+            listView.setAdapter(adapter);
         }
     }
 
