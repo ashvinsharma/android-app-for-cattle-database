@@ -6,10 +6,10 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +19,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -36,6 +35,7 @@ import java.util.Map;
 import in.nic.phra.app.R;
 
 import static android.content.Context.MODE_PRIVATE;
+import static in.nic.phra.app.data.Strings.NO_INTERNET_CONNECTION;
 import static in.nic.phra.app.data.Strings.RURAL;
 import static in.nic.phra.app.data.Strings.TOWN;
 import static in.nic.phra.app.data.Strings.URBAN;
@@ -104,16 +104,14 @@ public class OwnerForm extends Fragment implements AdapterView.OnItemSelectedLis
                 if (checkedId == R.id.radioButtonUrban) {
                     area = URBAN;
                     Log.i(TAG, "Area: Urban selected");
-                    Toast.makeText(getContext(), "Urban", Toast.LENGTH_SHORT).show();
                 } else if (checkedId == R.id.radioButtonRural) {
                     area = RURAL;
                     Log.i(TAG, "Area: Rural selected");
-                    Toast.makeText(getContext(), "Rural", Toast.LENGTH_SHORT).show();
                 }
-                String[] params = new String[]{area, String.valueOf(sharedPreferences.getInt("State_ID", 0)),
+
+                new FillSpinner().execute(area, String.valueOf(sharedPreferences.getInt("State_ID", 0)),
                         String.valueOf(sharedPreferences.getInt("District_ID", 0)), String.valueOf(sharedPreferences.getInt("Block_ID", 0)),
-                        String.valueOf(sharedPreferences.getInt("Centre_ID", 0))};
-                new FillSpinner().execute(params);
+                        String.valueOf(sharedPreferences.getInt("Centre_ID", 0)));
             }
         });
 
@@ -154,6 +152,7 @@ public class OwnerForm extends Fragment implements AdapterView.OnItemSelectedLis
     }
 
     private class FillSpinner extends AsyncTask<String, Void, String> {
+        int responseCode;
 
         @Override
         protected void onPreExecute() {
@@ -183,7 +182,7 @@ public class OwnerForm extends Fragment implements AdapterView.OnItemSelectedLis
                 connection.setDoInput(true);
                 connection.setRequestProperty("Content-type", "application/x-www-form-urlencoded");
 
-                int responseCode = connection.getResponseCode();
+                responseCode = connection.getResponseCode();
                 Log.i(TAG, "POST Response Code: " + responseCode);
 
                 if (responseCode == HttpURLConnection.HTTP_OK) {
@@ -200,6 +199,7 @@ public class OwnerForm extends Fragment implements AdapterView.OnItemSelectedLis
                     JSONObject jsonObject = new JSONObject(response.toString());
                     JSONArray jsonArray = jsonObject.getJSONArray("rows");
 
+                    villageTownMap.clear();
                     ArrayList<JSONObject> jsonResults = new ArrayList<>();
                     for (int i = 0; i < jsonArray.length(); i++) {
                         jsonResults.add(jsonArray.getJSONObject(i));
@@ -235,6 +235,10 @@ public class OwnerForm extends Fragment implements AdapterView.OnItemSelectedLis
                 villageTownList.add("No " + area + " found");
             }
             villageTown.setAdapter(villageTownListDataAdapter);
+
+            if (responseCode == 0) {
+                Snackbar.make(getActivity().findViewById(android.R.id.content), NO_INTERNET_CONNECTION, Snackbar.LENGTH_LONG).show();
+            }
         }
     }
 
@@ -298,13 +302,9 @@ public class OwnerForm extends Fragment implements AdapterView.OnItemSelectedLis
 
         switch (parent.getId()) {
             case R.id.spinnerVillageTown:
-                Toast.makeText(parent.getContext(), "Selected Village/Town: " + item, Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.spinnerCategory:
-                Toast toast = Toast.makeText(parent.getContext(), "Selected Category: " + item, Toast.LENGTH_SHORT);
-                toast.setGravity(Gravity.CENTER, 0, 350);
-                toast.show();
                 break;
         }
     }

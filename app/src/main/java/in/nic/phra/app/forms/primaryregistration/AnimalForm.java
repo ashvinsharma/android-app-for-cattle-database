@@ -11,6 +11,7 @@ import android.content.res.Configuration;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
@@ -49,6 +50,7 @@ import static in.nic.phra.app.data.Strings.BUFFALO;
 import static in.nic.phra.app.data.Strings.COW;
 import static in.nic.phra.app.data.Strings.FEMALE;
 import static in.nic.phra.app.data.Strings.MALE;
+import static in.nic.phra.app.data.Strings.NO_INTERNET_CONNECTION;
 import static in.nic.phra.app.data.WebServiceDetails.COMPLETE_SPINNER_BREED;
 import static in.nic.phra.app.data.WebServiceDetails.SEND_PRIMARY_REGISTRATION_FORM_DATA;
 import static in.nic.phra.app.data.WebServiceDetails.WS_URL;
@@ -122,11 +124,9 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
                 if (checkedId == R.id.radioButtonCow) {
                     species = COW;
                     Log.i(TAG, "Species: Cow selected");
-                    Toast.makeText(getContext(), "Cow", Toast.LENGTH_SHORT).show();
                 } else if (checkedId == R.id.radioButtonBuffalo) {
                     species = BUFFALO;
                     Log.i(TAG, "Species: Buffalo selected");
-                    Toast.makeText(getContext(), "Buffalo", Toast.LENGTH_SHORT).show();
                 }
                 String[] params = new String[]{String.valueOf(sharedPreferences.getInt("State_ID", 0)), species};
                 new FillSpinner().execute(params);
@@ -185,11 +185,9 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
                 if (checkedId == R.id.radioButtonMale) {
                     sex = MALE;
                     Log.i(TAG, "Sex: Male selected");
-                    Toast.makeText(getContext(), "Male", Toast.LENGTH_SHORT).show();
                 } else if (checkedId == R.id.radioButtonFemale) {
                     sex = FEMALE;
                     Log.i(TAG, "Sex: Female selected");
-                    Toast.makeText(getContext(), "Female", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -214,6 +212,7 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
     }
 
     private class FillSpinner extends AsyncTask<String, Void, String> {
+        int responseCode;
 
         @Override
         protected String doInBackground(String... params) {
@@ -230,7 +229,7 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
                 connection.setDoInput(true);
                 connection.setRequestProperty("Content-type", "application/x-www-form-urlencoded");
 
-                int responseCode = connection.getResponseCode();
+                responseCode = connection.getResponseCode();
                 Log.i(TAG, connection.getRequestMethod() + " Response is: " + responseCode);
 
                 if (responseCode == HttpURLConnection.HTTP_OK) {
@@ -270,11 +269,17 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
                 breedList.add(breedMap.getKey().toString());
             }
             breed.setAdapter(breedListAdapter);
+
+            if (responseCode == 0) {
+                Toast toast = Toast.makeText(getActivity().getApplicationContext(), NO_INTERNET_CONNECTION, Toast.LENGTH_LONG);
+                toast.show();
+            }
         }
     }
 
     private class sendFormData extends AsyncTask<Void, Void, Boolean> {
         private final ProgressDialog progressDialog = new ProgressDialog(getActivity());
+        int responseCode;
 
         @Override
         protected void onPreExecute() {
@@ -331,7 +336,7 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
                 httpURLConnection.setDoInput(true);
                 httpURLConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
 
-                int responseCode = httpURLConnection.getResponseCode();
+                responseCode = httpURLConnection.getResponseCode();
                 Log.i(TAG, httpURLConnection.getRequestMethod() + " Response Code: " + responseCode);
 
                 if (responseCode == HttpURLConnection.HTTP_OK) {
@@ -363,6 +368,10 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
 
             unlockScreenOrientation();
             progressDialog.dismiss();
+
+            if (responseCode == 0) {
+                Snackbar.make(getActivity().findViewById(android.R.id.content), NO_INTERNET_CONNECTION, Snackbar.LENGTH_LONG).show();
+            }
 
             Intent intent = new Intent(getActivity(), PrimaryRegistration.class);
             startActivity(intent);

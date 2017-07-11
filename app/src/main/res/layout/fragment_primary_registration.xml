@@ -36,6 +36,7 @@
 
         <ListView
             android:id="@+id/list"
+            style="@style/Widget.AppCompat.ListView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintLeft_toLeftOf="parent"

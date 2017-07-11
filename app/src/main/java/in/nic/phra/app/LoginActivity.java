@@ -9,6 +9,7 @@ import android.content.res.Configuration;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
@@ -188,15 +189,11 @@ public class LoginActivity extends AppCompatActivity {
                     Intent intent = new Intent(LoginActivity.this, WelcomeActivity.class);
                     startActivity(intent);
                 } else {
-                    Context context = getApplicationContext();
-                    int duration = Toast.LENGTH_LONG;
-
                     if (responseCode != 0) {
-                        Toast toast = Toast.makeText(context, INVALID_USERNAME_PASSWORD, duration);
+                        Toast toast = Toast.makeText(getApplicationContext(), INVALID_USERNAME_PASSWORD, Toast.LENGTH_LONG);
                         toast.show();
                     } else {
-                        Toast toast = Toast.makeText(context, NO_INTERNET_CONNECTION, duration);
-                        toast.show();
+                            Snackbar.make(findViewById(android.R.id.content), NO_INTERNET_CONNECTION, Snackbar.LENGTH_LONG).show();
                     }
                 }
             }
