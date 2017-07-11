@@ -66,7 +66,8 @@ public class PrimaryRegistration extends Fragment {
         // Inflate the layout for this fragment
 
         listView = (ListView) inputFragmentView.findViewById(R.id.list);
-         adapter = new SimpleAdapter(getActivity(), arrayListView,
+
+        adapter = new SimpleAdapter(getActivity(), arrayListView,
                 simple_list_item_2,
                 new String[] {"OwnerName", "EarTagNo"},
                 new int[]{text1, text2});
