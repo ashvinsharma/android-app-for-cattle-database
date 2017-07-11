@@ -193,7 +193,7 @@ public class LoginActivity extends AppCompatActivity {
                         Toast toast = Toast.makeText(getApplicationContext(), INVALID_USERNAME_PASSWORD, Toast.LENGTH_LONG);
                         toast.show();
                     } else {
-                            Snackbar.make(findViewById(android.R.id.content), NO_INTERNET_CONNECTION, Snackbar.LENGTH_LONG).show();
+                            Snackbar.make(findViewById(android.R.id.content), "Login Failed " + NO_INTERNET_CONNECTION, Snackbar.LENGTH_LONG).show();
                     }
                 }
             }

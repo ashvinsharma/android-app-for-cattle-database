@@ -44,6 +44,7 @@ import java.util.Map;
 
 import in.nic.phra.app.PrimaryRegistration;
 import in.nic.phra.app.R;
+import in.nic.phra.app.WelcomeActivity;
 
 import static android.content.Context.MODE_PRIVATE;
 import static in.nic.phra.app.data.Strings.BUFFALO;
@@ -373,7 +374,7 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
                 Snackbar.make(getActivity().findViewById(android.R.id.content), NO_INTERNET_CONNECTION, Snackbar.LENGTH_LONG).show();
             }
 
-            Intent intent = new Intent(getActivity(), PrimaryRegistration.class);
+            Intent intent = new Intent(getActivity(), WelcomeActivity.class);
             startActivity(intent);
         }
     }

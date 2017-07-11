@@ -91,6 +91,15 @@ public class PrimaryRegistration extends Fragment {
     private class LoadPrimaryRegistrationList extends AsyncTask<String, Void, ArrayList<JSONObject>> {
 
         @Override
+        protected void onPreExecute() {
+            Map<String, String> map = new HashMap<>();
+            map.put("OwnerName", "Loading List...");
+            arrayListView.add(map);
+            listView.setAdapter(adapter);
+        }
+
+
+        @Override
         protected ArrayList<JSONObject> doInBackground(String... params) {
             String param = "?username=" + params[0];
             Log.d(TAG, param);
@@ -137,6 +146,9 @@ public class PrimaryRegistration extends Fragment {
 
         @Override
         protected void onPostExecute(ArrayList<JSONObject> list) {
+            //clearing the previous list
+            arrayListView.clear();
+
             for (int i = 0; i < list.size(); i++) {
                 try {
                     Map<String, String> map = new HashMap<>();
