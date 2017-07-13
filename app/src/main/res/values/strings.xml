@@ -1,5 +1,5 @@
 <resources>
-    <!-- Login and Welcome Activity -->
+    <!-->Login and Welcome Activity<-->
     <string name="app_name">PHRA</string>
     <string name="PHRALogo">PHRA</string>
     <string name="editTextUsername">Username</string>
@@ -12,7 +12,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_logout">Log Out</string>
 
-    <!-- Primary Registration -->
+    <!-->Primary Registration<-->
     <string name="new_primary_registration">Add new Primary Registration</string>
     <string name="title_activity_form_primary_registration">FormPrimaryRegistration</string>
     <string name="action_settings">Settings</string>
@@ -20,7 +20,8 @@
     <string name="owner_primary_registration">Owner</string>
     <string name="animal_primary_registration">Animal</string>
     <string name="user_drawer_layout_subheader">User</string>
-    <!-- OwnerForm -->
+    <string name="add_first_milk_recording">Add First Milk Recording</string>
+    <!-->OwnerForm<-->
     <string name="select_area">Select Area:</string>
     <string name="urban">Urban</string>
     <string name="rural">Rural</string>
@@ -30,7 +31,7 @@
     <string name="mobile_number">Mobile Number</string>
     <string name="telephone_number">Telephone Number</string>
     <string name="next">NEXT</string>
-    <!-- AnimalForm -->
+    <!-->AnimalForm<-->
     <string name="select_species">Species:</string>
     <string name="cow">Cow</string>
     <string name="buffalo">Buffalo</string>
@@ -39,9 +40,6 @@
     <string name="age_of_animal">Age of Animal</string>
     <string name="breed">Breed Of Animal</string>
     <string name="date_of_calving">Date of Calving: (Select date)</string>
-    <string-array name="date_of_calving_array">
-        <item>@string/date_of_calving</item>
-    </string-array>
     <string name="lactation_number">Lactation Number:</string>
     <string name="sire_details">Sire Detail (Name &amp; Number)</string>
     <string name="dam_details">Dam Detail (Name &amp; Number)</string>
@@ -53,4 +51,6 @@
     <string name="remarks">Remarks</string>
     <string name="back">BACK</string>
     <string name="submit">SUBMIT</string>
+
+    <!--><-->
 </resources>

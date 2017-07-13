@@ -16,6 +16,10 @@
         "source": "C:\\Users\\ashvi\\.android\\build-cache\\69a8642930ef513e0e96feba42f46b27ec6758e4\\output\\res\\layout\\abc_popup_menu_header_item_layout.xml"
     },
     {
+        "merged": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_primary_registration_record_details.xml",
+        "source": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\src\\main\\res\\layout\\fragment_primary_registration_record_details.xml"
+    },
+    {
         "merged": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar.xml",
         "source": "C:\\Users\\ashvi\\.android\\build-cache\\a7dd2d8cd4df55b2db2e68dc6d523f91478d4c1e\\output\\res\\layout\\design_layout_snackbar.xml"
     },
@@ -28,12 +32,12 @@
         "source": "C:\\Users\\ashvi\\.android\\build-cache\\69a8642930ef513e0e96feba42f46b27ec6758e4\\output\\res\\layout\\abc_action_bar_up_container.xml"
     },
     {
-        "merged": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
-        "source": "C:\\Users\\ashvi\\.android\\build-cache\\69a8642930ef513e0e96feba42f46b27ec6758e4\\output\\res\\layout\\abc_action_mode_bar.xml"
-    },
-    {
         "merged": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
         "source": "C:\\Users\\ashvi\\.android\\build-cache\\69a8642930ef513e0e96feba42f46b27ec6758e4\\output\\res\\layout\\abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
+        "source": "C:\\Users\\ashvi\\.android\\build-cache\\69a8642930ef513e0e96feba42f46b27ec6758e4\\output\\res\\layout\\abc_action_mode_bar.xml"
     },
     {
         "merged": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_form_primary_registration.xml",
@@ -162,6 +166,10 @@
     {
         "merged": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_animal_form.xml",
         "source": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\src\\main\\res\\layout\\fragment_animal_form.xml"
+    },
+    {
+        "merged": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_first_milk_recording_form.xml",
+        "source": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\src\\main\\res\\layout\\activity_first_milk_recording_form.xml"
     },
     {
         "merged": "C:\\Users\\ashvi\\AndroidStudioProjects\\App\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",

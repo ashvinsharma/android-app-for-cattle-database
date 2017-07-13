@@ -42,7 +42,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import in.nic.phra.app.PrimaryRegistration;
 import in.nic.phra.app.R;
 import in.nic.phra.app.WelcomeActivity;
 
@@ -376,6 +375,7 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
 
             Intent intent = new Intent(getActivity(), WelcomeActivity.class);
             startActivity(intent);
+            getActivity().finish();
         }
     }
 

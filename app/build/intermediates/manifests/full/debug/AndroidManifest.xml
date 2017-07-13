@@ -43,12 +43,15 @@
         <activity
             android:name="in.nic.phra.app.WelcomeActivity"
             android:label="@string/title_activity_welcome"
+            android:launchMode="singleTask"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
             android:name="in.nic.phra.app.forms.FormPrimaryRegistration"
             android:label="@string/title_activity_form_primary_registration"
             android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity android:name="in.nic.phra.app.forms.primaryregistration.FirstMilkRecordingForm" >
         </activity>
     </application>
 
