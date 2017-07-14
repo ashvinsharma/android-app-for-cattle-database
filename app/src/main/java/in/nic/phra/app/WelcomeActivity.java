@@ -82,13 +82,13 @@ public class WelcomeActivity extends AppCompatActivity
             getFragmentManager().beginTransaction().commit();
         } else if (backPressOne == 0) {
             backPressOne = System.currentTimeMillis();
-            Toast.makeText(this, "Press Back button again to exit", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Press Back button again to exit", Toast.LENGTH_SHORT).show();
         } else {
-            if (System.currentTimeMillis() - backPressOne < 2000) { //waits for 2 second and listens for back button otherwise show the text again
+            if (System.currentTimeMillis() - backPressOne < 5000) { //waits for 5 second and listens for back button otherwise show the text again
                 super.onBackPressed();
             } else {
                 backPressOne = 0;
-                Toast.makeText(this, "Press Back button again to exit", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Press Back button again to exit", Toast.LENGTH_SHORT).show();
             }
         }
     }

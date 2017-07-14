@@ -426,11 +426,11 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
         animalBundle.putString("animalName", params[1]);
         animalBundle.putString("animalAge", params[2]);
         animalBundle.putString("breed", breedID);
-        animalBundle.putString("doc", docDate + "/" + docMonth + "/" + docYear);
+        animalBundle.putString("doc", docDate + "-" + docMonth + "-" + docYear);
         animalBundle.putString("numberOfLactation", lactationNumber.getSelectedItem().toString());
         animalBundle.putString("sireDetails", params[3]);
         animalBundle.putString("damDetails", params[4]);
-        animalBundle.putString("frd", frdDate + "/" + frdMonth + "/" + frdYear);
+        animalBundle.putString("frd", frdDate + "-" + frdMonth + "-" + frdYear);
         animalBundle.putString("earTagCalf", params[5]);
         animalBundle.putString("sex", sex);
 
@@ -457,7 +457,7 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
                 docYear = String.valueOf(year);
 
                 dateOfCalving.setText("Date of Calving: " +
-                        docDate + "/" + docMonth + "/" + docYear);
+                        docDate + "-" + docMonth + "-" + docYear);
             } else if (datePickerId.getId() == R.id.textViewFirstRecordingDate) {
                 if (dayOfMonth < 9) {
                     frdDate = "0" + String.valueOf(dayOfMonth);
@@ -473,7 +473,7 @@ public class AnimalForm extends Fragment implements AdapterView.OnItemSelectedLi
                 frdYear = String.valueOf(year);
 
                 firstRecordingDate.setText("First Recoding Date: " +
-                        frdDate + "/" + frdMonth + "/" + frdYear);
+                        frdDate + "-" + frdMonth + "-" + frdYear);
             }
             datePickerId = null;
         }

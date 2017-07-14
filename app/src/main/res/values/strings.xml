@@ -52,5 +52,15 @@
     <string name="back">BACK</string>
     <string name="submit">SUBMIT</string>
 
-    <!--><-->
+    <!-->FirstMilkRecording<-->
+    <string name="morning">Morning</string>
+    <string name="noon">Noon</string>
+    <string name="evening">Evening</string>
+    <string name="date_of_first_milk_recording">Date of First Milk Recording</string>
+    <string name="day_of_first_milk_recording">Day of First Milk Recording</string>
+    <string name="total">Total(in kg): </string>
+    <string name="production">Production(in kg): </string>
+    <string name="name_of_supervisor">Name of Supervisor</string>
+    <string name="nil">--</string>
+    <string name="name_of_vi_mr">Name of VI/MR</string>
 </resources>

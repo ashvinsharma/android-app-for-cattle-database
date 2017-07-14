@@ -99,10 +99,10 @@ ADDED from C:\Users\ashvi\AndroidStudioProjects\App\app\src\main\AndroidManifest
 		ADDED from C:\Users\ashvi\AndroidStudioProjects\App\app\src\main\AndroidManifest.xml:42:13-56
 	android:name
 		ADDED from C:\Users\ashvi\AndroidStudioProjects\App\app\src\main\AndroidManifest.xml:40:13-58
-activity#in.nic.phra.app.forms.primaryregistration.FirstMilkRecordingForm
+activity#in.nic.phra.app.forms.FirstMilkRecordingForm
 ADDED from C:\Users\ashvi\AndroidStudioProjects\App\app\src\main\AndroidManifest.xml:44:9-45:20
 	android:name
-		ADDED from C:\Users\ashvi\AndroidStudioProjects\App\app\src\main\AndroidManifest.xml:44:19-83
+		ADDED from C:\Users\ashvi\AndroidStudioProjects\App\app\src\main\AndroidManifest.xml:44:19-63
 uses-sdk
 INJECTED from C:\Users\ashvi\AndroidStudioProjects\App\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\ashvi\.android\build-cache\878fa0a1e3a282457ef529ac81a91fbe030e0fa2\output\AndroidManifest.xml:5:5-7:41

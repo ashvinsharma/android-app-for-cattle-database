@@ -1,11 +1,11 @@
 package in.nic.phra.app.welcomefragments;
 
+import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -99,7 +99,7 @@ public class PrimaryRegistrationRecordDetails extends Fragment {
                     if (jsonObject.names().getString(i).equals("Town/Village")) {
                         if (jsonObject.getString("Area").equals("Rural")) {
                             map.put("key", "Village");
-                        } else{
+                        } else {
                             map.put("key", "Town");
                         }
                     } else {
@@ -124,7 +124,6 @@ public class PrimaryRegistrationRecordDetails extends Fragment {
             e.printStackTrace();
         }
 
-
         //grays out the @string/add_first_milk_recording and makes it unClickable
         if (numLactation > 1) {
             addFirstMilkRecordingTextView.setEnabled(false);
@@ -135,6 +134,7 @@ public class PrimaryRegistrationRecordDetails extends Fragment {
             public void onClick(View v) {
                 Log.i(TAG, "Loading First Milk Recording Form...");
                 Intent intent = new Intent(getActivity(), FirstMilkRecordingForm.class);
+                intent.putExtra("JSONDetails", jsonObject.toString());
                 startActivity(intent);
             }
         });
@@ -145,6 +145,7 @@ public class PrimaryRegistrationRecordDetails extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+        //noinspection StatementWithEmptyBody
         if (context instanceof OnFragmentInteractionListener) {
         } else {
             throw new RuntimeException(context.toString()
