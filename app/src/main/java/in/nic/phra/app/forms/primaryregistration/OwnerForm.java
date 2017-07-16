@@ -1,15 +1,15 @@
 package in.nic.phra.app.forms.primaryregistration;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
-import android.net.Uri;
-import android.os.Build;
+import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.telephony.PhoneNumberUtils;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,12 +19,29 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
-import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import in.nic.phra.app.R;
+
+import static android.content.Context.MODE_PRIVATE;
+import static in.nic.phra.app.data.Strings.NO_INTERNET_CONNECTION;
+import static in.nic.phra.app.data.Strings.RURAL;
+import static in.nic.phra.app.data.Strings.TOWN;
+import static in.nic.phra.app.data.Strings.URBAN;
+import static in.nic.phra.app.data.Strings.VILLAGE;
+import static in.nic.phra.app.data.WebServiceDetails.COMPLETE_SPINNER_TOWN_VILLAGE;
+import static in.nic.phra.app.data.WebServiceDetails.WS_URL;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -34,10 +51,25 @@ import in.nic.phra.app.R;
  * Use the {@link OwnerForm#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class OwnerForm extends Fragment implements AdapterView.OnItemSelectedListener{
+public class OwnerForm extends Fragment implements AdapterView.OnItemSelectedListener {
     private static final String TAG = "OwnerForm";
-
     private OnFragmentInteractionListener mListener;
+
+    private Spinner villageTown;
+    private Spinner category;
+    private EditText editTextAddress;
+    private EditText editTextTelephoneNumber;
+    private EditText editTextMobileNumber;
+    private EditText editTextFatherHusbandName;
+    private EditText editTextOwnerName;
+
+    @SuppressLint("UseSparseArrays")
+    Map<String, Integer> villageTownMap = new HashMap<>();  //stores name+ID of village/town
+
+    private final List<String> villageTownList = new ArrayList<>();
+    private ArrayAdapter<String> villageTownListDataAdapter;
+
+    private String area;
 
     public OwnerForm() {
         // Required empty public constructor
@@ -58,64 +90,54 @@ public class OwnerForm extends Fragment implements AdapterView.OnItemSelectedLis
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        final SharedPreferences sharedPreferences = getActivity().getApplicationContext().getSharedPreferences("userSession", MODE_PRIVATE);
+
         // Inflate the layout for this fragment
         View inputFragmentView = inflater.inflate(R.layout.fragment_owner_form, container, false);
 
-        RadioGroup area = (RadioGroup) inputFragmentView.findViewById(R.id.areaRadioGroup);
-        area.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        RadioGroup radioGroupArea = (RadioGroup) inputFragmentView.findViewById(R.id.areaRadioGroup);
+        radioGroupArea.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, @IdRes int checkedId) {
                 if (checkedId == R.id.radioButtonUrban) {
+                    area = URBAN;
                     Log.i(TAG, "Area: Urban selected");
-                    Toast.makeText(getContext(), "Urban", Toast.LENGTH_SHORT).show();
                 } else if (checkedId == R.id.radioButtonRural) {
+                    area = RURAL;
                     Log.i(TAG, "Area: Rural selected");
-                    Toast.makeText(getContext(), "Rural", Toast.LENGTH_SHORT).show();
                 }
+
+                new FillSpinner().execute(area, String.valueOf(sharedPreferences.getInt("State_ID", 0)),
+                        String.valueOf(sharedPreferences.getInt("District_ID", 0)), String.valueOf(sharedPreferences.getInt("Block_ID", 0)),
+                        String.valueOf(sharedPreferences.getInt("Centre_ID", 0)));
             }
         });
 
-        Spinner villageTown = (Spinner) inputFragmentView.findViewById(R.id.spinnerVillageTown);
+        editTextAddress = (EditText) inputFragmentView.findViewById(R.id.Address);
+        editTextTelephoneNumber = (EditText) inputFragmentView.findViewById(R.id.editTextTelephoneNumber);
+        editTextMobileNumber = (EditText) inputFragmentView.findViewById(R.id.editTextMobileNumber);
+        editTextFatherHusbandName = (EditText) inputFragmentView.findViewById(R.id.editTextFatherHusbandName);
+        editTextOwnerName = (EditText) inputFragmentView.findViewById(R.id.editTextOwnerName);
+
+        villageTown = (Spinner) inputFragmentView.findViewById(R.id.spinnerVillageTown);
         villageTown.setOnItemSelectedListener(this);
-        List<String> villageTownList = new ArrayList<>();
-        villageTownList.add("Select Village/Town");
-        villageTownList.add("anything yada yada ");
-        ArrayAdapter<String> villageTownListDataAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, villageTownList);
+        villageTownList.add("Select one Village/Town");
+        villageTownListDataAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, villageTownList);
         villageTownListDataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         villageTown.setAdapter(villageTownListDataAdapter);
 
-        EditText editTextOwnerName = (EditText) inputFragmentView.findViewById(R.id.editTextOwnerName);
-        String ownerName = editTextOwnerName.toString();
-
-        EditText editTextFatherHusbandName = (EditText) inputFragmentView.findViewById(R.id.editTextFatherHusbandName);
-        String fatherHusbandName = editTextFatherHusbandName.toString();
-
-        Spinner category = (Spinner) inputFragmentView.findViewById(R.id.spinnerCategory);
+        category = (Spinner) inputFragmentView.findViewById(R.id.spinnerCategory);
         category.setOnItemSelectedListener(this);
         List<String> categoryList = new ArrayList<>();
         categoryList.add("General");
         categoryList.add("SC");
         categoryList.add("OBC");
         categoryList.add("Other");
-        ArrayAdapter<String> categoryListDataAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, categoryList);
+        ArrayAdapter<String> categoryListDataAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, categoryList);
         categoryListDataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         category.setAdapter(categoryListDataAdapter);
-
-        EditText editTextAddress = (EditText) inputFragmentView.findViewById(R.id.Address);
-        String Address = editTextAddress.toString();
-
-        EditText editTextMobileNumber = (EditText) inputFragmentView.findViewById(R.id.editTextMobileNumber);
-        String mobileNumber = editTextMobileNumber.toString();
-
-        EditText editTextTelephoneNumber = (EditText) inputFragmentView.findViewById(R.id.editTextTelephoneNumber);
-        String telephoneNumber = editTextTelephoneNumber.toString();
 
         Button nextButton = (Button) inputFragmentView.findViewById(R.id.next_button);
         nextButton.setOnClickListener(new View.OnClickListener() {
@@ -127,6 +149,134 @@ public class OwnerForm extends Fragment implements AdapterView.OnItemSelectedLis
         });
 
         return inputFragmentView;
+    }
+
+    private class FillSpinner extends AsyncTask<String, Void, String> {
+        int responseCode;
+
+        @Override
+        protected void onPreExecute() {
+            villageTownList.clear();
+            villageTownList.add("Please wait ...");
+        }
+
+        @Override
+        protected String doInBackground(String... params) {
+            String area = params[0];
+            String state = params[1];
+            String district = params[2];
+            String block = params[3];
+            String centre = params[4];
+            String param = "?area=" + area
+                    + "&stateID=" + state
+                    + "&districtID=" + district
+                    + "&blockID=" + block
+                    + "&centreID=" + centre;
+            Log.d(TAG, "Query: " + param);
+
+            try {
+                URL url = new URL(WS_URL + COMPLETE_SPINNER_TOWN_VILLAGE + param);
+                HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+                connection.setRequestMethod("GET");
+                connection.setDoInput(true);
+                connection.setRequestProperty("Content-type", "application/x-www-form-urlencoded");
+
+                responseCode = connection.getResponseCode();
+                Log.i(TAG, "POST Response Code: " + responseCode);
+
+                if (responseCode == HttpURLConnection.HTTP_OK) {
+                    BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                    String inputLine;
+                    StringBuilder response = new StringBuilder();
+
+                    while ((inputLine = in.readLine()) != null) {
+                        response.append(inputLine);
+                    }
+                    in.close();
+
+                    Log.d(TAG, "HTTP Response: " + response.toString());
+                    JSONObject jsonObject = new JSONObject(response.toString());
+                    JSONArray jsonArray = jsonObject.getJSONArray("rows");
+
+                    villageTownMap.clear();
+                    ArrayList<JSONObject> jsonResults = new ArrayList<>();
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        jsonResults.add(jsonArray.getJSONObject(i));
+                        villageTownMap.put(jsonResults.get(i).getString("Village_Name"),
+                                jsonResults.get(i).getInt("Village_ID"));
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            switch (area) {
+                case VILLAGE:
+                    return "Village";
+                case TOWN:
+                    return "Town";
+                default:
+                    return null;
+            }
+        }
+
+        @Override
+        protected void onPostExecute(String area) {
+            //clearing the previous list
+            villageTownList.clear();
+
+            //populate the list of villages/town
+            if (villageTownMap.size() != 0) {
+                for (Map.Entry vt : villageTownMap.entrySet()) {
+                    villageTownList.add(vt.getKey().toString());
+                }
+            } else {
+                villageTownList.add("No " + area + " found");
+            }
+            villageTown.setAdapter(villageTownListDataAdapter);
+
+            if (responseCode == 0) {
+                Snackbar.make(getActivity().findViewById(android.R.id.content), NO_INTERNET_CONNECTION, Snackbar.LENGTH_LONG).show();
+            }
+        }
+    }
+
+    public Bundle getData() {
+
+        String[] params = new String[]{
+                editTextOwnerName.getText().toString().trim(),
+                editTextFatherHusbandName.getText().toString().trim(),
+                editTextAddress.getText().toString().trim(),
+                editTextMobileNumber.getText().toString().trim(),
+                editTextTelephoneNumber.getText().toString().trim()
+        };
+
+        //removing spaces with "%20" to send through GET
+        for (int i = 0; i < params.length; i++)
+            if (params[i].contains(" ")) {
+                params[i] = params[i].replace(" ", "%20");
+            }
+
+        //Prevent NPE in case of empty spinner
+        String villageID;
+        if (villageTownMap.get(villageTown.getSelectedItem().toString()) == null) {
+            villageID = null;
+        } else {
+            villageID = String.valueOf(villageTownMap.get(villageTown.getSelectedItem().toString()));
+        }
+
+        Bundle bundle = new Bundle();
+        bundle.putString("area", area);
+        bundle.putString("villageTown", villageID);
+        bundle.putString("ownerName", params[0]);
+        bundle.putString("fatherHusbandName", params[1]);
+        bundle.putString("category", category.getSelectedItem().toString());
+        bundle.putString("address", params[2]);
+        bundle.putString("mobileNumber", params[3]);
+        bundle.putString("telephoneNumber", params[4]);
+
+        return bundle;
     }
 
     @Override
@@ -150,15 +300,11 @@ public class OwnerForm extends Fragment implements AdapterView.OnItemSelectedLis
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         String item = parent.getItemAtPosition(position).toString();
 
-        switch(parent.getId()){
+        switch (parent.getId()) {
             case R.id.spinnerVillageTown:
-                Toast.makeText(parent.getContext(),"Selected Village/Town: " + item, Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.spinnerCategory:
-                Toast toast = Toast.makeText(parent.getContext(),"Selected Category: " + item, Toast.LENGTH_SHORT);
-                toast.setGravity(Gravity.CENTER, 0, 350);
-                toast.show();
                 break;
         }
     }

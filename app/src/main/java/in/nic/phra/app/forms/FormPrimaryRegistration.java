@@ -1,6 +1,5 @@
 package in.nic.phra.app.forms;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -9,6 +8,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,6 +22,9 @@ import in.nic.phra.app.forms.primaryregistration.OwnerForm;
 
 public class FormPrimaryRegistration extends AppCompatActivity
         implements OwnerForm.OnFragmentInteractionListener, AnimalForm.OnFragmentInteractionListener {
+
+    private static final String TAG = "FormPrimaryRegistration";
+    private Bundle bundle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +56,32 @@ public class FormPrimaryRegistration extends AppCompatActivity
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.formTabs);
         tabLayout.setupWithViewPager(mViewPager);
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                //noinspection ConstantConditions
+                if (tab.getText().toString().equalsIgnoreCase("animal")) {
+                    AnimalForm frag = (AnimalForm) getSupportFragmentManager().getFragments().get(1);
+                    frag.sendBundle(bundle);
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+                //noinspection ConstantConditions
+                if (tab.getText().toString().equalsIgnoreCase("owner")) {
+                    OwnerForm frag = (OwnerForm) getSupportFragmentManager().getFragments().get(0);
+                    bundle = frag.getData();
+                }
+
+                Log.i(TAG, tab.getText().toString() + " says hi");
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle("Primary Registration Form");
@@ -80,11 +109,6 @@ public class FormPrimaryRegistration extends AppCompatActivity
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onFragmentInteraction(Uri uri) {
-
     }
 
     /**

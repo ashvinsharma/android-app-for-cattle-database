@@ -57,7 +57,9 @@ public class WelcomeActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        getSupportActionBar().setTitle("Hello User");
+        String userFullName = sharedPreferences.getString("User_FullName", "<user_full_name>");
+        if (getSupportActionBar() != null)
+            getSupportActionBar().setTitle("Hello " + userFullName.substring(0, 1).toUpperCase() + userFullName.substring(1));
     }
 
     @Override
@@ -70,9 +72,9 @@ public class WelcomeActivity extends AppCompatActivity
         }
 
         //Fetches the previous fragments
-        if(getFragmentManager().getBackStackEntryCount() > 0){
+        if (getFragmentManager().getBackStackEntryCount() > 0) {
             getFragmentManager().popBackStack();
-        }else{
+        } else {
             super.onBackPressed();
         }
     }
@@ -117,6 +119,7 @@ public class WelcomeActivity extends AppCompatActivity
             Intent intent = new Intent(WelcomeActivity.this, LoginActivity.class);
             startActivity(intent);
             finish();
+            return true;
         }
 
         if (fragmentClass != null) {

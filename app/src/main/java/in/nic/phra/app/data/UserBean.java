@@ -6,6 +6,7 @@ import android.os.Parcelable;
 /**
  * Created by ashvi on 06-06-2017.
  * Saves temporary User in.nic.phra.app.data from JSON Script at the time of login
+ * @deprecated not in use as of 27-06-2017. Safe to delete after the beta testing
  */
 
 public class UserBean implements Parcelable {

@@ -12,12 +12,6 @@
         <ScrollView
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -26,12 +20,55 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingBottom="16dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textViewSelectSpecies"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:paddingEnd="4dp"
+                        android:paddingStart="4dp"
+                        android:paddingTop="8dp"
+                        android:text="@string/select_species"/>
+
+                    <RadioGroup
+                        android:id="@+id/radio_group_species"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radioButtonBuffalo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/buffalo"/>
+
+                        <RadioButton
+                            android:id="@+id/radioButtonCow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/cow"/>
+                    </RadioGroup>
+                </LinearLayout>
 
                 <EditText
                     android:id="@+id/editTextEarTag"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:ems="10"
                     android:hint="@string/ear_tag_number"
                     android:inputType="number"/>
@@ -56,34 +93,49 @@
                     android:inputType="number"/>
 
                 <Spinner
-                    android:id="@+id/spinner_species"
+                    android:id="@+id/spinner_breed"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"/>
 
-                <EditText
-                    android:id="@+id/editTextBreed"
+                <TextView
+                    android:id="@+id/DateOfCalving"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:ems="10"
-                    android:hint="@string/breed"
-                    android:inputType="textPersonName"/>
+                    android:background="?android:attr/selectableItemBackground"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingTop="8dp"
+                    android:text="@string/date_of_calving"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"/>
 
-                <EditText
-                    android:id="@+id/editTextDateofCalving"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:ems="10"
-                    android:hint="@string/date_of_calving"
-                    android:inputType="date"/>
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
 
-                <Spinner
-                    android:id="@+id/spinner_number_of_lactation"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"/>
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_weight="1"
+                        android:paddingEnd="4dp"
+                        android:paddingStart="4dp"
+                        android:paddingTop="8dp"
+                        android:text="@string/lactation_number"/>
+
+                    <Spinner
+                        android:id="@+id/spinner_number_of_lactation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_weight="0.25"
+                        android:spinnerMode="dialog"/>
+                </LinearLayout>
 
                 <EditText
                     android:id="@+id/editTextSire"
@@ -103,14 +155,19 @@
                     android:hint="@string/dam_details"
                     android:inputType="textMultiLine"/>
 
-                <EditText
-                    android:id="@+id/editTextFirstRecordingDate"
+                <TextView
+                    android:id="@+id/textViewFirstRecordingDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:ems="10"
-                    android:hint="@string/first_recording_date"
-                    android:inputType="date"/>
+                    android:background="?android:attr/selectableItemBackground"
+                    android:text="@string/first_recording_date"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingTop="8dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"/>
 
                 <EditText
                     android:id="@+id/editTextEarTagofCalf"
@@ -120,6 +177,50 @@
                     android:ems="10"
                     android:hint="@string/ear_tag_of_calf"
                     android:inputType="number"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textViewSelectSex"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:paddingEnd="4dp"
+                        android:paddingStart="4dp"
+                        android:paddingTop="8dp"
+                        android:text="@string/sex_of_calf"/>
+
+                    <RadioGroup
+                        android:id="@+id/radio_group_sex"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radioButtonFemale"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_weight="1"
+                            android:text="@string/female"
+                            android:textAlignment="viewStart"/>
+
+                        <RadioButton
+                            android:id="@+id/radioButtonMale"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_weight="1"
+                            android:text="@string/male"
+                            android:textAlignment="viewStart"/>
+                    </RadioGroup>
+                </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/submit_layout"

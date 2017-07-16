@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="http://schemas.android.com/tools">
+    <string-array name="date_of_calving_array">
+        <item>@string/date_of_calving</item>
+    </string-array>
     <attr format="reference" name="constraintSet"/>
     <attr format="reference" name="drawerArrowStyle"/>
     <attr format="dimension" name="height"/>
@@ -691,16 +694,21 @@
     <string name="back">BACK</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
     <string name="breed">Breed Of Animal</string>
+    <string name="buffalo">Buffalo</string>
     <string name="buttonLogIn">LOGIN</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
+    <string name="cow">Cow</string>
     <string name="dam_details">Dam Detail (Name &amp; Number)</string>
-    <string name="date_of_calving">Date of Calving</string>
+    <string name="date_of_calving">Date of Calving: (Select date)</string>
     <string name="ear_tag_number">Ear Tag Number</string>
     <string name="ear_tag_of_calf">Ear Tag of Calf</string>
     <string name="editTextPassword">Password</string>
     <string name="editTextUsername">Username</string>
     <string name="father_husband_name">Father\'s/Husband\'s Name</string>
-    <string name="first_recording_date">First Recording Date</string>
+    <string name="female">Female</string>
+    <string name="first_recording_date">First Recording Date: (Select date)</string>
+    <string name="lactation_number">Lactation Number:</string>
+    <string name="male">Male</string>
     <string name="mobile_number">Mobile Number</string>
     <string name="name_of_animal">Name of Animal</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -719,7 +727,8 @@
     <string name="search_menu_title">Search</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="select_area">Select Area:</string>
-    <string name="sex_of_calf">Sex of Calf</string>
+    <string name="select_species">Species:</string>
+    <string name="sex_of_calf">Sex of Calf: </string>
     <string name="sire_details">Sire Detail (Name &amp; Number)</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="submit">SUBMIT</string>

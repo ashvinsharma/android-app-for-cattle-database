@@ -9,6 +9,7 @@ import android.content.res.Configuration;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
@@ -32,8 +33,8 @@ import java.security.MessageDigest;
 
 import static in.nic.phra.app.data.Strings.INVALID_USERNAME_PASSWORD;
 import static in.nic.phra.app.data.Strings.NO_INTERNET_CONNECTION;
-import static in.nic.phra.app.data.WebServiceDetails.authenticate;
-import static in.nic.phra.app.data.WebServiceDetails.wsURL;
+import static in.nic.phra.app.data.WebServiceDetails.AUTHENTICATE;
+import static in.nic.phra.app.data.WebServiceDetails.WS_URL;
 
 public class LoginActivity extends AppCompatActivity {
     private SharedPreferences sharedPreferences;
@@ -63,7 +64,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void sendLoginRequest(View view) {
-        String username = editTextUsername.getText().toString();
+        String username = editTextUsername.getText().toString().trim();
         String password = editTextPassword.getText().toString();
 
         //Converting password to md5 hash and initiating login process
@@ -74,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void loginMethod(final String username, String password) {
 
-        class LoginMethodAsyncTask extends AsyncTask<String, Void, String> {
+        class LoginMethodAsyncTask extends AsyncTask<String, Void, Void> {
             private final ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this);
             private int responseCode;
 
@@ -85,27 +86,30 @@ public class LoginActivity extends AppCompatActivity {
                  * Hiding Keyboard
                  */
 
-                InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                inputMethodManager.hideSoftInputFromWindow(editTextUsername.getWindowToken(), 0);
+                View view = getCurrentFocus();
+                if (view != null) {
+                    InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                    inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                }
 
                 lockScreenOrientation();
 
                 progressDialog.setIndeterminate(true);
                 progressDialog.setMessage("Logging in...");
                 progressDialog.show();
-
+                progressDialog.setCanceledOnTouchOutside(false);
             }
 
             @Override
-            protected String doInBackground(String... params) {
+            protected Void doInBackground(String... params) {
                 String paramUsername = params[0];
                 String paramPassword = params[1];
                 editor = sharedPreferences.edit();
                 String postParam = "LoginUserId=" + paramUsername + "&Pwd=" + paramPassword;
-                Log.d(TAG, "POST Query: LoginUserId=" + paramUsername + "&Pwd=" + paramPassword);
+                Log.d(TAG, "POST Query: " + postParam);
                 try {
                     //Apache Libraries and namevaluepair has been deprecated since APK 21(?). Using HttpURLConnection instead.
-                    URL url = new URL(wsURL + authenticate);
+                    URL url = new URL(WS_URL + AUTHENTICATE);
                     HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
                     connection.setRequestMethod("POST");
@@ -118,7 +122,7 @@ public class LoginActivity extends AppCompatActivity {
                     os.flush();
                     os.close();
 
-                    // Fetching the response code for debugging purposes.
+                    // Fetching the response code
                     responseCode = connection.getResponseCode();
                     Log.d(TAG, "POST Response Code: " + responseCode);
 
@@ -170,11 +174,11 @@ public class LoginActivity extends AppCompatActivity {
                     Log.e(TAG, "IOException Exception: " + e);
                 }
 
-                return postParam;
+                return null;
             }
 
             @Override
-            protected void onPostExecute(String result) {
+            protected void onPostExecute(Void param) {
                 unlockScreenOrientation();
                 progressDialog.dismiss();
 
@@ -185,21 +189,16 @@ public class LoginActivity extends AppCompatActivity {
                     Intent intent = new Intent(LoginActivity.this, WelcomeActivity.class);
                     startActivity(intent);
                 } else {
-                    Context context = getApplicationContext();
-                    int duration = Toast.LENGTH_LONG;
-
                     if (responseCode != 0) {
-                        Toast toast = Toast.makeText(context, INVALID_USERNAME_PASSWORD, duration);
+                        Toast toast = Toast.makeText(getApplicationContext(), INVALID_USERNAME_PASSWORD, Toast.LENGTH_LONG);
                         toast.show();
                     } else {
-                        Toast toast = Toast.makeText(context, NO_INTERNET_CONNECTION, duration);
-                        toast.show();
+                            Snackbar.make(findViewById(android.R.id.content), "Login Failed " + NO_INTERNET_CONNECTION, Snackbar.LENGTH_LONG).show();
                     }
                 }
             }
         }
-        LoginMethodAsyncTask loginMethodAsyncTask = new LoginMethodAsyncTask();
-        loginMethodAsyncTask.execute(username, password);
+        new LoginMethodAsyncTask().execute(username, password);
     }
 
     @NonNull
